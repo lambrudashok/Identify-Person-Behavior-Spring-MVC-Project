@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.editcontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.editsection{
+	width: 50%;
+	min-height: 90vh;
+	padding-top:30px;
+	margin: auto;
+	
+}
+
+.divider{
+	width:80%;
+	margin:auto;
+	min-height: 430px;
+	padding-top:15px;
+	padding-left:20px;
+	border: white solid 1px;
+	border-radius: 30px;
+	box-shadow: 5px 10px 20px white;
+}
+
+.divider h3{
+	font-size:25px;
+	color:white;
+	
+}
+.photo{
+	width:95%;
+	height: 80px;
+	display:flex;
+	margin-top:10px;
+	padding:5px;
+	border: white solid 1px;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+.photo #changebtn{
+	width:150px;
+	height:40px;
+	margin-top:15px;
+	border-radius:20px;
+	color:white;
+	background-color: deepskyblue;
+}
+.image{
+	width:20%;
+	height: 85px;
+	position:relative;
+	padding-left:10px;
+}
+.image img{
+	width:80%;
+	height:60px;
+	border-radius: 30px;
+}
+.image a{
+	width:25px;
+	height:25px;
+	font-size:25px;
+	text-align:center;
+	font-weight: bold;
+	background-color:black;
+	border-radius:20px;
+	top:35px;
+	right:10px;
+	position:absolute;
+	text-decoration: none;
+	color:white;
+}
+
+
+.userdetail{
+	width: 35%;
+	height: 60px;
+}
+.userdetail h4{
+	color:white;
+	overflow:hidden;
+	font-size: 22px;
+}
+.userdetail #name{
+	font-size: 17px;
+}
+
+.divider .pro{
+	width:45%;
+	height: 60px;
+	border: none;
+	color:white;
+	margin-top: 15px;
+}
+
+
+
+
+.divider input{
+	width:95%;
+	height: 45px;
+	border: black solid 2px;
+	padding-left:10px;
+	font-size:17px;
+	margin-top:20px;
+	border-radius: 10px;
+}
+
+.msg{
+	width:90%;
+	margin-top:5px;
+	padding-left:10px;
+	font-size: 20px;
+	color:red;
+}
+#msg{
+	width:90%;
+	margin-top:5px;
+	padding-left:10px;
+	font-size: 20px;
+	color:green;
+	font-weight: bold;
+}
+.divider #editbtn{
+	width:50%;
+	height:40px;
+	margin-top :10px;
+	margin-left:110px;
+	margin-bottom:20px;
+	border-radius:20px;
+	color:white;
+	background-color: deepskyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.searchcontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: black;
+}
+
+.searchsection{
+	width: 100%;
+	min-height: 100vh;
+}
+
+.searchbar{
+	width:40%;
+	margin:auto;
+	height:40px;
+	padding-top: 20px;
+	
+}
+
+.searchbar #searchuser{
+	width:97%;
+	height:40px;
+	border:white solid 1px;
+	border-radius:20px;
+	background: black;
+	padding: 15px;
+	color: white;
+	
+}
+.searchbar input::placeholder{
+	color:white;
+}
+.userInfo{
+	width: 100%;
+	height: 89vh;
+	overflow: auto;
+	margin-top: 20px;
+}
+.userInfo #searchGrid h4{
+	color:white;
+	font-size:20px;
+	margin-top:20px;
+	margin-left:35%;
+}
+
+.info{
+	margin:auto;
+	margin-top:10px;
+	width:40%;
+	min-height: 89vh;
+	padding-left:10px;
+	border:white solid 1px;
+	border-radius: 20px;
+}
+
+.userappinfo{
+	margin:auto;
+	width: 100%;
+	padding:5px;
+	min-height: 50px;
+	margin-top:5px;
+	text-decoration:none;
+	display: flex;	
+}
+
+.userappinfo .photo{
+	width:15%;
+	min-height: 60px;
+}
+.userappinfo .photo img{
+	width:70%;
+	height:50px;
+	margin-left:10px;
+	border-radius: 50px;
+}
+.userappinfo .userdetails{
+	color:white;
+	width:80%;
+	height:60px;
+	margin-left:5px;
+	margin-top:5px;
+	display:flex;
+}
+.userdetails .namediv{
+	width:70%;
+	height:60px;
+}
+.namediv #name{
+	width:100%;
+	height:20px;
+	font-size:16px;
+	font-weight:bolder;
+	overflow:hidden;
+}
+.namediv #username{
+	width:100%;
+	height:20px;
+	font-size:16px;
+	overflow:hidden;
+}
+
+
+

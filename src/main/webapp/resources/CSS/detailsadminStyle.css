@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.detailscontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.main{
+	width: 80%;
+	margin:auto;
+	min-height: 100vh;
+}
+.main h2{
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+}
+.columnname{
+	width:90%;
+	height: 50px;
+	margin:auto;
+	color:white;
+	margin-top:10px;
+	font-weight:bold;
+	top:0;
+	position:sticky;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	text-align:center;
+	display:flex;
+	border:white solid 1px;
+}
+
+.columnname #columnid{
+	width:80px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+
+.columnname #columnphoto{
+	width:150px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+
+.columnname #columnnam{
+	width:150px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+	
+}
+.columnname #columnemail{
+	width:162px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnusername{
+	width:150px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnpassword{
+	width:150px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnother{
+	width:90px;
+	height: 49px;
+	padding-top:15px;
+}
+
+.adjust{
+	width:100%;
+	min-height: 80vh;
+}
+
+
+.details{
+	width:90%;
+	height: 120px;
+	margin:auto;
+	color:white;
+	margin-top:5px;
+	display:flex;
+	border-radius:20px;
+	border: white solid 1px;
+}
+
+.details #userid{
+	width:80px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	border-right:white solid 1px;
+}
+.details #photo{
+	width:150px;
+	height: 120px;
+	border-right:white solid 1px;
+}
+.details #photo img{
+	width:130px;
+	height: 115px;
+	margin-left:10px;
+	border-radius:20px;
+	padding:5px; 
+	
+}
+.details #cname{
+	width:150px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+.details #email{
+	width:162px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+.details #username{
+	width:150px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+
+.details #password{
+	width:150px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+.details #delete{
+	width:90px;
+	height: 120px;
+	text-align:center;
+	padding-top:50px;
+}
+#delete a{
+	color: aqua;
+	font-weight: bold;
+	text-shadow: 1px 2px 5px white;
+}
+
+

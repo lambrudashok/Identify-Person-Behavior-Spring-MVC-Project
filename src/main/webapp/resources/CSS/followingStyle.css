@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.followingcontainer{
+	width: 100%;
+	min-height: 100vh;
+	
+}
+.main{
+	width:100%;
+	min-height: 100vh;
+	display: flex;
+}
+
+.main .leftmenu{
+	width:15%;
+	min-height: 100vh;
+}
+
+
+.followingsection{
+	width:85%;
+	height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	overflow: auto;
+	border-left: #BDBDBD solid 1px;
+	
+	
+}
+
+
+
+.followingsection h4{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.userfollowing{
+	margin:auto;
+	width: 70%;
+	min-height: 80px;
+	display: flex;
+	border-top: #BDBDBD solid 1px;
+	margin-top: 10px;
+	border-radius: 20px;
+}
+
+.userfollowing .photo{
+	width:20%;
+	padding:5px;
+	min-height: 80px;
+}
+.userfollowing .photo img{
+	width:70%;
+	height:80px;
+	margin-left:20px;
+	border-radius: 40px;
+}
+.userfollowing .userdetails{
+	width:100%;
+	height:80px;
+	margin-left: 10px;
+	margin-top:10px;
+	display:flex;
+}
+.userdetails #namediv{
+	width:50%;
+	height:80px;
+}
+.userdetails #btndiv{
+	width:50%;
+	height:80px;
+}
+.userdetails #btndiv button{
+	width:100px;
+	height:35px;
+	background-color:#BDBDBD;
+	color:white;
+	border-radius: 20px;
+}

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+ 
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ .registercontainer{
+	width:100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+ }
+ 
+ .adj{
+ 	width: 50%;
+ 	margin:auto;
+ 	min-height:100vh;
+ 	padding-top: 30px;
+ 	
+ }
+ .register{
+	width: 370px;
+	min-height: 500px;
+	background-color:white;
+	color:black;
+	padding-right:5px;
+	margin:auto;
+	box-shadow: 5px 20px 50px #000;
+	border-radius: 40px;
+	padding-top:20px;
+}
+	
+
+.logo{
+	height:40px;
+	font-size: 1.5em;
+	margin-bottom:10px;
+	text-align:center;
+	font-weight:bold;
+
+}
+.msg{
+	width: 80%;
+	color:red;
+	margin-left: 35px;
+}
+
+input{
+	width: 80%;
+	height: 40px;
+	background: #e0dede;
+	border-style:none;
+	margin-left:35px;
+	padding-left:10px;
+	border-radius: 5px;
+}
+.register #recapt{
+	margin-top:10px;
+	margin-bottom:20px;
+	margin-left: 35px;
+}
+button{
+	width: 80%;
+	height: 40px;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-left:35px;
+	border-radius: 5px;
+}
+
+button:hover{
+	background: #6d44b8;
+}
+
+.next {
+	width:100%;
+	height:40px;
+	text-align: center;
+	margin-top: 10px;
+}
+.next #regtag{
+	 text-decoration: none;
+	 color:green;
+	 font-size: 17px;
+}
+
+
+

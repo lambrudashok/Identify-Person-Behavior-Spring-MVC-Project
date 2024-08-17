@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.changecontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.changesection{
+	width: 40%;
+	min-height: 90vh;
+	padding-top:30px;
+	margin: auto;
+	
+}
+
+.divider{
+	width:80%;
+	margin:auto;
+	min-height: 400px;
+	position:relative;
+	padding-top:15px;
+	padding-left:20px;
+	border: white solid 1px;
+	border-radius: 30px;
+	box-shadow: 5px 10px 20px white;
+}
+
+.divider h3{
+	font-size:25px;
+	color:white;
+	
+}
+
+.divider h5{
+	color:white;
+	font-size: 15px;
+	padding-top:40px;
+	text-shadow: 2px 2px 4px white;
+}
+
+.divider input{
+	width:95%;
+	height: 45px;
+	margin-top: 20px;
+	border: black solid 2px;
+	padding-left:10px;
+	font-size:17px;
+	border-radius: 10px;
+}
+
+.divider .msg{
+	width:90%;
+	height:40px;
+	margin-top:20px;
+	padding-left:10px;
+	font-size: 20px;
+	color:red;
+}
+.divider button{
+	width:90%;
+	height:40px;
+	border-radius:20px;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	position:absolute;
+	border-color:white;
+	bottom:20px;
+	background-color: deepskyblue;
+}
+
+.usernamediv #usernamenextbtn{
+	width:90%;
+	height:40px;
+	border-radius:20px;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	position:absolute;
+	border-color:white;
+	bottom:70px;
+	background-color: deepskyblue;
+}
+
+
+
+#emailconfirmbtn{
+	width:90%;
+	height:40px;
+	border-radius:20px;
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	position:absolute;
+	border-color:white;
+	bottom:70px;
+	background-color: deepskyblue;
+}
+
+.divider #cancelbtn{
+	width:90%;
+	height:40px;
+	border-radius:20px;
+	color:white;
+	font-size:20px;
+	border-color:white;
+	font-weight:bold;
+	position:absolute;
+	bottom:20px;
+	background-color: black;
+}
+
+
+
+.emaildiv{
+ 	display: none;
+}
+.sendotpdiv{
+	display:none;
+}
+.otpverifydiv{
+ 	display:none;
+}
+
+.forgotdiv{
+	display:none;
+}
+
+
+
+
+
+
+
+
+
+

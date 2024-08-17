@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.detailscontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.main{
+	width: 80%;
+	margin:auto;
+	min-height: 100vh;
+}
+
+.adjust{
+	width:100%;
+	min-height: 80vh;
+}
+
+.adjust h2{
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+}
+.columnname{
+	width:90%;
+	height: 50px;
+	margin:auto;
+	color:white;
+	margin-top:10px;
+	font-weight:bold;
+	top:0;
+	position:sticky;
+	background-color:black;
+	text-align:center;
+	display:flex;
+	border:white solid 1px;
+}
+
+.columnname #columnid{
+	width:120px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnusername{
+	width:220px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnpassword{
+	width:220px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columndate{
+	width:180px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columtime{
+	width:170px;
+	height: 49px;
+	padding-top:15px;
+}
+
+
+.details{
+	width:90%;
+	height: 120px;
+	margin:auto;
+	color:white;
+	margin-top:5px;
+	display:flex;
+	border-radius:20px;
+	border: white solid 1px;
+	
+}
+
+.details #userid{
+	width:120px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	border-right:white solid 1px;
+}
+
+.details #username{
+	width:220px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+
+.details #password{
+	width:220px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+.details #date{
+	width:180px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+	border-right:white solid 1px;
+}
+
+.details #time{
+	width:170px;
+	height: 120px;
+	text-align: center;
+	padding-top:50px;
+	padding-left:5px;
+	overflow:hidden;
+}
+
+
+

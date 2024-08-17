@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.main{
+	width:100%;
+	min-height: 100vh;
+	color:white;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+} 
+
+.logoimg{
+	border-radius:30px;
+	width:70px;
+	height:50px;
+}
+
+.menulogo{
+	font-size: 17px;
+	margin-top: 10px;
+}
+
+.logosize{
+	font-size: 20px;
+	margin-right: 15px;
+}
+
+.bg{
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	color:white;
+	margin-top: 5px;
+}
+.brd{
+	border :white solid 1px;
+	border-radius: 10px;
+	padding: 7px;
+}
+
+#v-pills-tab {
+	width:100%;
+}
+#v-pills-tab :hover{
+	background: linear-gradient(#7579e7, #393e46);
+	color:white;	
+}
