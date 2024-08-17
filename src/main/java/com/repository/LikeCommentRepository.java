@@ -88,68 +88,77 @@ public class LikeCommentRepository {
 	}
 	
 	
-//	// fetch last like
-//	public int getLikeId() {
-//		try {
-//			ps =con.prepareStatement("select max(likeid) from likemaster");
-//			rs=ps.executeQuery();
-//			if(rs.next()){
-//				return rs.getInt(1);
-//			}else {
-//				return 0;
-//			}
-//		}catch(Exception e) {
-//			System.out.println("like repo error :"+e);
-//			return -1;
-//		}
-//	}
-//	
-//	
-//	// add like in database
-//	public boolean isAddLike(int postid,int registerid) {
-//		try {
-//			ps= con.prepareStatement("insert into likemaster value('0',?)");
-//			ps.setInt(1, registerid);
-//			int v=ps.executeUpdate();
-//			
-//			int likeid=this.getLikeId();
-//			ps=con.prepareStatement("insert into likepostjoin values(?,?)");
-//			ps.setInt(1, likeid);
-//			ps.setInt(2, postid);
-//			int v1=ps.executeUpdate();
-//			return v1>0?true:false;
-//		}catch(Exception e) {
-//			System.out.println("error :"+e);
-//			return false;
-//		}
-//	}
-//	
-//	// fetch like count of post
-//	public int fetchLikeCount(int postid) {
-//		try {
-//			ps =con.prepareStatement("select count(lm.likeid) from likemaster lm "
-//					+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
-//					+ "inner join postmaster pm on pm.postid=lpj.postid "
-//					+ "where pm.postid=?");
-//			ps.setInt(1, postid);
-//			rs=ps.executeQuery();
-//			if(rs.next()) {
-//				return rs.getInt(1);   // return post like count 
-//			}else {
-//				return 0;
-//			}
-//		}catch(Exception e) {
-//			System.out.println("error :"+e);
-//			return 0;
-//		}
-//	}
-//	
+	// fetch last like
+	public int getLikeId() {
+		try {
+			Integer like = template.queryForObject("select max(likeid) from likemaster", new RowMapper<Integer>() {
+				@Override
+				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getInt(1);
+				}
+			});
+			return (like>0)? like : 0;
+		}catch(Exception e) {
+			System.out.println("like repo error :"+e);
+			return -1;
+		}
+	}
+	
+	
+	// add like in database
+	public boolean isAddLike(final int postid,final int registerid) {
+		try {
+			
+			int v = template.update("insert into likemaster value('0',?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, registerid);
+				}
+			});
+			
+			
+			final int likeid=this.getLikeId();
+			v = template.update("insert into likepostjoin values(?,?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, likeid);
+					ps.setInt(2, postid);
+				}
+			});
+			
+			return (v>0)?true:false;
+		}catch(Exception e) {
+			System.out.println("error :"+e);
+			return false;
+		}
+	}
+	
+	// fetch like count of post
+	public int fetchLikeCount(int postid) {
+		try {
+			int likecount = template.queryForObject("select count(lm.likeid) from likemaster lm "
+					+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
+					+ "inner join postmaster pm on pm.postid=lpj.postid "
+					+ "where pm.postid=?", new Object[] {postid}, new RowMapper<Integer>() {
+						@Override
+						public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getInt(1);   // return post like count
+						}
+					});
+			return (likecount>0) ? likecount : 0;
+			
+		}catch(Exception e) {
+			System.out.println("error :"+e);
+			return 0;
+		}
+	}
+	
 	
 	// check person like or not
 	public int checkLike(int postid,int userID) {
 		
 			
-		Integer like = template.queryForObject("select lm.registerid from likemaster lm "
+		Integer like = template.queryForObject("select count(lm.registerid) from likemaster lm "
 					+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
 					+ "where lpj.postid=? and lm.registerid=?", new Object[] {postid,userID}, new RowMapper<Integer>() {
 
@@ -161,30 +170,32 @@ public class LikeCommentRepository {
 		return (like>0) ? like : 0;
 	}
 	
-//	// unlike post logic
-//		public int unLikePost(int postid,int userID) {
-//			try {
-//				int like=0;
-//				ps=con.prepareStatement("select lm.likeid from likemaster lm "
-//						+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
-//						+ "where lpj.postid=? and lm.registerid=?");
-//				ps.setInt(1, postid);
-//				ps.setInt(2, userID);
-//				rs=ps.executeQuery();
-//				if(rs.next()) {
-//					like=rs.getInt(1);
-//				}
-//				
-//				ps=con.prepareStatement("delete from likemaster where likeid=?");
-//				ps.setInt(1, like);
-//				int v=ps.executeUpdate();
-//				
-//				return (v>0) ? 1 : 0;
-//				
-//			}catch(Exception e) {
-//				System.out.println("error :"+e);
-//				return 0;
-//			}
-//		}
+	// unlike post logic
+		public int unLikePost(int postid,int userID) {
+			try {
+				
+				final Integer like = template.queryForObject("select lm.likeid from likemaster lm "
+						+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
+						+ "where lpj.postid=? and lm.registerid=?", new Object[] {postid,userID}, new RowMapper<Integer>() {
+							@Override
+							public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+								return rs.getInt(1);
+							}
+						});
+				
+				int v = template.update("delete from likemaster where likeid=?", new PreparedStatementSetter() {
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setInt(1, like);
+					}
+				});
+				
+				return (v>0) ? 1 : 0;
+				
+			}catch(Exception e) {
+				System.out.println("error :"+e);
+				return 0;
+			}
+		}
 	
 }

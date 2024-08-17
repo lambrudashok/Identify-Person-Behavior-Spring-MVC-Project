@@ -103,7 +103,6 @@
 											<a id="like"  onclick="likefun(<%=posts.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=posts.getLikeCount() %></a>
 					 	                    <%
 										 }
-						                 
 						                 %> 
 				                     </div>
 				                    

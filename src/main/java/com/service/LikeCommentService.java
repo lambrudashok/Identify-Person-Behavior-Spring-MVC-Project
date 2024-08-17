@@ -23,23 +23,23 @@ public class LikeCommentService {
 		return likecommentRepo.getCommentCount(postid);
 	}
 	
-//	// add like in database
-//	public boolean isAddLike(int postid,int registerid) {
-//		return likecommentRepo.isAddLike(postid, registerid);
-//	}
-//	
-//	// check user like or not post
-//	public int checkLike(int postid,int userID) {
-//		return likecommentRepo.checkLike(postid,userID);
-//	}
-//	
-//	// fetch like count of post
-//	public int fetchLikeCount(int postid) {
-//		return likecommentRepo.fetchLikeCount(postid);
-//	}
-//		
-//	// unlike post logic
-//	public int unLikePost(int postid,int userID) {	
-//		return likecommentRepo.unLikePost(postid, userID);
-//	}
+	// add like in database
+	public boolean isAddLike(int postid,int registerid) {
+		return likecommentRepo.isAddLike(postid, registerid);
+	}
+	
+	// check user like or not post
+	public int checkLike(int postid,int userID) {
+		return likecommentRepo.checkLike(postid,userID);
+	}
+	
+	// fetch like count of post
+	public int fetchLikeCount(int postid) {
+		return likecommentRepo.fetchLikeCount(postid);
+	}
+		
+	// unlike post logic
+	public int unLikePost(int postid,int userID) {	
+		return likecommentRepo.unLikePost(postid, userID);
+	}
 }

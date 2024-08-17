@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*, com.model.*,com.service.*" %>
+    <%@ page import="java.util.*, com.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="CSS/searchprofileStyle.css">
-<script type="text/javascript" src="JS/searchprofilevalidation.js"></script>
+<link rel="stylesheet" href="resources/CSS/searchprofileStyle.css">
+<script type="text/javascript" src="resources/JS/searchprofilevalidation.js"></script>
 </head>
 <body>
 <div class="searchcontainer">
@@ -28,8 +28,8 @@
 	   	<div id="searchGrid">
 	  
 	   	<%
-			UserSearchService searchSer = new UserSearchService();
-	   	List <UserInfoModel> list = searchSer.fetchAllUserDetails();
+	   	
+	   	List <UserInfoModel> list =(List<UserInfoModel>) request.getAttribute("searchdata");
 			
 			if(list!=null){
 				
@@ -38,7 +38,7 @@
 					
 					<a class="userappinfo" id="userappinfo" href="anotheruserprofilepage.jsp?id=<%=userInfo.getRegisterid() %>" > 
 						<div class="photo">
-							<img alt="" src="Profile_Images/<%=userInfo.getProfileimage()%>">
+							<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 						</div> <!-- photo -->
 						<div class="userdetails">
 							<div class="namediv">

@@ -45,7 +45,7 @@ public class ProfilePageController {
 		return "profilepage";
 	}
 
-	// delete user profile post
+	//  delete posts profile
 	@RequestMapping("/deletepost")
 	public String deletePostProfile(HttpServletRequest request, Model model) {
 		
@@ -55,6 +55,8 @@ public class ProfilePageController {
 		return getProfilePage(request, model);
 	}
 	
+	
+	// profile posts comment logic
 	@RequestMapping(value="/commentsubmit", method=RequestMethod.POST)
 	@ResponseBody
 	public String storeComment(HttpServletRequest request) {
@@ -86,9 +88,64 @@ public class ProfilePageController {
 	}
 
 	
+	//profile posts like logic
+	@RequestMapping("/likecontroller")
+	@ResponseBody
+	public String likeUserProfilePosts(HttpServletRequest request) {
+		
+		int postid=Integer.parseInt(request.getParameter("postid"));		
+		// access user id from session
+		HttpSession session=request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		
+		boolean result=lkSer.isAddLike(postid, userID);
+		
+			// get count of like
+		int likeCount=lkSer.fetchLikeCount(postid);
+		
+		// check like 
+        int v=lkSer.checkLike(postid,userID);
+        
+        String str="";
+		if(v>0){
+			str=str+"<a id='liked' onclick='unlikefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";  
+         
+        }else{
+        	str=str+"<a id='like'  onclick='likefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";
+         }
+     
+		return str;
+	}
 	
 	
 	
+	//unlike logic posts profile
+	@RequestMapping("/unlikecontroller")
+	@ResponseBody
+	public String unLikeUserPostsProfile(HttpServletRequest request) {
+		
+		int postid=Integer.parseInt(request.getParameter("postid"));		
+		// access user id from session
+		HttpSession session=request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		
+		int result=lkSer.unLikePost(postid, userID); // unlike post
+			
+		// get count of like
+		int likeCount=lkSer.fetchLikeCount(postid);
+		
+		// check like or not
+        int v=lkSer.checkLike(postid,userID);
+        
+        String str=""; 
+		if(v>0){
+			str=str+"<a id='liked' onclick='unlikefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";  
+	    }else{
+	    	str=str+"<a id='like'  onclick='likefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";
+		}
+     
+		return str;
+	}
 	
 	
 }
