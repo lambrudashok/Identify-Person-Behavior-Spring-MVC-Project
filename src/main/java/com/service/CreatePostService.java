@@ -27,6 +27,11 @@ public class CreatePostService {
 		return postRepo.ViewAllPosts(userID);
 	}
 	
+	/*view All posts or like,comment date wise decreasing order particular user*/
+	public List<PostLayoutModel> ViewAllPosts(int registerid, int userID){
+		return postRepo.ViewAllPosts(registerid,userID);
+	}
+	
 	/*Delete post from database*/
 	public int deletePost(int postID) {
 		return postRepo.deletePost(postID);

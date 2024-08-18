@@ -36,7 +36,7 @@
 				for(UserInfoModel userInfo:list){
 					%>
 					
-					<a class="userappinfo" id="userappinfo" href="anotheruserprofilepage.jsp?id=<%=userInfo.getRegisterid() %>" > 
+					<a class="userappinfo" id="userappinfo" href="anotheruserprofilepage?id=<%=userInfo.getRegisterid() %>" > 
 						<div class="photo">
 							<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 						</div> <!-- photo -->

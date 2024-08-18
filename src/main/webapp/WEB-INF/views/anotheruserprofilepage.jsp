@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="java.util.*,com.model.*,com.service.*" %>
+    <%@page import="java.util.*,com.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="CSS/anotherprofileStyle.css"> 
-<script type="text/javascript" src='JS/commentpostvalidation.js'></script> 
+<link rel="stylesheet" href="resources/CSS/anotherprofileStyle.css"> 
+<script type="text/javascript" src='resources/JS/commentpostvalidation.js'></script> 
 </head>
 <body>
+<%!int registerid; %>
 <div class="profilecontainer">
 
 	<div class="menuprofile">
@@ -22,19 +23,13 @@
 	<div class="userprofile">
 		
 		<%
-			session = request.getSession(false);
-			int userID=Integer.parseInt(session.getAttribute("userID").toString());
-			
-			int registerid=Integer.parseInt(request.getParameter("id"));
-			
-			UserRegistrationService proSer = new UserRegistrationService();
-			List<ProfileInformationModel> profileList=proSer.profileInformation(registerid);
+			List<ProfileInformationModel> profileList=(List<ProfileInformationModel>)request.getAttribute("profileList");
 			for(ProfileInformationModel prof :profileList){
 			%>
 		
 		<div class="profilemain">
 			<div class="profilelogo">
-			<img alt="" src="Profile_Images/<%=prof.getProfilephoto()%>">
+			<img alt="" src="resources/Profile_Images/<%=prof.getProfilephoto()%>">
 			</div>
 			<div class="profilename">
 			
@@ -59,8 +54,9 @@
 				
 				<%
 				
-				FollowingService fs = new FollowingService();
-				int status=fs.checkFollowingStatus(registerid,userID);
+				int status=Integer.parseInt(request.getAttribute("status").toString());
+				registerid = Integer.parseInt(request.getAttribute("registerid").toString());
+				
 				if(status==0){
 					%>
 					<!--  follow btn-->
@@ -98,14 +94,13 @@
 					 
 					 
 					  <%
-					  CreateUserPostService userSer = new CreateUserPostService();
-			            List<PostLayoutModel> listPosts = userSer.ViewAllPosts(registerid);
+			            List<PostLayoutModel> listPosts =(List<PostLayoutModel>) request.getAttribute("listPosts");
 			            if(listPosts!=null){
 			                for(PostLayoutModel posts:listPosts){
 			                	%>
 			                	<div class="pro">
 			                	<div class="userlogo">
-			                    <img alt="" src="Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
+			                    <img alt="" src="resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
 			                    </div>
 			                    
 			                    <div class="userpost">
@@ -113,7 +108,7 @@
 			                   		 <h4><%=posts.getUsername() %></h4> 
 			                   		 </div>
 			                    <div id="postdisplay"><%=posts.getPost() %></div>
-			                    <img alt="" src="Post_Images/<%=posts.getImgname()%>">
+			                    <img alt="" src="resources/Post_Images/<%=posts.getImgname()%>">
 				                    <div id="likecommentdiv">
 				                    
 				                   <div class="likesp">
@@ -121,9 +116,7 @@
 		                    <div id="likecommentGrid<%= posts.getPostid() %>">
 		                 		                    
 		                     <%
-				                 userID=Integer.parseInt(session.getAttribute("userID").toString());
-				                 LikeCommentService lk = new LikeCommentService();
-				                 int v=lk.checkLike(posts.getPostid(),userID);
+				                 int v= posts.getLike();
 								 if(v>0){
 									 %>			 
 					                    <a id="liked" onclick="unlikefun(<%=posts.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=posts.getLikeCount() %></a>

@@ -14,11 +14,11 @@ public class FollowingService {
 	@Autowired
 	FollowingRepository followingRepo;
 	
-//	/*insert data following user in database */
-//	public boolean isAddFollowingUser(int registerId,int followid) {
-//		return followingRepo.isAddFollowingUser(registerId,followid);
-//	}
-//	
+	/*insert data following user in database */
+	public boolean isAddFollowingUser(int registerId,int followid) {
+		return followingRepo.isAddFollowingUser(registerId,followid);
+	}
+	
 	/*fetch following all user details*/
 	public List<UserInfoModel> fetchAllFollowingUser(int userID){
 		return followingRepo.fetchAllFollowingUser(userID);
@@ -38,11 +38,11 @@ public class FollowingService {
 //	public List<Integer> followingUserIDs(int userID){
 //		return followingRepo.followingUserIDs(userID);
 //	}
-//	
-//	// check another profile user following
-//	public int checkFollowingStatus(int followingid,int registerid) {
-//		return followingRepo.checkFollowingStatus(followingid,registerid);
-//	}
+	
+	// check another profile user following
+	public int checkFollowingStatus(int followingid,int registerid) {
+		return followingRepo.checkFollowingStatus(followingid,registerid);
+	}
 	
 	
 	

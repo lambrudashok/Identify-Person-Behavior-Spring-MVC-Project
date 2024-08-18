@@ -1,5 +1,6 @@
 package com.repository;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -145,27 +147,32 @@ public class SearchRepository {
 //	}
 //	
 //	
-//	/*fetch all user details for searching using name*/
-//	public List<UserInfoModel> fetchAllUserDetails(String name){
-//		List<UserInfoModel> list = new ArrayList<UserInfoModel>(); // store all user  details
-//		try {
-//			
-//			ps = con.prepareStatement("select registerid,username,customername,profileimg from registrationmaster where username like (?) ");
-//			ps.setString(1, name+"%");
-//			rs=ps.executeQuery();
-//			while(rs.next()) {
-//				UserInfoModel user = new UserInfoModel();
-//				user.setRegisterid(rs.getInt("registerid"));
-//				user.setUsername(rs.getString("username"));
-//				user.setName(rs.getString("customername"));
-//				user.setProfileimage(rs.getString("profileimg"));
-//				list.add(user);
-//			}	
-//						
-//			return (list.size()>0) ? list : null;
-//		}catch(Exception e) {
-//			System.out.println("following repo error :"+e);
-//			return null;
-//		}
-//	}
+	/*fetch all user details for searching using name JSON search profile page used*/
+	public List<UserInfoModel> fetchAllUserDetails(final String name){
+		try {
+			// store all user  details
+			final List<UserInfoModel> list = template.query("select registerid,username,customername,profileimg from registrationmaster where username like (?) ", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setString(1, name+"%");
+				}
+			}, new RowMapper<UserInfoModel>() {
+
+				@Override
+				public UserInfoModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+					UserInfoModel user = new UserInfoModel();
+					user.setRegisterid(rs.getInt("registerid"));
+					user.setUsername(rs.getString("username"));
+					user.setName(rs.getString("customername"));
+					user.setProfileimage(rs.getString("profileimg"));
+					return user;
+				}
+			});
+					
+			return (list.size()>0) ? list : null;
+		}catch(Exception e) {
+			System.out.println("search repo error :"+e);
+			return null;
+		}
+	}
 }

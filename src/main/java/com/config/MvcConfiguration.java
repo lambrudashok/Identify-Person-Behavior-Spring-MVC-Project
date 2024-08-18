@@ -55,10 +55,12 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
         return multipartResolver;
 	}
 	
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
+	
 	
 }

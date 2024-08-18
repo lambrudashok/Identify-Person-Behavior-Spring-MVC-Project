@@ -21,75 +21,89 @@ public class FollowingRepository {
 	JdbcTemplate template;
 	
 	
-//	/*fetch last following id*/
-//	public int getFollowingID() {
-//		try {
-//			ps = con.prepareStatement("select max(followingid) from followingmaster");
-//			rs=ps.executeQuery();
-//			if(rs.next()) {
-//				return rs.getInt(1);
-//			}else {
-//				return 0;
-//			}
-//		}catch(Exception e) {
-//			System.out.println("following repo error :"+e);
-//			return -1;
-//		}
-//		
-//	}
-//	
-//	/*fetch last follower id*/
-//	public int getFollowerID() {
-//		try {
-//			ps = con.prepareStatement("select max(followerid) from followermaster");
-//			rs=ps.executeQuery();
-//			if(rs.next()) {
-//				return rs.getInt(1);
-//			}else {
-//				return 0;
-//			}
-//		}catch(Exception e) {
-//			System.out.println("following repo error :"+e);
-//			return -1;
-//		}
-//		
-//	}
-//	
-//	
-//		
-//	
-//	/*insert data following user in database */
-//	public boolean isAddFollowingUser(int registerId,int followid) {
-//		try {
-//			ps = con.prepareStatement("insert into  followermaster values('0',?)");
-//			ps.setInt(1, registerId);
-//			int c=ps.executeUpdate();
-//			
-//			ps = con.prepareStatement("insert into followingmaster values('0',?)");
-//			ps.setInt(1, followid);
-//			c = ps.executeUpdate();
-//		
-//			int followeruserID=this.getFollowerID();
-//			int followinguserID=this.getFollowingID();
-//			
-//			ps=con.prepareStatement("insert into userfollowingfollowerjoin (registerid,followerid) values (?,?)");
-//			ps.setInt(1, followid);
-//			ps.setInt(2, followeruserID);
-//			int v=ps.executeUpdate();
-//			
-//			ps = con.prepareStatement("insert into  userfollowingfollowerjoin (registerid,followingid) values(?,?)");
-//			ps.setInt(1, registerId);
-//			ps.setInt(2, followinguserID);
-//			v=ps.executeUpdate();
-//			
-//			return (v>0)?true:false;
-//				
-//		}catch(Exception e) {
-//			System.out.println("Following add repo error :"+e);
-//			return false;
-//		}
-//	}
-//	
+	/*fetch last following id*/
+	public int getFollowingID() {
+		try {
+			Integer following = template.queryForObject("select max(followingid) from followingmaster", new RowMapper<Integer>() {
+				@Override
+				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getInt(1);
+				}
+			});
+			return (following>0) ? following : 0;
+			
+		}catch(Exception e) {
+			System.out.println("following repo error :"+e);
+			return -1;
+		}
+		
+	}
+	
+	/*fetch last follower id*/
+	public int getFollowerID() {
+		try {
+			Integer follower = template.queryForObject("select max(followerid) from followermaster", new RowMapper<Integer>() {
+				@Override
+				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getInt(1);
+				}
+			});
+			
+			return (follower>0) ? follower :0;
+		}catch(Exception e) {
+			System.out.println("following repo error :"+e);
+			return -1;
+		}
+		
+	}
+	
+	
+		
+	
+	/*insert data following user in database */
+	public boolean isAddFollowingUser(final int registerId,final int followid) {
+		try {
+			// insert follower data
+			int v = template.update("insert into  followermaster values('0',?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, registerId);
+				}
+			});
+			//insert following data
+			v = template.update("insert into followingmaster values('0',?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, followid);
+				}
+			});
+			
+			final int followeruserID=this.getFollowerID();
+			final int followinguserID=this.getFollowingID();
+			
+			v = template.update("insert into userfollowingfollowerjoin (registerid,followerid) values (?,?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, followid);
+					ps.setInt(2, followeruserID);
+				}
+			});
+			
+			v = template.update("insert into  userfollowingfollowerjoin (registerid,followingid) values(?,?)", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, registerId);
+					ps.setInt(2, followinguserID);	
+				}
+			});
+			return (v>0)?true:false;
+				
+		}catch(Exception e) {
+			System.out.println("Following add repo error :"+e);
+			return false;
+		}
+	}
+	
 	
 	/*fetch follower all user*/
 	public List<UserInfoModel> fetchAllFollowerUser(int userID){
@@ -262,29 +276,29 @@ public class FollowingRepository {
 //			return null;
 //		}
 //	}
-//	
-//	
-//	
-//	// check another profile user following
-//	public int checkFollowingStatus(int followingid,int registerid) {
-//		try {
-//			ps = con.prepareStatement("select fm.followingregisterid  from registrationmaster rm "
-//					+ "inner join userfollowingfollowerjoin uffj on uffj.registerid=rm.registerid "
-//					+ "inner join followingmaster fm on fm.followingid=uffj.followingid "
-//					+ "where fm.followingregisterid=? and rm.registerid=?");
-//			ps.setInt(1, followingid);
-//			ps.setInt(2, registerid);
-//			rs=ps.executeQuery();
-//			if(rs.next()) {
-//				return 1;
-//			}else {
-//				return 0;
-//			}
-//		}catch(Exception e) {
-//			System.out.println("error :"+e);
-//			return 0;
-//		}
-//	}
+	
+	
+	
+	// check another profile user following
+	public int checkFollowingStatus(int followingid,int registerid) {
+		try {
+			
+			Integer status = template.queryForObject("select count(fm.followingregisterid)  from registrationmaster rm "
+					+ "inner join userfollowingfollowerjoin uffj on uffj.registerid=rm.registerid "
+					+ "inner join followingmaster fm on fm.followingid=uffj.followingid "
+					+ "where fm.followingregisterid=? and rm.registerid=?", new Object[] {followingid,registerid}, new RowMapper<Integer>() {
+						@Override
+						public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getInt(1);
+						}
+					});
+			return (status>0)?1:0;
+			
+		}catch(Exception e) {
+			System.out.println("error :"+e);
+			return 0;
+		}
+	}
 	
 	
 	

@@ -30,9 +30,9 @@ public class SearchService {
 //	public List<UserInfoModel> fetchAllUserDetails(String name, int registerid){
 //		return serRepo.fetchAllUserDetails(name,registerid);
 //	}
-//	
-//	/*fetch all user details for searching using name*/
-//	public List<UserInfoModel> fetchAllUserDetails(String name){
-//		return serRepo.fetchAllUserDetails(name);
-//	}
+	
+	/*fetch all user details for searching using name JSON search profile page used*/
+	public List<UserInfoModel> fetchAllUserDetails(String name){
+		return serRepo.fetchAllUserDetails(name);
+	}
 }
