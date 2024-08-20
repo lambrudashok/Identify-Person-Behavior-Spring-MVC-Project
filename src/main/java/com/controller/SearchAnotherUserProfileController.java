@@ -77,7 +77,7 @@ public class SearchAnotherUserProfileController {
 		return "anotheruserprofilepage";
 	}
 	
-	
+	// another user profile follow
 	@RequestMapping(value="/follow" , method=RequestMethod.POST)
 	@ResponseBody
 	public String getFollowUser(HttpServletRequest request) {
@@ -99,7 +99,7 @@ public class SearchAnotherUserProfileController {
 		return str;
 	}
 	
-	
+	// another user profile unfollow
 	@RequestMapping(value="/unfollow", method=RequestMethod.POST)
 	@ResponseBody
 	public String getFollowingUser(HttpServletRequest request) {

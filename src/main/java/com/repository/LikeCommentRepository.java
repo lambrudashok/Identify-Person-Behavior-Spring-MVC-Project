@@ -193,7 +193,7 @@ public class LikeCommentRepository {
 				return (v>0) ? 1 : 0;
 				
 			}catch(Exception e) {
-				System.out.println("error :"+e);
+				System.out.println("error unlike :"+e);
 				return 0;
 			}
 		}

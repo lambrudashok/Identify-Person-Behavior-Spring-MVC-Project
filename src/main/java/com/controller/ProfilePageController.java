@@ -75,15 +75,12 @@ public class ProfilePageController {
 		
 		boolean commentResult=lkSer.isAddComment(pmodel);
 		int commentCount = lkSer.getCommentCount(postid);
-		
 		String str="";
-		
 		str=str+"<a id='commentshow' href=''> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
         str=str+"<form name='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
         str=str+"<input type='text' name='comment' id='comment' placeholder='comment here...' required>"; 
         str=str+"<button type='submit' id='commentbtn'  name='commentbtn' >post</button>";
         str=str+"</form>";
-		
 		return str;
 	}
 
@@ -99,13 +96,8 @@ public class ProfilePageController {
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
 		
 		boolean result=lkSer.isAddLike(postid, userID);
-		
-			// get count of like
-		int likeCount=lkSer.fetchLikeCount(postid);
-		
-		// check like 
-        int v=lkSer.checkLike(postid,userID);
-        
+		int likeCount=lkSer.fetchLikeCount(postid); // get count of like
+        int v=lkSer.checkLike(postid,userID);  // check like 
         String str="";
 		if(v>0){
 			str=str+"<a id='liked' onclick='unlikefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";  

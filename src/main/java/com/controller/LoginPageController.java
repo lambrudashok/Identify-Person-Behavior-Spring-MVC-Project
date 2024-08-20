@@ -57,7 +57,7 @@ public class LoginPageController {
 				model.setLoginid(userID);
 				
 				boolean res=loginSer.isAddUserLogin(model); // add user login details
-				return "userhomepage";  // call userloginpage.jsp
+				return "userhomepage";  // call userhomepage.jsp
 				
 			
 			}else {

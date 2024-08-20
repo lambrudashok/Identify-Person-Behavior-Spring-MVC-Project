@@ -113,7 +113,7 @@
 				                    
 				                   <div class="likesp">
 		                    
-		                    <div id="likecommentGrid<%= posts.getPostid() %>">
+		                    <div id="likeGrid<%= posts.getPostid() %>">
 		                 		                    
 		                     <%
 				                 int v= posts.getLike();
@@ -132,13 +132,13 @@
 				                    
 				                 </div>
 				                    
-				                    <div class="commentsp">
-				                    <a id="commentshow" href=""> <i class="fa-solid fa-comment"></i> <%=posts.getCommentCount() %></a> 
-					                    <form name="frm" action="anotheruserprofile?id=<%=registerid %>" method="post"  > 
-					                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
-					                    <button type="submit" id="commentbtn"  name="btn" value="<%=posts.getPostid() %>" >post</button>
-					                    </form>
-					                    </div>
+				                    <div class="commentsp" id="commentGrid<%=posts.getPostid() %>">
+				                    <a id="commentshow" href=""> <i class="fa-solid fa-comment"></i> <%=posts.getCommentCount() %></a>
+				                    <form name="frm" method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
+				                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
+				                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
+				                    </form>
+				                    </div>
 					                    
 					                    
 				                    </div>  <!-- likecommentdiv -->

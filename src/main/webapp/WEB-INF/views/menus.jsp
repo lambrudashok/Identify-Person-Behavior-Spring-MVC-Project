@@ -35,6 +35,7 @@
 		    <a class="dropdown-item bg brd" href="loginpage">Logout</a>
 		  </div>
   		
+  		
 		</div>
 </div>
 </body>
