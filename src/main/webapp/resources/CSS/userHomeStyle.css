@@ -80,7 +80,7 @@
 
 
 .userpostA #postdisplayA{
-	width:80%;
+	width:90%;
 	font-size: 20px;
 }
 .userpostA img{
@@ -158,7 +158,11 @@
 	height: 88vh;
 	overflow: auto;
 }
-
+.allposts h5{
+	width:100%;
+	height:40px;
+	text-align:center;
+}
 .pro{
 	width:100%;
 	min-height:430px;

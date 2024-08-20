@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="java.util.*,com.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,20 +43,15 @@
        		<!-- foryou-------------------------------------------------------------------------------------------------------------------------- -->
        		
        		<div class="allapplicationposts">
-       		<%-- 
+       		 
        		<%
-       		session = request.getSession(false);
-			int userID=Integer.parseInt(session.getAttribute("userID").toString());
-       		
-       		CreateUserPostService postSer = new CreateUserPostService();
-       		List<PostLayoutModel> postlist= postSer.ViewAllPosts();
- 
+       		List<PostLayoutModel> postlist=(List<PostLayoutModel>) request.getAttribute("postlist");
 	            if(postlist!=null){
 	                for(PostLayoutModel post:postlist){
 	                	%>
 	                	<div class="proA">
 	                	<div class="userlogoA">
-	                    <img alt="" src="Profile_Images/<%=post.getProfileimage() %>" width="100px" height="50px">
+	                    <img alt="" src="resources/Profile_Images/<%=post.getProfileimage() %>" width="100px" height="50px">
 	                    </div>
 	                    
 	                    <div class="userpostA">
@@ -63,19 +59,16 @@
 	                   		<h4 id="h4"><%=post.getUsername() %></h4>
 	                   		 </div>
 	                    <div id="postdisplayA"><%=post.getPost() %></div>
-	                    <img alt="" src="Post_Images/<%=post.getImgname()%>">
+	                    <img alt="" src="resources/Post_Images/<%=post.getImgname()%>">
 	                    
 	                    
 		                    <div id="likecommentdivA">
 		                    
 		                     <div class="likesp">
 		                    
-		                    <div id="likecommentGridA<%= post.getPostid() %>">
-		                 		                    
+		                    <div id="likecommentGridA<%= post.getPostid() %>">	                    
 		                     <%
-				                 userID=Integer.parseInt(session.getAttribute("userID").toString());
-				                 LikeCommentService lk = new LikeCommentService();
-				                 int v=lk.checkLike(post.getPostid(),userID);
+				                 int v=post.getLike();
 								 if(v>0){
 									 %>			 
 					                    <a id="liked" onclick="unlikeForYou(<%=post.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=post.getLikeCount() %></a>
@@ -112,7 +105,7 @@
           					<h5>Posts Not Founds</h5>
           					<%
           				}
-			  	%> --%>
+			  	%>
        		
        		</div> <!-- allapplicationposts -->
        		
@@ -130,20 +123,15 @@
        		<!-- Following Content -->
        		<div class="tab-pane fade" id="following-content" role="tabpanel" aria-labelledby="following-tab">
        		<div class="allposts">
-       		<%-- <%
+       		<%
        		
-       		FollowingService followSer = new FollowingService();
-       		List<Integer> al=followSer.followingUserIDs(userID);// fetch all following users id
-       		if(al!=null){
-       		CreateUserPostService pSer = new CreateUserPostService();
-       		List<PostLayoutModel> listPosts=pSer.fetchFollowingAllUserPost(al);  // fetch following users details
- 
+       		List<PostLayoutModel> listPosts =(List<PostLayoutModel>) request.getAttribute("listPosts");  // fetch following users details
 	            if(listPosts!=null){
 	                for(PostLayoutModel posts:listPosts){
 	                	%>
 	                	<div class="pro">
 	                	<div class="userlogo">
-	                    <img alt="" src="Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
+	                    <img alt="" src="resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
 	                    </div>
 	                    
 	                    <div class="userpost">
@@ -151,7 +139,7 @@
 	                   		 <h4><%=posts.getUsername() %></h4> 
 	                   		</div>
 	                    <div id="postdisplay"><%=posts.getPost() %></div>
-	                    <img alt="" src="Post_Images/<%=posts.getImgname()%>">
+	                    <img alt="" src="resources/Post_Images/<%=posts.getImgname()%>">
 	                    
 	                    
 		                    <div id="likecommentdiv">
@@ -160,9 +148,7 @@
 		                    <div id="likecommentGrid<%= posts.getPostid() %>">
 		                 		                    
 		                     <%
-				                 userID=Integer.parseInt(session.getAttribute("userID").toString());
-				                 LikeCommentService lk = new LikeCommentService();
-				                 int v=lk.checkLike(posts.getPostid(),userID);
+				                 int v = posts.getLike();
 								 if(v>0){
 									 %>			 
 					                    <a id="liked" onclick="unlikeForYou(<%=posts.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=posts.getLikeCount() %></a>
@@ -191,9 +177,8 @@
 	                    </div>
 	                    <%
 	                    }
-          				}else{%><h5>Posts Not Founds</h5><%}
-       					}else{%><h5>Posts Not Founds</h5><%}
-			  			%> --%>
+          				}else{%><h5>Posts Not Found</h5><%}
+			  			%> 
        		 </div> <!-- allposts -->  		
        		</div> <!-- Following Content -->
        
@@ -214,13 +199,10 @@
 	   
 	   <div class="userInfo">
 	   	
-	   	<%-- <div id="showGrid">
+	    <div id="showGrid">
 	  
 	   	<%
-	   		session = request.getSession(false);
-			userID=Integer.parseInt(session.getAttribute("userID").toString());
-			UserSearchService searchSer = new UserSearchService();
-			List <UserInfoModel> list = searchSer.fetchAllUserDetails(userID);
+			List <UserInfoModel> list =(List <UserInfoModel>) request.getAttribute("list");
 			
 			if(list!=null){
 				
@@ -230,7 +212,7 @@
 					<div class="userfollowing">
 					
 						<div class="photo">
-							<img alt="" src="Profile_Images/<%=userInfo.getProfileimage()%>">
+							<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 						</div> <!-- photo -->
 						
 						<div class="userdetails">
@@ -269,7 +251,6 @@
 			
 			%>
 	   	
-	   	 --%>
 	   	</div>
 	   	
 	   </div> <!-- userInfo -->

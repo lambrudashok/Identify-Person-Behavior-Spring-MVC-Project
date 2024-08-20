@@ -255,27 +255,32 @@ public class FollowingRepository {
 		}
 	}
 	
-//	/*fetch following all user only id*/
-//	public List<Integer> followingUserIDs(int userID){
-//		List<Integer> al =new ArrayList<Integer>(); // store all following user id
-//		try {
-//			
-//			ps = con.prepareStatement("select fm.followingregisterid as 'followingid' from followingmaster fm "
-//					+ "inner join userfollowingfollowerjoin uffj on uffj.followingid=fm.followingid "
-//					+ "inner join registrationmaster rm on rm.registerid=uffj.registerid "
-//					+ "where rm.registerid=?");
-//			ps.setInt(1, userID);
-//			rs=ps.executeQuery();
-//			while(rs.next()) {
-//				al.add(rs.getInt(1));
-//			}
-//			
-//			return (al.size()>0) ? al : null;
-//		}catch(Exception e) {
-//			System.out.println("following repo error :"+e);
-//			return null;
-//		}
-//	}
+	/*fetch following all user only id*/
+	public List<Integer> followingUserIDs(final int userID){
+		try {
+			List<Integer> al =new ArrayList<Integer>(); // store all following user id
+			
+			al = template.query("select fm.followingregisterid as 'followingid' from followingmaster fm "
+					+ "inner join userfollowingfollowerjoin uffj on uffj.followingid=fm.followingid "
+					+ "inner join registrationmaster rm on rm.registerid=uffj.registerid "
+					+ "where rm.registerid=?", new PreparedStatementSetter() {
+						@Override
+						public void setValues(PreparedStatement ps) throws SQLException {
+							ps.setInt(1, userID);
+						}
+					}, new RowMapper<Integer>() {
+						@Override
+						public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getInt(1);
+						}
+					});
+			
+			return (al.size()>0) ? al : null;
+		}catch(Exception e) {
+			System.out.println("following repo error :"+e);
+			return null;
+		}
+	}
 	
 	
 	

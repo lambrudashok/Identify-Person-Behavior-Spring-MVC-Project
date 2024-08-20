@@ -34,10 +34,10 @@ public class FollowingService {
 		return followingRepo.fetchAllFollowerUser(userID);
 	}
 	
-//	/*fetch following all user only id*/
-//	public List<Integer> followingUserIDs(int userID){
-//		return followingRepo.followingUserIDs(userID);
-//	}
+	/*fetch following all user only id*/
+	public List<Integer> followingUserIDs(int userID){
+		return followingRepo.followingUserIDs(userID);
+	}
 	
 	// check another profile user following
 	public int checkFollowingStatus(int followingid,int registerid) {
