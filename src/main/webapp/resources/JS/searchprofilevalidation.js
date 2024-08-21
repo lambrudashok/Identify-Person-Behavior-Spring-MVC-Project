@@ -9,7 +9,7 @@
 			
 			var jsonObject = JSON.parse(this.responseText);
 			var str = "";
-			if(jsonObject.length >0){		
+			if(jsonObject != null){		
 				for(var i=0;i<jsonObject.length;i++){
 				str=str+"<a class='userappinfo' id='userappinfo' href='anotheruserprofilepage?id="+jsonObject[i].registerid+" '>"; 
 				str=str+"<div class='photo'>";

@@ -63,19 +63,16 @@ public class SearchAnotherUserProfileController {
 		HttpSession session = request.getSession(false);
 		int userID=Integer.parseInt(session.getAttribute("userID").toString()); // user id
 		int registerid=Integer.parseInt(request.getParameter("id")); // search user id
-		
 		List<ProfileInformationModel> profileList=userSer.profileInformation(registerid);
 		model.addAttribute("profileList", profileList);
-		
 		int status=follwSer.checkFollowingStatus(registerid,userID); // check following status
 		model.addAttribute("status", status);
 		model.addAttribute("registerid", registerid);
-		
         List<PostLayoutModel> listPosts = postSer.ViewAllPosts(registerid,userID); // fetch all posts
         model.addAttribute("listPosts", listPosts);
-      
 		return "anotheruserprofilepage";
 	}
+	
 	
 	// another user profile follow
 	@RequestMapping(value="/follow" , method=RequestMethod.POST)
@@ -87,7 +84,6 @@ public class SearchAnotherUserProfileController {
 		boolean result=follwSer.isAddFollowingUser(userID,followid); // add following user
 		int status=follwSer.checkFollowingStatus(followid,userID); // check following or not
 		String str = "";
-		
 		if(status==0){
 			// follow btn
 			str=str+"<button name='follow' id='follow' value='"+followid+"' onclick='followUser(this.value)' >Follow</button>";            
@@ -95,7 +91,6 @@ public class SearchAnotherUserProfileController {
 			 // following btn 
 			str=str+"<button name='following' id='following' value='"+followid+"' onmouseover='unfollowShow(this)' onmouseleave='followingShow(this)' onclick='unfollowUser(this.value)' >Following</button>";            
 		}
-		
 		return str;
 	}
 	

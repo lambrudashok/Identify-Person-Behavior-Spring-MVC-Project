@@ -156,12 +156,9 @@ public class LikeCommentRepository {
 	
 	// check person like or not
 	public int checkLike(int postid,int userID) {
-		
-			
 		Integer like = template.queryForObject("select count(lm.registerid) from likemaster lm "
 					+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
 					+ "where lpj.postid=? and lm.registerid=?", new Object[] {postid,userID}, new RowMapper<Integer>() {
-
 				@Override
 				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
 					return rs.getInt(1);

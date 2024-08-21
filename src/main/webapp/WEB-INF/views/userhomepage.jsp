@@ -85,16 +85,14 @@
 				                 </div>
 		                    
 		                    
-		                    <div class="commentsp">
-		                    <a id="commentshowA" href=""> <i class="fa-solid fa-comment"></i> <%=post.getCommentCount() %></a>
-			                   
-			                   <form name="frm" action="homecontroller" method="post" > 
-			                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
-			                    <button type="submit" id="commentbtn"  name="btn" value="<%=post.getPostid() %>" >post</button>
-			                    </form>
-			                    </div>
-			                    
-			                    
+		                    <div class="commentsp" id="commentGridA<%=post.getPostid() %>">
+		                    <a id="commentshow" href=""> <i class="fa-solid fa-comment"></i> <%=post.getCommentCount() %></a>
+		                    <form name="frm" method="POST" onsubmit="return commentfun(<%=post.getPostid() %>,comment.value)"> 
+		                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
+		                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
+		                    </form>
+		                    </div>
+		                    		             		                    
 		                    </div><!--  likecommentdivA -->
 	                    </div>
 	                    </div>
@@ -163,15 +161,16 @@
 				                     </div> 
 				                    
 				                 </div>
-		                     <div class="commentsp">
+				                 
+				                 
+				            <div class="commentsp" id="commentGrid<%=posts.getPostid() %>">
 		                    <a id="commentshow" href=""> <i class="fa-solid fa-comment"></i> <%=posts.getCommentCount() %></a>
-			                   
-			                   <form name="frm" action="" method="post" > 
-			                    <input type="text" name="comment" id="comment" placeholder="comment here..."> 
-			                    <button type="submit" id="commentbtn"  name="btn" value="<%=posts.getPostid() %>" >post</button>
-			                    </form>
-			                    </div>
-			                    
+		                    <form name="frm" method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
+		                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
+		                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
+		                    </form>
+		                    </div>
+				                 				
 		                    </div>  <!-- likecommentdiv -->
 	                    </div>
 	                    </div>

@@ -85,7 +85,6 @@ public class LoginPageController {
 		List<Integer> al=followSer.followingUserIDs(userID);// fetch all following users id home page
 		List<PostLayoutModel> listPosts=postSer.fetchFollowingAllUserPost(al,userID);  // fetch following users details home page
 		model.addAttribute("listPosts", listPosts);
-		
 		List <UserInfoModel> list = searchSer.fetchAllUserDetails(userID); // fetch search details search home page
 		model.addAttribute("list", list);
 		
