@@ -20,7 +20,7 @@
 			<input type="text" name="username" id="username"	placeholder="Enter username" ><br>
 			<div class="msg" id="usernamemsg"></div><br>
 			<input type="password"	name="password" id="password" placeholder="Enter password" ><br>
-			<div class="msg" id="passwordmsg"></div><br>
+			<div class="msg" id="passwordmsg">${msg}</div><br>
 			<button type="submit" id="btn" name="s" value="login">Login</button><br>
 		</form>
 		<div class="next">

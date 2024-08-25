@@ -67,6 +67,7 @@ public class LoginPageController {
 				
         		return getHomePage(request, mod); // call getHomePage
 			}else {
+				mod.addAttribute("msg", "Incorrect username and password. Please try again");
 				return "loginpage";  // call loginpage.jsp
 			}
 		}

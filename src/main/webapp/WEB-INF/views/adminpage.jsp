@@ -20,18 +20,18 @@
 	<div class="menus">
 		<ul class="nav ">
 			<li class="nav-item"><a class="nav-link active text-white"
-				aria-current="page" href="adminpage.jsp">Home</a></li>
-			<li class="nav-item"><a class="nav-link text-white" href="userdetailsadminpage.jsp">User
+				aria-current="page" href="adminpage">Home</a></li>
+			<li class="nav-item"><a class="nav-link text-white" href="userdetailsadminpage">User
 					Details</a></li>
-			<li class="nav-item"><a class="nav-link text-white" href="userpostsadminpage.jsp">View All
+			<li class="nav-item"><a class="nav-link text-white" href="userpostsadminpage">View All
 					Posts</a></li>
-			<li class="nav-item"><a class="nav-link text-white" href="deleterequestadminpage.jsp">Delete
+			<li class="nav-item"><a class="nav-link text-white" href="deleterequestadminpage">Delete
 					Account Request</a></li>
-			<li class="nav-item"><a class="nav-link text-white" href="logindetailsadminpage.jsp">User
+			<li class="nav-item"><a class="nav-link text-white" href="logindetailsadminpage">User
 					Logins</a></li>
 			<li class="nav-item"><a class="nav-link text-white" href="predictionadminpage.jsp">Prediction</a>
 			</li>
-			<li class="nav-item"><a class="nav-link text-white" href="loginpage.jsp">Logout</a></li>
+			<li class="nav-item"><a class="nav-link text-white" href="loginpage">Logout</a></li>
 		</ul>
 	</div>
 </div> <!-- menustag -->

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*, com.model.*,com.service.*" %>
+    <%@ page import="java.util.*, com.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="CSS/deleteaccountStyle.css">
-<script type="text/javascript" src='JS/deleteaccountvalidation.js'></script> 
+<link rel="stylesheet" href="resources/CSS/deleteaccountStyle.css">
+<script type="text/javascript" src='resources/JS/deleteaccountvalidation.js'></script> 
 </head>
 <body>
 <div class="deletecontainer">
@@ -18,16 +18,12 @@
 		
 	<div id="profile">
 		
-	<%		
-		session =request.getSession(false);
-		int userId=Integer.parseInt(session.getAttribute("userID").toString());
-		
-		UserRegistrationService userSer = new UserRegistrationService();
-		UserInfoModel userInfo=userSer.getUserInfo(userId);
+	<%	
+		UserInfoModel userInfo =(UserInfoModel)request.getAttribute("userInfo");
 	%>
 					
 		<div class="photo">
-			<img alt="" src="Profile_Images/<%=userInfo.getProfileimage()%>">
+			<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 		</div> <!-- photo -->
 		<div class="userdetails">
 			<div id="name"><%=userInfo.getName() %></div>
@@ -40,15 +36,15 @@
 	<div id="request">
 	<div id="requestGrid">
 	<%
-	session =request.getSession(false);
-	int userID=Integer.parseInt(session.getAttribute("userID").toString());
-	int checkdelete=userSer.checkRequestDelete(userID);
+	int checkdelete = Integer.parseInt(request.getAttribute("checkdelete").toString());
+	int userID = Integer.parseInt(request.getAttribute("userID").toString());
+	
 	if(checkdelete!=0){
 		%>
 		<h2>Recover Account ?</h2>
 		<div class="btndiv">
 		<button type="submit" id="yesbtn" onclick="recoverRequest(<%=userID%>)">Yes</button>
-		<form name="frm" action="userhomepage.jsp" method="post">
+		<form name="frm" action="userhomepage" method="post">
 		<button type="submit" id="nobtn" >No</button>
 		</form>
 		</div>
@@ -58,7 +54,7 @@
 		<h2>Do You Want Delete Account ?</h2>
 		<div class="btndiv">
 		<button type="submit" id="yesbtn" onclick="deleteRequest(<%=userID%>)">Yes</button>
-		<form name="frm" action="userhomepage.jsp" method="post">
+		<form name="frm" action="userhomepage" method="post">
 		<button type="submit" id="nobtn" >No</button>
 		</form>
 		</div>

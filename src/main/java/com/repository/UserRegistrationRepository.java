@@ -324,48 +324,53 @@ public class UserRegistrationRepository {
 		}
 		
 		
-//		/*check request account delete*/
-//		public int checkRequestDelete(int registerId) {
-//			try {
-//				ps=con.prepareStatement("select registerid from deleterequest where registerid=?");
-//				ps.setInt(1, registerId);
-//				rs=ps.executeQuery();
-//				if(rs.next()) {
-//					return rs.getInt(1);
-//				}else {
-//					return 0;
-//				}
-//			}catch(Exception e) {
-//				System.out.println("register repo :"+e);
-//				return -1;
-//			}
-//		}
-//		
-//		/*recover delete requested account*/
-//		public int recoverAccount(int register) {
-//			try {
-//				ps=con.prepareStatement("delete from deleterequest where registerid=?");
-//				ps.setInt(1, register);
-//				int v=ps.executeUpdate();
-//				return (v>0)?1:0;
-//			}catch(Exception e) {
-//				System.out.println("register repo :"+e);
-//				return -1;
-//			}
-//		}
-//		
-//		
-//		/*delete account user*/
-//		public int deleteUserAccount(int registerId) {
-//			try {
-//				ps=con.prepareStatement("insert into deleterequest values(?,(select curdate()))");
-//				ps.setInt(1, registerId);
-//				int v=ps.executeUpdate();
-//				return (v>0)?1:0;
-//			}catch(Exception e) {
-//				System.out.println("register repo error :"+e);
-//				return -1;
-//			}
-//		}
+		/*check request account delete*/
+		public int checkRequestDelete(int registerId) {
+			try {
+				Integer uid = template.queryForObject("select count(registerid) from deleterequest where registerid=?", new Object[] {registerId}, new RowMapper<Integer>() {
+					@Override
+					public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+						return rs.getInt(1);
+					}
+				});
+				return (uid>0)?uid:0;
+			}catch(Exception e) {
+				System.out.println("request repo :"+e);
+				return -1;
+			}
+		}
+		
+		/*recover delete requested account*/
+		public int recoverAccount(final int register) {
+			try {
+				int v = template.update("delete from deleterequest where registerid=?", new PreparedStatementSetter() {
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setInt(1, register);
+					}
+				});
+				return (v>0)?1:0;
+			}catch(Exception e) {
+				System.out.println("register repo :"+e);
+				return -1;
+			}
+		}
+		
+		
+		/*delete account user*/
+		public int deleteUserAccount(final int registerId) {
+			try {
+				int v = template.update("insert into deleterequest values(?,(select curdate()))", new PreparedStatementSetter() {
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setInt(1, registerId);
+					}
+				});
+				return (v>0)?1:0;
+			}catch(Exception e) {
+				System.out.println("register repo error :"+e);
+				return -1;
+			}
+		}
 	
 }

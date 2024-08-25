@@ -81,19 +81,19 @@ public class UserRegistrationService {
 	}
 	
 	
-//	/*check request account delete*/
-//	public int checkRequestDelete(int registerId) {
-//		return regRepo.checkRequestDelete(registerId);
-//	}
-//	
-//	/*recover delete requested account*/
-//	public int recoverAccount(int register) {
-//		return regRepo.recoverAccount(register);
-//	}
-//	
-//	/*delete account user*/
-//	public int deleteUserAccount(int registerId) {
-//		return regRepo.deleteUserAccount(registerId);
-//	}
+	/*check request account delete*/
+	public int checkRequestDelete(int registerId) {
+		return regRepo.checkRequestDelete(registerId);
+	}
+	
+	/*recover delete requested account*/
+	public int recoverAccount(int register) {
+		return regRepo.recoverAccount(register);
+	}
+	
+	/*delete account user*/
+	public int deleteUserAccount(int registerId) {
+		return regRepo.deleteUserAccount(registerId);
+	}
 	
 }
