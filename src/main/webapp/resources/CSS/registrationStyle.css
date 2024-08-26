@@ -44,6 +44,13 @@
 	color:red;
 	margin-left: 35px;
 }
+.msgsuccess{
+	width: 80%;
+	color:green;
+	font-size:20px;
+	font-weight:bold;
+	margin-left: 35px;
+}
 
 input{
 	width: 80%;
@@ -86,5 +93,26 @@ button:hover{
 	 font-size: 17px;
 }
 
+#otpconfirmGrid{
+	width: 100%;
+	margin-top:5px;
+	display: flex;
+}
 
+#otpinput{
+	width: 40%;
+}
+
+#otpverifybtn{
+	width: 25%;
+}
+
+.otpverifydiv h4{
+	width: 80%;
+	margin-left: 35px;
+}
+
+.otpverifydiv{
+	display: none;
+}
 

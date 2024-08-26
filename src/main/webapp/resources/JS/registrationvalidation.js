@@ -26,6 +26,40 @@
  }
 
 
+
+
+ var otp ;
+ var otpSent = false;
+// when user enter wrong otp then its function call
+function retypeVerifyOTP(){
+	document.getElementById("otpverifybtn").addEventListener('click', function() {
+               
+    let otpInput = document.getElementById("otpinput").value;
+	
+    if (otpInput == otp) {   // otp correct
+		document.getElementById("frm").submit();
+        
+    } else {
+		    // otp wrong
+        						// Call AJAX function to reload OTP form with error message
+        let xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				document.getElementById("otpGrid").innerHTML=this.responseText;
+				
+                retypeVerifyOTP(); // Re calling the event listener after updating the HTML
+			}
+		};
+		xhttp.open("POST","registercheckotp",true);
+		xhttp.send(); 
+
+    }
+});
+}
+
+
+
+
 function validateForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -66,7 +100,32 @@ function validateForm() {
 		return false;             // check capture click or not if not click then length is 0 but click there are somany words
 	}
     else{
-	return true;	
+		
+		// send otp user email
+		if(!otpSent){
+	    // Generate a random OTP
+	    otp = Math.floor(1000 + Math.random() * 9000);
+	    otpSent=true;
+	    
+	    var params = {
+	        form_name: "ashok",
+	        message: otp,
+	        to_email: document.getElementById("email").value,
+	    };
+	
+	    emailjs.send("service_ta51o2i", "template_6hcq9nm", params).then(
+	        function(response) {
+	            document.getElementById("otpverifydiv").style.display = "block";
+	
+	            retypeVerifyOTP();   //call the event listener initially
+	        },
+	        function(error) {
+	            alert("Failed to send OTP. Please try again.");
+	        }
+	    );
+	}
+		
+	return false;	
 	}
     
 }

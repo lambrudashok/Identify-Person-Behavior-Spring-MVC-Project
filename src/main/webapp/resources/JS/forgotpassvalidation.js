@@ -39,12 +39,11 @@ function retypeVerifyOTP(){
     let otpInput = document.getElementById("otpinput").value;
 	
     if (otpInput == otp) {   // otp correct
-        alert("OTP correct");
         document.getElementById("otpverifydiv").style.display = "none";
 		document.getElementById("forgotdiv").style.display = "block";
         
     } else {
-        alert("Invalid OTP");   // otp wrong
+          // otp wrong
         						// Call AJAX function to reload OTP form with error message
         let xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange=function(){
@@ -74,8 +73,6 @@ function checkOTP() {
 
     emailjs.send("service_ta51o2i", "template_6hcq9nm", params).then(
         function(response) {
-            alert("OTP sent to your email.");
-            
 			document.getElementById("sendotpdiv").style.display = "none";
             document.getElementById("otpverifydiv").style.display = "block";
 

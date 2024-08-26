@@ -28,7 +28,7 @@
 	<input type="text" name="username" id="username" placeholder="Enter Username" required><br>
 	<div id="msgusername" class="msg"></div>
 	<button type="submit" name="usernamenextbtn" id="usernamenextbtn" onclick="checkUsername()" >Next</button><br>
-	<form action="loginpage.jsp" method="post">
+	<form action="loginpage" method="post">
 	<button type="submit" id="cancelbtn" >Cancel</button><br>
 	</form>
 	</div> <!-- usernamediv -->
@@ -40,7 +40,7 @@
 	<input type="email" id="email" placeholder="Enter Your Email"><br>
 	<div id="msgemail" class="msg"></div>
 	<button type="submit" name="emailconfirmbtn" id="emailconfirmbtn" onclick="checkConfirmEmail()" >Confirm</button><br>
-	<form action="loginpage.jsp" method="post">
+	<form action="loginpage" method="post">
 	<button type="submit"  id="cancelbtn">Cancel</button><br>
 	</form>
 	</div> <!-- emaildiv -->
@@ -63,7 +63,6 @@
 	<button type="submit" name="otpverifybtn" id="otpverifybtn"  >Confirm</button><br>
 	</div>
 	</div><!-- otpverifydiv -->
-	
 	
 	
 	<div class="forgotdiv" id="forgotdiv">

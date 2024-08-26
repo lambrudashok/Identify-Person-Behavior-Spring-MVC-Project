@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+       emailjs.init({
+         publicKey: "cSJw4UQuV4JA_SXo7",
+       });
+    })();
+ </script>
 <link rel="stylesheet" href="resources/CSS/registrationStyle.css">
 <script type="text/javascript" src='resources/JS/registrationvalidation.js'></script>
 </head>
@@ -29,6 +38,19 @@
 			</div>
 			<input type="password" name="password" id="password" placeholder="Password" required><br>
 			<div class="msg" id="passwordmsg"></div><br>
+			
+			<div class="otpverifydiv" id="otpverifydiv">
+			<h4>Check your email to get your confirmation code</h4>
+			<div id="otpGrid">
+			<div id="otpconfirmGrid">
+			<input type="text" id="otpinput"  placeholder="Enter OTP code"><br>
+			<button type="submit" name="otpverifybtn" id="otpverifybtn"  >Confirm</button><br>
+			</div>
+			<div id="msgotp" class="msg"></div>
+			</div>
+			</div><!-- otpverifydiv -->
+			
+			<div class="msgsuccess" >${msg}</div><br>
 			<div class="g-recaptcha" id="recapt" data-sitekey="6Lca4SQqAAAAAMR1uYXhG2V1o-yIw-dP3X3rZkyF"></div>
 			<button type="submit" name="s" value="register" >Register</button><br>
 			<div class="next">
