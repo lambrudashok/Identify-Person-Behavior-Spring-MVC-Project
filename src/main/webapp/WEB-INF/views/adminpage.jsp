@@ -29,7 +29,7 @@
 					Account Request</a></li>
 			<li class="nav-item"><a class="nav-link text-white" href="logindetailsadminpage">User
 					Logins</a></li>
-			<li class="nav-item"><a class="nav-link text-white" href="predictionadminpage.jsp">Prediction</a>
+			<li class="nav-item"><a class="nav-link text-white" href="predictionadminpage">Prediction</a>
 			</li>
 			<li class="nav-item"><a class="nav-link text-white" href="loginpage">Logout</a></li>
 		</ul>

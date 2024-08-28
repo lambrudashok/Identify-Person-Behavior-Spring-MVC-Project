@@ -54,7 +54,7 @@
 			<div class="g-recaptcha" id="recapt" data-sitekey="6Lca4SQqAAAAAMR1uYXhG2V1o-yIw-dP3X3rZkyF"></div>
 			<button type="submit" name="s" value="register" >Register</button><br>
 			<div class="next">
-			<a id="regtag" href="/">already register?</a>
+			<a id="regtag" href="loginpage">already register?</a>
 			</div>
 		</form>
 	</div>  <!-- register -->
