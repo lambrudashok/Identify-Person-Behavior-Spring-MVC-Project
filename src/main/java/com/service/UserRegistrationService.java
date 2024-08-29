@@ -44,6 +44,11 @@ public class UserRegistrationService {
 		return regRepo.getUserInfo(registerid);
 	}
 	
+	//get registerid of post
+	public int getPostRegisterid(int postid) {
+		return regRepo.getPostRegisterid(postid);
+	}
+	
 	//update or add profile image
 	public boolean isAddProfilePhoto(RegistrationModel model) {
 		return regRepo.isAddProfilePhoto(model);

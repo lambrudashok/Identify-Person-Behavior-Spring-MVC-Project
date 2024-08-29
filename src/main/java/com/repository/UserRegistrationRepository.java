@@ -167,6 +167,25 @@ public class UserRegistrationRepository {
 	}
 	
 	
+	public int getPostRegisterid(int postid) {
+		try {
+			Integer registerid= template.queryForObject("select rm.registerid from registrationmaster rm "
+					+ "inner join postregistrationjoin prj on prj.registerid=rm.registerid "
+					+ "inner join postmaster pm on pm.postid=prj.postid "
+					+ "where pm.postid=?", new Object[] {postid}, new RowMapper<Integer>() {
+						@Override
+						public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getInt("registerid");
+						}
+					});
+			return (registerid>0)?registerid:0;
+		}catch(Exception e) {
+			System.out.println("error re :"+e );
+			return 0;
+		}
+	}
+	
+	
 	//update or add profile image
 	public boolean isAddProfilePhoto(final RegistrationModel model) {
 		try {

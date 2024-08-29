@@ -11,3 +11,9 @@
 	xhttp.open("POST","predictionadmincontroller?n="+str,true);
 	xhttp.send();
  }
+ 
+ 
+ 
+ function closefun(){
+	window.history.back();
+ }

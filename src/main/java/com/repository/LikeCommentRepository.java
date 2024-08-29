@@ -5,6 +5,8 @@ package com.repository;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +15,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.model.PostModel;
+import com.model.*;
 
 @Repository
 public class LikeCommentRepository {
@@ -79,13 +82,58 @@ public class LikeCommentRepository {
 					return rs.getInt(1);	
 				}
 			});
-			
 			return (pid>0) ? pid : 0;
 		}catch(Exception e) {
 			System.out.println("error "+e);
 			return -1;
 		}
 	}
+	
+	
+	
+	// fetch post comment details 
+		public List<PostLayoutModel> getCommentDetails(int postid) {
+			final List<PostLayoutModel> commentlist = new ArrayList<PostLayoutModel>(); // store user comment details
+			try {
+				// fetch particular post comments 
+				List<CommentModel> list= template.query("select cm.registerid,cm.comment,cm.commentdate from commentmaster cm "
+						+ "inner join postcommentjoin pj on pj.commentid=cm.commentid "
+						+ "inner join postmaster pm on pm.postid=pj.postid "
+						+ "where pm.postid=?", new Object[] {postid}, new RowMapper<CommentModel>() {
+					@Override
+					public CommentModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+						PostLayoutModel pm = new PostLayoutModel();
+						pm.setRegisterid(rs.getInt(1));
+						pm.setComment(rs.getString(2));
+						pm.setCommentDate(rs.getDate(3));
+						return pm;	
+					}
+				});
+				
+				// fetch details comment user
+				if(list.size()>0) {
+					for(final CommentModel pl : list) {
+						template.queryForObject("select username,profileimg from registrationmaster where registerid=?", new Object[] {pl.getRegisterid()},new RowMapper<Void>() {
+							@Override
+							public Void mapRow(ResultSet rs, int rowNum) throws SQLException {
+								PostLayoutModel pm = new PostLayoutModel();
+								pm.setUsername(rs.getString(1)); // set username
+								pm.setProfileimage(rs.getString(2)); // set profile photo name
+								pm.setRegisterid(pl.getRegisterid()); // set registerid
+								pm.setComment(pl.getComment());       // set comment
+								pm.setCommentDate(pl.getCommentDate()); // set comment date
+								commentlist.add(pm);
+								return null;
+							}					
+						});
+					}
+				}
+				return (commentlist.size()>0) ? commentlist : null;
+			}catch(Exception e) {
+				System.out.println("error commet"+e);
+				return null;
+			}
+		}
 	
 	
 	// fetch last like

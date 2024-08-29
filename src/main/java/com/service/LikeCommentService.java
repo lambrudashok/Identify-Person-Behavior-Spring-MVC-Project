@@ -1,9 +1,12 @@
 package com.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.model.PostLayoutModel;
 import com.model.PostModel;
 import com.repository.LikeCommentRepository;
 
@@ -21,6 +24,11 @@ public class LikeCommentService {
 	// we fetch comment count of post
 	public int getCommentCount(int postid) {
 		return likecommentRepo.getCommentCount(postid);
+	}
+	
+	// fetch post comment details 
+	public List<PostLayoutModel> getCommentDetails(int postid) {
+		return likecommentRepo.getCommentDetails(postid);
 	}
 	
 	// add like in database

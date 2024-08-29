@@ -67,6 +67,28 @@
         }
  }
  
+ 
+ 
+ // another user profile comment
+ function commentfun(postid,commentname){
+	
+        if(commentname.trim() == ''){
+            return false;
+        } else {
+			let xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange=function(){
+				if(this.readyState==4 && this.status==200){
+					document.getElementById("commentGrid"+postid).innerHTML=this.responseText;
+					
+				}
+			};
+			xhttp.open("POST","commentsubmitanotheruser?comment="+commentname+"&postid="+postid,true);
+			xhttp.send();
+			return false;
+        }
+ }
+ 
+ 
  function likefun(postid){
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange=function(){

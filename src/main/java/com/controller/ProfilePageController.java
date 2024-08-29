@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.model.PostLayoutModel;
 import com.model.PostModel;
 import com.model.ProfileInformationModel;
+import com.model.UserInfoModel;
 import com.service.CreatePostService;
 import com.service.LikeCommentService;
 import com.service.UserRegistrationService;
@@ -63,20 +64,17 @@ public class ProfilePageController {
 		// fetch postid and comment 
 		int postid=Integer.parseInt(request.getParameter("postid"));
 		String comment=(String)request.getParameter("comment");
-		
 		// access user id from session
 		HttpSession session=request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
-		
 		PostModel pmodel = new PostModel();
 		pmodel.setComment(comment);
 		pmodel.setPostid(postid);
 		pmodel.setRegisterid(userID);
-		
 		boolean commentResult=lkSer.isAddComment(pmodel);
 		int commentCount = lkSer.getCommentCount(postid);
 		String str="";
-		str=str+"<a id='commentshow' href=''> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
+		str=str+"<a id='commentshow' href='viewprofilecomment?postid="+postid+"&userID="+userID+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
         str=str+"<form name='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
         str=str+"<input type='text' name='comment' id='comment' placeholder='comment here...' required>"; 
         str=str+"<button type='submit' id='commentbtn'  name='commentbtn' >post</button>";
@@ -115,28 +113,36 @@ public class ProfilePageController {
 	@RequestMapping("/unlikecontroller")
 	@ResponseBody
 	public String unLikeUserPostsProfile(HttpServletRequest request) {
-		
 		int postid=Integer.parseInt(request.getParameter("postid"));		
 		// access user id from session
 		HttpSession session=request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
-		
 		int result=lkSer.unLikePost(postid, userID); // unlike post
-			
 		// get count of like
 		int likeCount=lkSer.fetchLikeCount(postid);
-		
 		// check like or not
         int v=lkSer.checkLike(postid,userID);
-        
         String str=""; 
 		if(v>0){
 			str=str+"<a id='liked' onclick='unlikefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";  
 	    }else{
 	    	str=str+"<a id='like'  onclick='likefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";
 		}
-     
 		return str;
+	}
+	
+	
+	// comment view controller logic
+	@RequestMapping("/viewprofilecomment")
+	public String getCommentProfileUser(HttpServletRequest request, Model model) {
+		int postid = Integer.parseInt(request.getParameter("postid"));
+		HttpSession session = request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		UserInfoModel userInfo = registerSer.getUserInfo(userID); // add user info
+		model.addAttribute("userInfo", userInfo);
+		List<PostLayoutModel> commentlist = lkSer.getCommentDetails(postid); // add comments user details 
+		model.addAttribute("commentlist", commentlist);
+		return "commentpage";
 	}
 	
 	

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.model.UserInfoModel;
 import com.model.ProfileInformationModel;
 import com.model.PostLayoutModel;
+import com.model.PostModel;
 import com.service.CreatePostService;
 import com.service.FollowingService;
 import com.service.LikeCommentService;
@@ -115,6 +116,45 @@ public class SearchAnotherUserProfileController {
 		return str;
 	}
 	
+	
+	// another user profile posts comment logic
+	@RequestMapping(value="/commentsubmitanotheruser", method=RequestMethod.POST)
+	@ResponseBody
+	public String storeComment(HttpServletRequest request) {
+		// fetch postid and comment 
+		int postid=Integer.parseInt(request.getParameter("postid"));
+		String comment=(String)request.getParameter("comment");
+		// access user id from session
+		HttpSession session=request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		PostModel pmodel = new PostModel();
+		pmodel.setComment(comment);
+		pmodel.setPostid(postid);
+		pmodel.setRegisterid(userID);
+		int registerid = userSer.getPostRegisterid(postid); // fetch registerid post user
+		boolean commentResult=lkSer.isAddComment(pmodel);
+		int commentCount = lkSer.getCommentCount(postid);
+		String str="";
+		str=str+"<a id='commentshow' href='viewanotheruserprofilecomment?postid="+postid+"&userID="+registerid+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
+        str=str+"<form name='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
+        str=str+"<input type='text' name='comment' id='comment' placeholder='comment here...' required>"; 
+        str=str+"<button type='submit' id='commentbtn'  name='commentbtn' >post</button>";
+        str=str+"</form>";
+		return str;
+	}
+	
+	
+	// comment view controller logic
+	@RequestMapping("/viewanotheruserprofilecomment")
+	public String getCommentProfileUser(HttpServletRequest request, Model model) {
+		int postid = Integer.parseInt(request.getParameter("postid"));
+		int userID = Integer.parseInt(request.getParameter("userID"));
+		UserInfoModel userInfo = userSer.getUserInfo(userID); // add user info
+		model.addAttribute("userInfo", userInfo);
+		List<PostLayoutModel> commentlist = lkSer.getCommentDetails(postid); // add comments user details 
+		model.addAttribute("commentlist", commentlist);
+		return "commentpage";
+	}
 	
 	
 	

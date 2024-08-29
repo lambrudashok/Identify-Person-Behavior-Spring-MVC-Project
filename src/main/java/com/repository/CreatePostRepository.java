@@ -205,13 +205,14 @@ public class CreatePostRepository {
 						
 						final PostLayoutModel pmodel = new PostLayoutModel();
 						
-						template.queryForObject("select username,profileimg from registrationmaster where registerid=?", 
+						template.queryForObject("select username,profileimg,registerid from registrationmaster where registerid=?", 
 								new Object[] {registerid}, new RowMapper<Void>() {
 
 							@Override
 							public Void mapRow(ResultSet rs, int rowNum) throws SQLException {
 								pmodel.setUsername(rs.getString(1)); // set username
 								pmodel.setProfileimage(rs.getString("profileimg")); // set profile photo
+								pmodel.setRegisterid(rs.getInt("registerid"));
 								return null;
 							}
 						});
@@ -304,7 +305,7 @@ public class CreatePostRepository {
 						
 						final PostLayoutModel pmodel = new PostLayoutModel();
 						
-						template.queryForObject("select rm.username,rm.profileimg from registrationmaster rm "
+						template.queryForObject("select rm.username,rm.profileimg,rm.registerid from registrationmaster rm "
 								+ "inner join postregistrationjoin prj on prj.registerid=rm.registerid "
 								+ "inner join postmaster pm on pm.postid=prj.postid "
 								+ "where pm.postid=?", new Object[] {lc}, new RowMapper<Void>() {
@@ -312,6 +313,7 @@ public class CreatePostRepository {
 									public Void mapRow(ResultSet rs, int rowNum) throws SQLException {
 										pmodel.setUsername(rs.getString(1)); // set username
 										pmodel.setProfileimage(rs.getString("profileimg")); // set profile photo name
+										pmodel.setRegisterid(rs.getInt("registerid"));
 										return null;
 									}
 								});
