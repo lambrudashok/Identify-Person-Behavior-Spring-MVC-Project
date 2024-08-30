@@ -27,6 +27,21 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     
+    <!-- for error page -->
+    <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+        <param-name>throwExceptionIfNoHandlerFound</param-name>
+        <param-value>true</param-value>
+    </init-param>
+	</servlet>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/errorpage.jsp</location>
+    </error-page>
+    <!-- error page above -->
+    
     <servlet-mapping>
         <servlet-name>SpringDispatcher</servlet-name>
         <url-pattern>/</url-pattern>

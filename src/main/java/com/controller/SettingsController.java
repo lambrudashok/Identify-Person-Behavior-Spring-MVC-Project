@@ -125,8 +125,20 @@ public class SettingsController {
 	
 	
 	//settings logout page
-	@RequestMapping("/loginpage")
-	public String getLogoutPage() {
+	@RequestMapping("/logoutpage")
+	public String getLogoutPage(HttpServletRequest request,Model model) {
+		HttpSession session = request.getSession(false);
+		int userID=Integer.parseInt(session.getAttribute("userID").toString());
+		UserInfoModel userInfo = userSer.getUserInfo(userID);
+		model.addAttribute("userInfo", userInfo);
+		return "logoutpage";
+	}
+	
+	//logout login page
+	@RequestMapping(value="/loginpage", method=RequestMethod.POST)
+	public String getLoginPage() {
 		return "loginpage";
 	}
+	
+	
 }

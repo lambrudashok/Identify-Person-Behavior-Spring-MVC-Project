@@ -32,7 +32,7 @@
 		  <div class="dropdown-menu bg" aria-labelledby="settingsid">
 		    <a class="dropdown-item bg brd" href="changepasswordpage">Change Password</a>
 		    <a class="dropdown-item bg brd" href="deleteaccountpage">Delete Account</a>
-		    <a class="dropdown-item bg brd" href="loginpage">Logout</a>
+		    <a class="dropdown-item bg brd" href="logoutpage">Logout</a>
 		  </div>
   		
   		

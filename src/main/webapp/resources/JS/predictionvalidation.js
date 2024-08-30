@@ -13,7 +13,7 @@
  }
  
  
- 
+ // view commentpage back
  function closefun(){
 	window.history.back();
  }
