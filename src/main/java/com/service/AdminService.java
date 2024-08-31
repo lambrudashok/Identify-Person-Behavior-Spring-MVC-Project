@@ -31,6 +31,21 @@ public class AdminService {
 		return adminRepo.deleteUser(registerid);
 	}
 	
+	//check freeze user account
+	public String checkFreezeUser(int registerid) {
+		return adminRepo.checkFreezeUser(registerid);
+	}
+	
+	//freeze user account
+	public int freezeUserAccount(final int registerid) {
+		return adminRepo.freezeUserAccount(registerid);
+	}
+	
+	//unfreeze user account
+	public int unFreezeUserAccount(final int registerid) {
+		return adminRepo.unFreezeUserAccount(registerid);
+	}
+	
 	/*view All posts application users*/
 	public List<PostLayoutModel> ViewAllUserPosts(){
 		return adminRepo.ViewAllUserPosts();

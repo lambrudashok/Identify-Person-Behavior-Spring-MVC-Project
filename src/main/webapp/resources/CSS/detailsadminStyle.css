@@ -13,7 +13,7 @@
 }
 
 .main{
-	width: 80%;
+	width: 83%;
 	margin:auto;
 	min-height: 100vh;
 }
@@ -23,7 +23,7 @@
 	padding-top: 20px;
 }
 .columnname{
-	width:90%;
+	width:100%;
 	height: 50px;
 	margin:auto;
 	color:white;
@@ -76,8 +76,14 @@
 	padding-top:15px;
 	border-right:white solid 1px;
 }
-.columnname #columnother{
+.columnname #columdelete{
 	width:90px;
+	height: 49px;
+	padding-top:15px;
+	border-right:white solid 1px;
+}
+.columnname #columnother{
+	width:110px;
 	height: 49px;
 	padding-top:15px;
 }
@@ -89,7 +95,7 @@
 
 
 .details{
-	width:90%;
+	width:100%;
 	height: 120px;
 	margin:auto;
 	color:white;
@@ -161,11 +167,50 @@
 	height: 120px;
 	text-align:center;
 	padding-top:50px;
+	border-right:white solid 1px;
 }
 #delete a{
 	color: aqua;
 	font-weight: bold;
 	text-shadow: 1px 2px 5px white;
+}
+.details #freezediv{
+	width:110px;
+	height: 120px;
+	text-align:center;
+	padding-top:40px;
+}
+.details #freeze{
+	width:85px;
+	height: 40px;
+	border-radius:20px;
+	margin-left:10px;
+	border-color:silver;
+	background-color: #7fdbd8;
+	font-size:15px;
+	font-weight: bold;
+}
+#freeze:hover{
+	background-color: aqua;
+}
+.details #unfreezediv{
+	width:110px;
+	height: 120px;
+	text-align:center;
+	padding-top:40px;
+}
+.details #unfreeze{
+	width:85px;
+	height: 40px;
+	border-radius:20px;
+	margin-left:10px;
+	border-color:silver;
+	background-color: #e74c3c;
+	font-size:15px;
+	font-weight: bold;
+}
+#unfreeze:hover {
+	background-color: red;
 }
 
 

@@ -71,8 +71,8 @@ public class ChangePasswordRepository {
 		try {
 			Integer uid = template.queryForObject("select registerid from registrationmaster where email=? and username=?", new Object[] {email,username}, new RowMapper<Integer>() {
 				@Override
-				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
-					return rs.getInt(1);
+				public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {	
+					return rs.getInt(1);	
 				}
 			});
 			return (uid>0)?uid:0;

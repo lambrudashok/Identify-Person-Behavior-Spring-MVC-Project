@@ -58,6 +58,7 @@ public class AdminRepository {
 					model.setPassword(rs.getString("password"));
 					model.setCustomername(rs.getString("customername"));
 					model.setProfileimgname(rs.getString("profileimg"));
+					model.setStatus(rs.getString("status"));
 					return model;
 				}
 			});
@@ -84,6 +85,58 @@ public class AdminRepository {
 		}
 	}
 	
+	
+	//check freeze user account
+	public String checkFreezeUser(int registerid) {
+		try {
+			String status = template.queryForObject("select status from registrationmaster where registerid=?", new Object[] {registerid}, new RowMapper<String>() {
+				@Override
+				public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getString("status");
+				}
+			});
+			return status;
+		}catch(Exception e) {
+			System.out.println("error freeze :"+e);
+			return null;
+		}
+	}
+	
+	
+	//freeze user account
+	public int freezeUserAccount(final int registerid) {
+		try {
+			int v = template.update("update registrationmaster set status='freeze' where registerid=?", new PreparedStatementSetter() {			
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, registerid);
+				}
+			});
+			return (v>0)?1:0;
+		}catch(Exception e) {
+			System.out.println("error freeze :"+e);
+			return 0;
+		}
+	}
+	
+	
+	//unfreeze user account
+	public int unFreezeUserAccount(final int registerid) {
+		try {
+			int v = template.update("update registrationmaster set status='no' where registerid=?", new PreparedStatementSetter() {			
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, registerid);
+				}
+			});
+			return (v>0)?1:0;
+		}catch(Exception e) {
+			System.out.println("error freeze :"+e);
+			return 0;
+		}
+	}
+		
+		
 	
 	// delete user from delete request
 	public int deleteUserRequestAccount(final int registerid) {

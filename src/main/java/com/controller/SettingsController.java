@@ -140,5 +140,11 @@ public class SettingsController {
 		return "loginpage";
 	}
 	
+	// already register
+	@RequestMapping("/loginpage")
+	public String getAlredyRegister() {
+		return "loginpage";
+	}
+	
 	
 }

@@ -23,6 +23,7 @@
 <div id="columnemail">Email</div>
 <div id="columnusername">UserName</div>
 <div id="columnpassword">Password</div>
+<div id="columdelete">Delete</div>
 <div id="columnother">Others</div>
 </div> <!-- columname -->
 
@@ -44,6 +45,24 @@
 		<div id="username"><%=info.getUsername() %></div>
 		<div id="password"><%=info.getPassword() %></div>
 		<div id="delete"><a onclick="userDelete(<%=info.getRegisterid()%>)">Delete</a></div>
+		<div id="freezeGrid<%=info.getRegisterid()%>">
+		<%
+		String status=info.getStatus();
+		if(status.compareTo("freeze")==0){
+			%>
+			<div id="unfreezediv">
+			<button name="unfreeze" id="unfreeze" onclick="unFreezeUserFun(<%=info.getRegisterid()%>)" >UnFreeze</button>            
+			</div>
+			<%
+		}else{
+			%>
+			<div id="freezediv">
+			<button name="freeze" id="freeze" onclick="freezeUserFun(<%=info.getRegisterid()%>)"  >Freeze</button>           
+			</div>	
+			<%
+		}
+		%>
+		</div> <!-- freezeGrid -->
 		</div> <!-- details -->
 	
 	<%

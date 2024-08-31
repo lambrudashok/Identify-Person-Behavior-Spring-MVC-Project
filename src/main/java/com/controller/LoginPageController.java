@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.model.LoginModel;
 import com.service.AdminService;
@@ -43,7 +44,7 @@ public class LoginPageController {
 	}
 	
 	
-	@RequestMapping("/validation")
+	@RequestMapping(value="/validation",method=RequestMethod.POST)
 	public String checkLogin(HttpServletRequest request, Model mod) {
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
@@ -60,12 +61,18 @@ public class LoginPageController {
 			// user logics        
 			int userID = loginSer.checkUserLogin(model);
 			if(userID!=-1) {
+				
+				String status = adminSer.checkFreezeUser(userID); // check freeze user
+				if(status.compareTo("freeze")==0) {
+					mod.addAttribute("msg", "Your account has been temporarily frozen due to violation of terms. Please contact officials for regain access.");
+					return "loginpage";  // call loginpage.jsp
+				}else {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("userID", userID);
 				model.setLoginid(userID);
 				boolean res=loginSer.isAddUserLogin(model); // add user login details
-				
         		return getHomePage(request, mod); // call getHomePage
+				}
 			}else {
 				mod.addAttribute("msg", "Incorrect username and password. Please try again");
 				return "loginpage";  // call loginpage.jsp

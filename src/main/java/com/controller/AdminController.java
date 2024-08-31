@@ -38,6 +38,48 @@ public class AdminController {
 	}
 	
 	
+	//freeze user account
+	@RequestMapping(value="/freezeaccountuser", method = RequestMethod.POST)
+	@ResponseBody
+	public String getfreezeUserAccount(HttpServletRequest request) {
+		int userid = Integer.parseInt(request.getParameter("userid"));
+		int freeze = adminSer.freezeUserAccount(userid); // freeze user account	
+		String status = adminSer.checkFreezeUser(userid); // check user account freeze or not
+		String str="";
+		if(status.compareTo("freeze")==0){
+			str=str+"<div id='unfreezediv'>";
+			str=str+"<button name='unfreeze' id='unfreeze' onclick='unFreezeUserFun("+userid+")' >UnFreeze</button>";            
+			str=str+"</div>";
+		}else{
+			str=str+"<div id='freezediv'>";
+			str=str+"<button name='freeze' id='freeze' onclick='freezeUserFun("+userid+")'  >Freeze</button>";            
+			str=str+"</div>";
+		}
+		return str;
+	}
+	
+	
+	// unfreeze user account
+	@RequestMapping(value="/unfreezeaccountuser", method = RequestMethod.POST)
+	@ResponseBody
+	public String getunfreezeUserAccount(HttpServletRequest request) {
+		int userid = Integer.parseInt(request.getParameter("userid"));
+		int freeze = adminSer.unFreezeUserAccount(userid); // unfreeze user account	
+		String status = adminSer.checkFreezeUser(userid); // check user account freeze or unfreeze
+		String str="";
+		if(status.compareTo("freeze")==0){
+			str=str+"<div id='unfreezediv'>";
+			str=str+"<button name='unfreeze' id='unfreeze' onclick='unFreezeUserFun("+userid+")' >UnFreeze</button>";            
+			str=str+"</div>";
+		}else{
+			str=str+"<div id='freezediv'>";
+			str=str+"<button name='freeze' id='freeze' onclick='freezeUserFun("+userid+")'  >Freeze</button>";            
+			str=str+"</div>";
+		}
+		return str;
+	}
+	
+	
 	@RequestMapping(value="/userdeleteadmin", method=RequestMethod.POST)
 	@ResponseBody
 	public String userDeleteAdmin(HttpServletRequest request) {
@@ -54,6 +96,18 @@ public class AdminController {
 		str=str+"<div id='username'>"+info.getUsername()+"</div>";
 		str=str+"<div id='password'>"+info.getPassword()+"</div>";
 		str=str+"<div id='delete'><a onclick='userDelete("+info.getRegisterid()+")'>Delete</a></div>";
+		str=str+"<div id='freezeGrid"+userid+"'>";
+		String status=info.getStatus();
+		if(status.compareTo("freeze")==0){
+			str=str+"<div id='unfreezediv'>";
+			str=str+"<button name='unfreeze' id='unfreeze' onclick='unFreezeUserFun("+userid+")' >UnFreeze</button>";            
+			str=str+"</div>";
+		}else{
+			str=str+"<div id='freezediv'>";
+			str=str+"<button name='freeze' id='freeze' onclick='freezeUserFun("+userid+")'  >Freeze</button>";           
+			str=str+"</div>";	
+		}
+		str=str+"</div>"; // freezeGrid
 		str=str+"</div>"; //details
 		}
 		return str;
@@ -75,7 +129,7 @@ public class AdminController {
 		return "deleterequestadminpage";
 	}
 	
-	
+	// delete account request user
 	@RequestMapping(value="/deleteaccountrequest" ,method=RequestMethod.POST)
 	@ResponseBody
 	public String deleteUserAccountRequested(HttpServletRequest request) {
@@ -84,7 +138,6 @@ public class AdminController {
 		List<RegistrationModel> list =adminSer.fetchDeleteUserAccountReuests();
 		String str ="";
 		if(list!=null){
-			
 			str=str+"<h2>User Requests Found</h2>";
 			str=str+"<div class='columnname'>";
 			str=str+"<div id='columnid'>RegisterId</div>";
@@ -95,9 +148,7 @@ public class AdminController {
 			str=str+"<div id='columnremaining'>Remaining Days</div>";
 			str=str+"<div id='columnother'>Others</div>";
 			str=str+"</div>";//columname
-			
 			for(RegistrationModel info:list){
-			
 				str=str+"<div class='details'>";
 				str=str+"<div id='userid'>"+info.getRegisterid()+"</div>";
 				str=str+"<div id='photo'><img alt='' src='resources/Profile_Images/"+info.getProfileimgname()+"'></div>";
