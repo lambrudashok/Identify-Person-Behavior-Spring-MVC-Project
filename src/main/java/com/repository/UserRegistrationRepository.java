@@ -1,5 +1,6 @@
 package com.repository;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,14 +8,18 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import com.model.NotificationModel;
 import com.model.ProfileInformationModel;
 import com.model.RegistrationModel;
+import com.model.ReportProblemModel;
 import com.model.UserInfoModel;
 
 @Repository
@@ -391,5 +396,141 @@ public class UserRegistrationRepository {
 				return -1;
 			}
 		}
+		
+
+		
+		// Notification send user (multiple user)
+		public boolean isAddNotification(final List<Integer> list, final NotificationModel model) {
+		    try {
+		    	 final List<Integer> keysgenerated = new ArrayList<Integer>(); // store generated primary keys
+		    	 for (final Integer id : list) {
+		             KeyHolder keyholder = new GeneratedKeyHolder();
+		             template.update(
+		                 new PreparedStatementCreator() {
+		                     @Override
+		                     public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+		                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()))",
+		                        		 PreparedStatement.RETURN_GENERATED_KEYS);
+		                         ps.setString(1, model.getNotification());
+		                         ps.setInt(2, id);
+		                         return ps;
+		                     }
+		                 }, keyholder);
+		          // Retrieve generated key
+	              keysgenerated.add(keyholder.getKey().intValue());
+		    	 }  
+		        // Insert into notificationregistrationjoin using stored keys
+		        template.batchUpdate(
+		            "insert into notificationregistrationjoin (registerid, nid) values (?, ?)",
+		            new BatchPreparedStatementSetter() {
+		                public void setValues(PreparedStatement ps, int i) throws SQLException {
+		                    ps.setInt(1, model.getRegisterid());
+		                    ps.setInt(2, keysgenerated.get(i));
+		                }
+
+		                public int getBatchSize() {
+		                    return keysgenerated.size();
+		                }
+		            }
+		        );
+		        return true;
+
+		    } catch (Exception e) {
+		        System.out.println("Notification error: " + e);
+		        return false;
+		    }
+		}
+		
+		
+		
+		
+		// Notification send user (single user)
+		public boolean isAddNotification(final int sender, final NotificationModel model) {
+		    try {
+	             KeyHolder keyholder = new GeneratedKeyHolder();
+	             template.update(
+	                 new PreparedStatementCreator() {
+	                     @Override
+	                     public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+	                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()))",
+	                        		 PreparedStatement.RETURN_GENERATED_KEYS);
+	                         ps.setString(1, model.getNotification());
+	                         ps.setInt(2, model.getRegisterid());
+	                         return ps;
+	                     }
+	                 }, keyholder);
+		          // Retrieve generated key
+	              final int key=keyholder.getKey().intValue();
+		        // Insert into notificationregistrationjoin using stored keys
+		        template.update(
+		            "insert into notificationregistrationjoin (registerid, nid) values (?, ?)", new PreparedStatementSetter() {
+						@Override
+						public void setValues(PreparedStatement ps) throws SQLException {
+							ps.setInt(1, sender);
+		                    ps.setInt(2, key);
+						}
+		            });
+		        return true;
+
+		    } catch (Exception e) {
+		        System.out.println("Notification error: " + e);
+		        return false;
+		    }
+		}
+		
+		
+		// notifications fetch user
+		public List<NotificationModel> getAllUserNotification(int registerid){
+			try {
+				List<NotificationModel> list = template.query("select rm.registerid,nm.notification,nm.date,nm.time from notificationmaster nm "
+						+ "inner join notificationregistrationjoin nrj on nrj.nid=nm.nid "
+						+ "inner join registrationmaster rm on rm.registerid=nrj.registerid "
+						+ "where nm.sendid=? order by nm.nid desc", 
+						new Object[] {registerid}, new RowMapper<NotificationModel>() {
+							@Override
+							public NotificationModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+								NotificationModel nmodel = new NotificationModel();
+								nmodel.setRegisterid(rs.getInt(1));
+								nmodel.setNotification(rs.getString(2));
+								nmodel.setDate(rs.getDate(3));
+								nmodel.setTime(rs.getTime(4));
+								return nmodel;
+							}
+						});
+				if(list!=null) {
+					for(NotificationModel mod : list) {
+						UserInfoModel uf = this.getUserInfo(mod.getRegisterid());
+						mod.setUsername(uf.getUsername());
+						mod.setProfileimage(uf.getProfileimage());
+					}
+				}
+				return (list.size()>0) ?list:null;
+			}catch(Exception e) {
+				System.out.println("notification error :"+e);
+				return null;
+			}
+		}
 	
+		
+		
+		// when user send report problem
+		public boolean isAddReportProblemUser(final ReportProblemModel model) {
+			try {
+				int v = template.update("insert into reportproblemmaster values('0',?,?,(select curdate()),?,?)", new PreparedStatementSetter() {	
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setString(1, model.getTitle());
+						ps.setString(2, model.getDescription());
+						ps.setString(3, model.getStatus());
+						ps.setInt(4, model.getRegisterid());
+					}
+				});				
+				return (v>0)?true:false;
+			}catch(Exception e) {
+				System.out.println("report error :"+e);
+				return false;
+			}
+		}
+		
+		
 }

@@ -134,7 +134,12 @@ public class EditProfilePageController {
 		
 		String str="";
 		
+		str=str+"<div class='heading'>";
 		str=str+"<h3>Edit Profile</h3>";
+		str=str+"<div class='closetab'>";
+		str=str+"<a href='profilepage'><i class='fa-solid fa-xmark'></i></a>";
+		str=str+"</div>"; //closetab 
+		str=str+"</div>";
 		str=str+"<form name='frm' action='updateprofilephoto' method='POST' enctype='multipart/form-data' onsubmit='return profilefun()'>";	
 		str=str+"<div class='photo'>";
 		str=str+"<div class='image' id='imageGrid'>";

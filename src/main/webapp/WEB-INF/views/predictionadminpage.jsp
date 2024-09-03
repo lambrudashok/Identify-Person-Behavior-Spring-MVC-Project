@@ -12,6 +12,10 @@
 <body>
 
 <div class="searchcontainer">
+
+<div class="menustag">
+	<%@include file="adminmenus.jsp" %>
+</div> <!-- menustag -->
 	
 	<div class="searchsection">
 		<div class="searchbar">
@@ -19,10 +23,10 @@
 	   </div><!--  searchbar -->
 	   
 	   <div class="userInfo">
-	   		<div class="info">
+	   		
 	   	
 	   	<div id="searchGrid">
-	  
+	  <div class="info">
 	   	<%
 	   	List <UserInfoModel> list =(List<UserInfoModel>) request.getAttribute("list");
 			
@@ -55,8 +59,8 @@
 			%>
 	   	
 	   	
-	   	</div>
 	   	</div> <!-- info -->
+	   	</div>
 	   	
 	   </div> <!-- userInfo -->
 	   

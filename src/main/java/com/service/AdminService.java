@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.model.LoginModel;
 import com.model.PostLayoutModel;
 import com.model.RegistrationModel;
+import com.model.ReportProblemModel;
 import com.repository.AdminRepository;
 
 @Service
@@ -65,8 +66,21 @@ public class AdminService {
 	public List<LoginModel> viewUserLoginDetails(){
 		return adminRepo.viewUserLoginDetails();
 	}
-		
 	
+	//fetch reports 
+	public List<ReportProblemModel> getReportsUser(){
+		return adminRepo.getReportsUser();
+	}
+	
+	// solve problem update status
+	public int solveReportProblemStatus(int reportid) {
+		return adminRepo.solveReportProblemStatus(reportid);
+	}
+	
+	// check reported problem status solve or not
+	public String checkReportProblem(int reportid) {
+		return adminRepo.checkReportProblem(reportid);
+	}
 	
 	
 }

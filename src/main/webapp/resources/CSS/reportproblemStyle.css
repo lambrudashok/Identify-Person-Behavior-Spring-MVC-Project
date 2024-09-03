@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.reportcontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	display: flex;
+}
+
+.reportmenu{
+	width: 15%;
+	min-height: 100vh;
+}
+
+.reportmain{
+	width: 80%;
+	min-height: 100vh;
+	padding-top:30px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	border-left:white solid 1px;
+}
+
+.reportmain .reportbox{
+	width: 70%;
+	min-height: 75vh;
+	border-radius:10px;
+	margin:auto;
+	color:white;
+	box-shadow: 2px 2px 20px white;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+	
+	border:white solid 1px;
+}
+
+.reportdiv{
+	width: 100%;
+	padding:5px;
+	min-height: 50px;
+	margin-top:5px;
+	border-bottom:white solid 1px;
+	display: flex;
+}
+
+.reportdiv h4{
+	font-weight: bold;
+	width:85%;
+	font-size:25px;
+	padding-left:10px;
+	color:white;
+}
+
+.closetab{
+	font-size:30px;
+	text-align:center;
+	color:white;
+	margin-left: 50px;
+}
+.reportbox .desc{
+	width:100%;
+	padding-left:15px;
+	color:white;
+}
+
+.reportbox h6{
+	font-size: 18px;
+	padding-top: 20px;
+}
+
+#title{
+	width:95%;
+	height: 45px;
+	border: black solid 2px;
+	padding-left:10px;
+	font-size:17px;
+	border-radius: 10px;
+}
+
+#description {
+    width: 95%;
+    height: 120px;
+    border: black solid 2px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-size: 17px;
+    border-radius: 10px;
+    resize: vertical;
+    overflow: auto; 
+}
+.reportbox #reportbtn{
+	width:20%;
+	height:40px;
+	border-radius:15px;
+	color:white;
+	margin-top:20px;
+	background-color: deepskyblue;
+}
+#msg{
+	width:90%;
+	margin-top:10px;
+	padding-left:10px;
+	font-size: 20px;
+	color:green;
+	font-weight: bold;
+}
+ 

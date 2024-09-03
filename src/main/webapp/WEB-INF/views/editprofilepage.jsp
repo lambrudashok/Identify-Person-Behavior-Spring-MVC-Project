@@ -6,13 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="resources/CSS/editprofileStyle.css">
 <script type="text/javascript" src='resources/JS/editprofilevalidation.js'></script>
 </head>
 <body>
 	
 <div class="editcontainer">
-	
+	<div class="editmenu">
+		<%@ include file="menus.jsp" %>
+	</div><!-- editmenu -->
 <div class="editsection">
 	
 	<%
@@ -21,8 +24,12 @@
 
 	%>
 	<div class="divider" id="editGrid">
-	
+	<div class="heading">
 	<h3>Edit Profile</h3>
+	<div class="closetab">
+			<a href="profilepage"><i class="fa-solid fa-xmark"></i></a>
+	</div><!--closetab -->
+	</div>
 	
 	<form name="frm" action="updateprofilephoto" method="POST" enctype="multipart/form-data" onsubmit="return profilefun()">	
 	<div class="photo">

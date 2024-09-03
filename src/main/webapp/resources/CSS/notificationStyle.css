@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.notificationcontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	display: flex;
+}
+
+.notificationmenu{
+	width: 15%;
+	min-height: 100vh;
+}
+
+.notificationmain{
+	width: 80%;
+	min-height: 100vh;
+	padding-top:10px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	border-left:white solid 1px;
+}
+
+.notificationmain .notificationbox{
+	width: 80%;
+	min-height: 40vh;
+	border-radius:10px;
+	margin:auto;
+	color:white;
+	box-shadow: 5px 5px 20px white;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+	border:white solid 1px;
+}
+
+.notificationdiv{
+	width: 100%;
+	padding:5px;
+	min-height: 50px;
+	margin-top:5px;
+	border-bottom:white solid 1px;
+	display: flex;
+}
+.notificationdiv .details{
+	color:black;
+	width:85%;
+	height:75px;
+	margin-left:5px;
+	font-size:20px;
+	margin-top:5px;
+	padding-left:10px;
+	color:white;
+}
+.details h4{
+	font-weight: bold;
+}
+.details #name{
+	width:45px;
+	height:36px;
+	font-weight: bold;
+	border-radius: 20px;
+	text-align: center;
+	padding-top: 2px;
+	background-color: white;
+}
+.details #name a{
+	text-decoration: none;
+}
+
+.closetab{
+	width: 10%;
+	height:70px;
+	font-size:30px;
+	text-align:center;
+	padding-top:10px;
+	color:white;
+	margin-left: 20px;
+}
+
+.notificationuser{
+	width: 100%;
+	min-height: 40px;
+	padding:5px;
+	padding-top:5px;
+	padding-bottom:10px;
+	display: flex;
+}
+.notificationuser:hover{
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+	border-radius: 20px;
+}
+.notificationuser .photouser{
+	width:10%;
+	min-height: 40px;
+}
+.notificationuser .photouser img{
+	width:70%;
+	height:50px;
+	border-radius: 50px;
+	margin-left: 10px;
+}
+.notificationuser .userdetailsnotification{
+	width:70%;
+	min-height:40px;
+	color:white;
+	margin-left:5px;
+}
+.namedivuser{
+	display: flex;
+	color:white;
+}
+.namedivuser #notificationpro{
+	font-size: 18px;
+}
+.userdetailsnotification #username{
+	font-weight: bold;
+	font-size: 18px;
+	color:white;
+	padding-right: 10px;
+}
+.userdetailsnotification .spdatetime{
+	display:flex;
+	font-size: 12px;
+	margin-top: 10px;
+}
+.userdetailsnotification #notificationdate{
+	margin-right: 50px;
+}
+#nnf{
+	text-align: center;
+	font-weight:bold;
+	font-size:20px;
+	margin-top: 20px;
+}
+ 

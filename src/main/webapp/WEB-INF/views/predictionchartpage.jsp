@@ -9,6 +9,7 @@
 
 <link rel="stylesheet" href="resources/CSS/predictionchartStyle.css">
 <script type="text/javascript" src='resources/JS/predictionchartvalidation.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -18,8 +19,12 @@
 <div class="chartcontainer">
 
 <div class="chart">
-<h1>Predicted Behavior</h1>
-
+	<div class="heading">
+	<h1>Predicted Behavior</h1>
+	<div class="closetab">
+		<a href="predictionadminpage"><i class="fa-solid fa-xmark"></i></a>
+	</div><!--closetab -->
+	</div>
 <%
 int openessToExperience=Integer.parseInt(request.getAttribute("openessToExperience").toString());
 int conscientiousness=Integer.parseInt(request.getAttribute("conscientiousness").toString());

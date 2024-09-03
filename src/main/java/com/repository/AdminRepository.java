@@ -18,6 +18,7 @@ import org.springframework.stereotype.Repository;
 import com.model.LoginModel;
 import com.model.PostLayoutModel;
 import com.model.RegistrationModel;
+import com.model.ReportProblemModel;
 
 @Repository
 public class AdminRepository {
@@ -327,6 +328,76 @@ public class AdminRepository {
 			return (al.size()>0)? al : null;
 		}catch(Exception e) {
 			System.out.println("error :"+e);
+			return null;
+		}
+	}
+	
+	
+	//fetch reports 
+	public List<ReportProblemModel> getReportsUser(){
+		try {
+			List<ReportProblemModel> list = template.query("select reportid,title,description,date,status,registerid from reportproblemmaster", 
+					new RowMapper<ReportProblemModel>() {
+				@Override
+				public ReportProblemModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+					ReportProblemModel rp = new ReportProblemModel();
+					rp.setReportid(rs.getInt(1));
+					rp.setTitle(rs.getString(2));
+					rp.setDescription(rs.getString(3));
+					rp.setDate(rs.getDate(4));
+					rp.setStatus(rs.getString(5));
+					rp.setRegisterid(rs.getInt(6));
+					return rp;
+				}
+			});
+			if(list!=null) {
+				for(ReportProblemModel rpm :list) {
+					String username = template.queryForObject("select username from registrationmaster where registerid=?", 
+							new Object[] {rpm.getRegisterid()}, new RowMapper<String>() {
+						@Override
+						public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getString(1);
+						}
+					});
+					rpm.setUsername(username);
+				}
+			}
+			return (list.size()>0)?list:null;
+		}catch(Exception e) {
+			System.out.println("report admin error :"+e);
+			return null;
+		}
+	}
+	
+	
+	// solve problem update status
+	public int solveReportProblemStatus(final int reportid) {
+		try {
+			int v = template.update("update reportproblemmaster set status='solve' where reportid=?", new PreparedStatementSetter() {
+				@Override
+				public void setValues(PreparedStatement ps) throws SQLException {
+					ps.setInt(1, reportid);
+				}
+			});
+			return (v>0)?1:0;
+		}catch(Exception e) {
+			System.out.println("report admin :"+e);
+			return 0;
+		}
+	}
+	
+	// check reported problem status solve or not
+	public String checkReportProblem(int reportid) {
+		try {
+			String status = template.queryForObject("select status from reportproblemmaster where reportid=?",new Object[] {reportid}, new RowMapper<String>() {
+				@Override
+				public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return rs.getString(1);
+				}
+			});
+			return status;
+		}catch(Exception e) {
+			System.out.println("report admin :"+e);
 			return null;
 		}
 	}

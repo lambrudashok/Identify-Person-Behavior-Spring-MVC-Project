@@ -26,12 +26,13 @@
 
 .postimg{
 	width: 40%;
-	min-height: 100vh;
+	height: 100vh;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	
 }
 .postimg img{
 	width: 70%;
-	min-height: 60vh;
+	height: 80vh;
 	padding-top:130px;
 	margin-left: 60px;
 }

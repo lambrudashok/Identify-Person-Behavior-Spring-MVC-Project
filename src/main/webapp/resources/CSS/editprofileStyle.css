@@ -10,30 +10,50 @@
 	width: 100%;
 	min-height: 100vh;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	display: flex;
 }
+
+.editmenu{
+	width: 15%;
+	min-height: 100vh;
+	border-right:white solid 1px;
+}
+
 .editsection{
-	width: 50%;
+	width: 80%;
 	min-height: 90vh;
-	padding-top:30px;
+	padding-top:10px;
 	margin: auto;
 	
 }
 
 .divider{
-	width:80%;
+	width:55%;
 	margin:auto;
 	min-height: 430px;
 	padding-top:15px;
 	padding-left:20px;
 	border: white solid 1px;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
 	border-radius: 30px;
 	box-shadow: 5px 10px 20px white;
 }
 
+.heading{
+	display: flex;
+}
+
 .divider h3{
+	width:85%;
 	font-size:25px;
 	color:white;
 	
+}
+.closetab{
+	font-size:30px;
+	text-align:center;
+	color:white;
+	margin-left: 20px;
 }
 .photo{
 	width:95%;
@@ -61,23 +81,23 @@
 	padding-left:10px;
 }
 .image img{
-	width:80%;
+	width:75%;
 	height:60px;
 	border-radius: 30px;
 }
 .image a{
 	width:25px;
 	height:25px;
-	font-size:25px;
+	font-size:20px;
 	text-align:center;
 	font-weight: bold;
-	background-color:black;
+	background-color:white;
 	border-radius:20px;
-	top:35px;
-	right:10px;
+	top:33px;
+	right:12px;
+	border:white solid 1px;
 	position:absolute;
 	text-decoration: none;
-	color:white;
 }
 
 
@@ -134,7 +154,7 @@
 	width:50%;
 	height:40px;
 	margin-top :10px;
-	margin-left:110px;
+	margin-left:125px;
 	margin-bottom:20px;
 	border-radius:20px;
 	color:white;

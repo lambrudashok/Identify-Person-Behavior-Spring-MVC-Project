@@ -307,5 +307,31 @@ public class FollowingRepository {
 	
 	
 	
+	/*fetch following user id only for notification*/
+	public List<Integer> fetchAllFollowingUserIds(final int userID){
+		try {
+			// store all following user id
+			List<Integer> al = template.query("select fm.followingregisterid as 'followingid' from followingmaster fm "
+					+ "inner join userfollowingfollowerjoin uffj on uffj.followingid=fm.followingid "
+					+ "inner join registrationmaster rm on rm.registerid=uffj.registerid "
+					+ "where rm.registerid=?", new PreparedStatementSetter() {
+						@Override
+						public void setValues(PreparedStatement ps) throws SQLException {
+							ps.setInt(1, userID);
+						}
+					}, new RowMapper<Integer>() {
+						@Override
+						public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+							return rs.getInt(1);
+						}
+					});
+			return (al.size()>0) ? al : null;
+		}catch(Exception e) {
+			System.out.println("following repo error :"+e);
+			return null;
+		}
+	}
+	
+	
 	
 }

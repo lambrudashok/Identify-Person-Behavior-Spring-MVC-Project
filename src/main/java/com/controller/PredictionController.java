@@ -44,6 +44,7 @@ public class PredictionController {
    		String name=request.getParameter("n");
 		List <UserInfoModel> list = searchSer.fetchAllUserDetails(name);
 		String str="";
+		str=str+"<div class='info'>";
 		if(list!=null){
 			for(UserInfoModel userInfo:list){
 				str=str+"<a class='userappinfo' id='userappinfo' href='predictionpostpage?id="+userInfo.getRegisterid()+"' >"; 
@@ -61,6 +62,7 @@ public class PredictionController {
 		}else{
 			str=str+"<h4>User Not Found</h4>";
 		}
+		str=str+"</div>";
 		return str;
    	}
    	

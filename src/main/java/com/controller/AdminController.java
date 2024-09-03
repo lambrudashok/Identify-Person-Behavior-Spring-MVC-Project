@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.model.LoginModel;
+import com.model.NotificationModel;
 import com.model.PostLayoutModel;
 import com.model.RegistrationModel;
+import com.model.ReportProblemModel;
 import com.service.AdminService;
+import com.service.UserRegistrationService;
 
 @Controller
 public class AdminController {
@@ -23,6 +26,8 @@ public class AdminController {
 	@Autowired
 	AdminService adminSer;
 	
+	@Autowired
+	UserRegistrationService userSer;
 	
 	@RequestMapping("/adminpage")
 	public String getAdminPage() {
@@ -171,6 +176,45 @@ public class AdminController {
 		List<LoginModel> list =adminSer.viewUserLoginDetails();
 		model.addAttribute("list", list);
 		return "logindetailsadminpage";
+	}
+	
+	
+	
+	// reports admin section
+	@RequestMapping("/reportproblemadminpage")
+	public String getReportsAdminPage(Model model) {
+		List<ReportProblemModel> list = adminSer.getReportsUser();
+		model.addAttribute("list", list);
+		return "reportproblemadminpage";
+	}
+	
+	//pending reported problem solve then
+	@RequestMapping(value="/solvependingreport",method=RequestMethod.POST)
+	@ResponseBody
+	public String solveReportProblemUser(HttpServletRequest request) {
+		int reportid =Integer.parseInt(request.getParameter("reportid"));
+		String title = request.getParameter("title");
+		int registerid = Integer.parseInt(request.getParameter("registerid"));
+		int result=adminSer.solveReportProblemStatus(reportid);  // solve problem
+		
+		//solve problem user notification send
+		NotificationModel nmodel = new NotificationModel(); 
+		nmodel.setNotification("'"+title+"'"+", Your reported issue has been resolved. Thank you for helping us improve!");
+		nmodel.setRegisterid(registerid);
+		boolean b=userSer.isAddNotification(1, nmodel); // send notification user
+		
+		String str="";
+		String status=adminSer.checkReportProblem(reportid);
+		if(status.compareTo("pending")==0){
+			str=str+"<div id='pendingdiv'>";
+			str=str+"<input type='submit' value='pending' name='pending' id='pending' onclick='pendingReportFun("+reportid+",'"+title+"','"+registerid+"')' >";            
+			str=str+"</div>";
+		}else{
+			str=str+"<div id='solvediv'>";
+			str=str+"<button name='solve' id='solve'  >Solve</button>";           
+			str=str+"</div>";	
+		}
+		return str;
 	}
 	
 }

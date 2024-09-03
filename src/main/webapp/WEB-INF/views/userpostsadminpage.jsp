@@ -11,6 +11,10 @@
 <body>
 <div class="postcontainer">
 
+<div class="menustag">
+	<%@include file="adminmenus.jsp" %>
+</div> <!-- menustag -->
+
 <div class="main">
 
 <h2>Posts Details</h2>

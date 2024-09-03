@@ -17,7 +17,6 @@
 	background-repeat: no-repeat;
 } 
 .logincontainer img{
-	
 	width:50%;
 	height:460px;
 	float: left;
@@ -91,5 +90,7 @@ button:hover{
 	color: green;
 	
 }
+
+
 
 

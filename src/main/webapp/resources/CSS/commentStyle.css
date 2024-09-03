@@ -81,6 +81,10 @@
 	margin-bottom:10px;
 	display: flex;
 }
+.commentuser:hover{
+	background-color:#fff0f5;
+	border-radius: 20px;
+}
 .commentuser .photouser{
 	width:15%;
 	min-height: 40px;

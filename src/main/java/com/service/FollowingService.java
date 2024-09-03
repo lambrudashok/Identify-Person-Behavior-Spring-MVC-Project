@@ -44,6 +44,11 @@ public class FollowingService {
 		return followingRepo.checkFollowingStatus(followingid,registerid);
 	}
 	
+	/*fetch following user id only for notification*/
+	public List<Integer> fetchAllFollowingUserIds(final int userID){
+		return followingRepo.fetchAllFollowingUserIds(userID);
+	}
+	
 	
 	
 }

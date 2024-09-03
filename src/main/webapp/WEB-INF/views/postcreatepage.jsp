@@ -18,7 +18,7 @@
 	
 	<div class="postsection">
 		<div class="postimg">
-		<img alt="" id="twitterpic" src="resources/asset/twitter.png">
+		<img alt="" id="twitterpic" src="resources/Post_Images/person.png">
 		</div> <!-- postimg -->
 		
 		<div class="postlayout">
@@ -38,8 +38,6 @@
 			<form name="frm" id="postfrm" action="postsubmit" method="POST" enctype="multipart/form-data" >
 			<h6>Post:</h6>
 			<input type="text" name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" >
-			
-			
 			<h6>Post Image:</h6>
 			<div id="select">
 			<input type="file" name="postimagefile" id="postimagefile"  onchange="changeImg(this)">

@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.model.NotificationModel;
 import com.model.ProfileInformationModel;
 import com.model.RegistrationModel;
+import com.model.ReportProblemModel;
 import com.model.UserInfoModel;
 import com.repository.UserRegistrationRepository;
 
@@ -99,6 +101,26 @@ public class UserRegistrationService {
 	/*delete account user*/
 	public int deleteUserAccount(int registerId) {
 		return regRepo.deleteUserAccount(registerId);
+	}
+	
+	// Notification send user (multiple user)
+	public boolean isAddNotification(List<Integer> list, NotificationModel model) {
+		return regRepo.isAddNotification(list, model);
+	}
+	
+	// Notification send user (single user)
+	public boolean isAddNotification(int sender, NotificationModel model) {
+		return regRepo.isAddNotification(sender, model);
+	}
+	
+	// notifications fetch user
+	public List<NotificationModel> getAllUserNotification(int registerid){
+		return regRepo.getAllUserNotification(registerid);
+	}
+	
+	// when user send report problem
+	public boolean isAddReportProblemUser(ReportProblemModel model) {
+		return regRepo.isAddReportProblemUser(model);
 	}
 	
 }

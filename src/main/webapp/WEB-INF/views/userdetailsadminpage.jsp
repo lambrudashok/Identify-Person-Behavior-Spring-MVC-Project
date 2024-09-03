@@ -13,6 +13,10 @@
 
 <div class="detailscontainer">
 
+<div class="menustag">
+	<%@include file="adminmenus.jsp" %>
+</div> <!-- menustag -->
+
 <div class="main">
 
 <h2>User Details</h2>
