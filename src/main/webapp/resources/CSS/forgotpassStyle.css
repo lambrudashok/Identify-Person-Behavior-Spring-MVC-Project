@@ -31,6 +31,14 @@
 	box-shadow: 5px 10px 20px white;
 }
 
+.divider .closetab{
+	width:15%;
+	font-size:30px;
+	text-align:center;
+	float:right;
+	color:white;
+}
+
 .divider h3{
 	font-size:25px;
 	color:white;
@@ -116,8 +124,6 @@
 	background-color: black;
 }
 
-
-
 .emaildiv{
  	display: none;
 }
@@ -131,6 +137,61 @@
 .forgotdiv{
 	display:none;
 }
+
+
+
+/* ----------------------------------------------------------------------------- */
+
+/* Media Query mobile*/
+
+@media only screen and (max-width: 480px) {
+	
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.changecontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	
+}
+
+.changesection{
+	width: 100%;
+	min-height: 90vh;
+	padding-top:30px;
+	margin: auto;
+	
+}
+
+.divider{
+	width:100%;
+	margin:auto;
+	min-height: 400px;
+	margin-top:40px;
+	position:none;
+	padding-top:15px;
+	padding-left:20px;
+	border: 0;
+	border-radius: 30px;
+	box-shadow: none;
+}
+
+.divider .closetab{
+	width:15%;
+	font-size:20px;
+	text-align:center;
+	float:right;
+	color:white;
+}
+.closetab a{
+	color: aqua;
+}
+	
+}	
 
 
 

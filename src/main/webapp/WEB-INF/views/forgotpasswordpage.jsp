@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
    <script type="text/javascript">
        (function(){
@@ -13,6 +14,7 @@
           });
        })();
     </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="resources/CSS/forgotpassStyle.css">
 <script type="text/javascript" src='resources/JS/forgotpassvalidation.js'></script>
 
@@ -23,7 +25,12 @@
 <div class="changesection">
 	<div class="divider" id="forgotGrid">
 	
+	<div class="closetab">
+		<a href="loginpage"><i class="fa-solid fa-xmark"></i></a>
+	</div><!--closetab -->
+	
 	<div class="usernamediv" id="usernamediv">
+	
 	<h3>Forgot Password</h3>
 	<input type="text" name="username" id="username" placeholder="Enter Username" required><br>
 	<div id="msgusername" class="msg"></div>

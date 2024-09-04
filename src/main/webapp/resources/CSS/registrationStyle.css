@@ -3,6 +3,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
  .registercontainer{
@@ -12,9 +13,9 @@
  }
  
  .adj{
- 	width: 50%;
- 	margin:auto;
+ 	width: 100%;
  	min-height:100vh;
+ 	margin:auto;
  	padding-top: 30px;
  	
  }
@@ -23,7 +24,6 @@
 	min-height: 500px;
 	background-color:white;
 	color:black;
-	padding-right:5px;
 	margin:auto;
 	box-shadow: 5px 20px 50px #000;
 	border-radius: 40px;
@@ -61,10 +61,14 @@ input{
 	padding-left:10px;
 	border-radius: 5px;
 }
+.capdiv{
+	width: 90%;
+	margin: auto;
+	padding-left: 15px;
+}
 .register #recapt{
 	margin-top:10px;
 	margin-bottom:20px;
-	margin-left: 35px;
 }
 button{
 	width: 80%;
@@ -89,7 +93,6 @@ button:hover{
 }
 .next #regtag{
 	 text-decoration: none;
-	 color:green;
 	 font-size: 17px;
 }
 
@@ -114,5 +117,122 @@ button:hover{
 
 .otpverifydiv{
 	display: none;
+}
+
+
+
+
+/* -------------------------------------------------------------- */
+
+/* Media Query mobile*/
+
+@media only screen and (max-width: 480px) {
+
+ .adj{
+ 	padding-top: 70px;
+ }
+ 
+ .register{
+	width: 350px;
+	color:white;
+	background:0;
+	border-radius: 0;
+	box-shadow:none;
+  }
+  
+  .logo{
+	font-size: 2em;
+	margin-bottom:20px;
+	text-align:center;
+	font-weight:bold;
+	margin-left: 20px;
+
+}
+
+.msg{
+	width: 90%;
+	color:red;
+	margin-left: 20px;
+	padding-top: 5px;
+}
+.msgsuccess{
+	width: 90%;
+	color:green;
+	font-size:20px;
+	font-weight:bold;
+	margin-left: 20px;
+}
+
+input{
+	width: 90%;
+	height: 40px;
+	background: #e0dede;
+	border-style:none;
+	margin-left:20px;
+	padding-left:10px;
+	border-radius: 5px;
+}
+  .capdiv{
+	width: 100%;
+	padding-left: 0;
+	margin: auto;
+}
+  .register #recapt{
+	margin-left: 22px;
+	margin-top: 0;
+}
+  
+button{
+	width: 90%;
+	height: 40px;
+	color: white;
+	background: deepskyblue;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-left:20px;
+	border-radius: 5px;
+}
+
+.next #regtag{
+	 color:aqua;
+	 font-size: 17px;
+	 margin-left:20px;
+}
+
+#otpconfirmGrid{
+	width: 100%;
+	margin-top:5px;
+	margin-left:0;
+	display: flex;
+}
+
+#otpinput{
+	width: 50%;
+	margin-left: 0;
+}
+
+#otpverifybtn{
+	width: 30%;
+	margin-left: 3.2em;
+}
+
+.otpverifydiv h4{
+	width: 90%;
+	font-size:14px;
+	color:red;
+	margin-left:0;
+}
+
+.otpverifydiv{
+	width:90%;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left:20px;
+	border :black solid 1px;
+	display: none;
+}
+
+
 }
 

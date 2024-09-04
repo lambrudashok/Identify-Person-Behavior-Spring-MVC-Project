@@ -27,7 +27,7 @@
 	<div class="heading">
 	<h3>Edit Profile</h3>
 	<div class="closetab">
-			<a href="profilepage"><i class="fa-solid fa-xmark"></i></a>
+			<a href="loginpage"><i class="fa-solid fa-xmark"></i></a>
 	</div><!--closetab -->
 	</div>
 	

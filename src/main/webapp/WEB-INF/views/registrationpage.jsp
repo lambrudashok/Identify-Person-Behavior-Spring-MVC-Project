@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
     (function(){
@@ -16,6 +15,7 @@
        });
     })();
  </script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="resources/CSS/registrationStyle.css">
 <script type="text/javascript" src='resources/JS/registrationvalidation.js'></script>
 </head>
@@ -51,10 +51,14 @@
 			</div><!-- otpverifydiv -->
 			
 			<div class="msgsuccess" >${msg}</div><br>
+			
+			<div class="capdiv">
 			<div class="g-recaptcha" id="recapt" data-sitekey="6Lca4SQqAAAAAMR1uYXhG2V1o-yIw-dP3X3rZkyF"></div>
+			</div>
+			
 			<button type="submit" name="s" value="register" >Register</button><br>
 			<div class="next">
-			<a id="regtag" href="loginpage">already register?</a>
+			<a id="regtag" href="loginpage">Login Page?</a>
 			</div>
 		</form>
 	</div>  <!-- register -->

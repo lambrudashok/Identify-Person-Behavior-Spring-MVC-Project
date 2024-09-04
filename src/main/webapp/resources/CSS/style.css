@@ -3,6 +3,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 	
 .logincontainer{
@@ -19,6 +20,7 @@
 .logincontainer img{
 	width:50%;
 	height:460px;
+	margin-right:50px;
 	float: left;
 }
 
@@ -27,7 +29,6 @@
 	height: 500px;
 	float:right;
 	border-radius: 10px;
-	margin-left:50px;
 	box-shadow: 5px 20px 50px #000;
 	height: 460px;
 	border-radius: 30px;
@@ -93,4 +94,88 @@ button:hover{
 
 
 
+/*  --------------------------------------------------------------  */
 
+  /* Media Query mobile  */
+
+@media only screen and (max-width: 480px) and (min-width: 0px) {
+	
+.logincontainer{
+	margin:auto;
+	width:100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.logincontainer img{
+	display: none;
+}
+
+
+.main{
+ 	width: 350px;
+	height: 460px;
+	box-shadow: none;
+	border-radius: 0;	
+}
+
+
+h2{
+	width:95%;
+	height:40px;
+	font-size: 2em;
+	margin-left:10px;
+	margin-bottom:30px;
+	font-weight:bold;
+	text-align:center;
+	color:white;
+}
+
+input{
+	width: 95%;
+	height: 40px;
+	background: #e0dede;
+	margin-left:10px;
+	border-style:none;
+	padding-left:10px;
+	border-radius: 5px;
+}
+button{
+	width: 95%;
+	height: 40px;
+	color: white;
+	background: deepskyblue;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left:10px;
+	border-radius: 5px;
+}
+.msg{
+	width: 95%;
+	color:red;
+	padding:5px;
+	margin-left: 10px;
+}
+
+button:hover{
+	background: green;
+}
+
+.next {
+	text-align: center;
+	margin-top: 20px;
+}
+.next #fg{
+	text-decoration: none;
+	font-size: 18px;
+	color: aqua;
+}
+.next #ank{
+	text-decoration: none;
+	font-size: 18px;
+	color: aqua;
+	
+}
+
+}
