@@ -78,10 +78,10 @@ public class EditProfilePageController {
 	@ResponseBody
 	public String setUpdateProfile(HttpServletRequest request , Model model) {
 		
-		String name=(String)request.getParameter("name");
-		String username=(String)request.getParameter("username");
+		String name=(String)request.getParameter("name").trim();
+		String username=(String)request.getParameter("username").trim();
 		String email=(String)request.getParameter("email");
-		String bio=(String)request.getParameter("bio");
+		String bio=(String)request.getParameter("bio").trim();
 		
 		HttpSession session = request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());

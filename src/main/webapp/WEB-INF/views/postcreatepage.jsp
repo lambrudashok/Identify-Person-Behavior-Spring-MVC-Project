@@ -38,7 +38,7 @@
 		
 			<form name="frm" id="postfrm" action="postsubmit" method="POST" enctype="multipart/form-data" >
 			<h6>Post:</h6>
-			<input type="text" name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" >
+			<textarea name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" ></textarea>
 			<h6>Post Image:</h6>
 			<div id="select">
 			<input type="file" name="postimagefile" id="postimagefile"  onchange="changeImg(this)">

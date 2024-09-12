@@ -196,3 +196,25 @@
 	button.style.fontWeight="none";
 	button.style.border="none";
 	}
+	
+	
+	
+	
+	
+//mobile search follow option 
+function mobilesearchtabfun(){
+	document.getElementById("MainMiddleContent").style.display="none";
+	
+	document.getElementById("rightSearchDiv").style.display="block";
+	
+		
+}	
+
+function showmiddlecontent(){
+	document.getElementById("MainMiddleContent").style.display="block";
+	
+	document.getElementById("rightSearchDiv").style.display="none";
+}
+
+
+

@@ -12,6 +12,66 @@
 }
 
 .main{
+	width: 100%;
+	height: 90vh;
+	margin: auto;
+}
+
+.errorphoto{
+	width: 90%;
+	margin:auto;
+	height: 50vh;
+}
+.errorphoto img{
+	width: 100%;
+	height: 45vh;
+}
+
+.content{
+	width: 90%;
+	height: 180px;
+	text-align:center;
+	margin: auto;
+}
+
+.content #heading1{
+	margin-top: 10px;
+	font-size: 18px;
+}
+.content #heading2{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+button{
+	width:100px;
+	height: 40px;
+	border-radius:20px;
+	border-color:silver;
+	background-color: #7fdbd8;
+	font-size:15px;
+}
+
+#btn:hover {
+	background-color: aqua;
+}
+
+
+
+
+ /* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+	
+	
+.errorpageContainer{
+	width: 100%;
+	min-height: 100vh;
+}
+
+.main{
 	width: 60%;
 	height: 90vh;
 	margin: auto;
@@ -54,9 +114,13 @@ button{
 
 #btn:hover {
 	background-color: aqua;
-}
-
-
-
-
-
+}	
+	
+	
+	
+	
+}	
+	
+	
+	
+	

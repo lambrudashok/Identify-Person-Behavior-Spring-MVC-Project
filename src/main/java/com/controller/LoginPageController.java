@@ -46,7 +46,7 @@ public class LoginPageController {
 	
 	@RequestMapping(value="/validation",method=RequestMethod.POST)
 	public String checkLogin(HttpServletRequest request, Model mod) {
-		String username=request.getParameter("username");
+		String username=request.getParameter("username").trim();
 		String password=request.getParameter("password");
 		LoginModel model = new LoginModel();
 		model.setUsername(username);

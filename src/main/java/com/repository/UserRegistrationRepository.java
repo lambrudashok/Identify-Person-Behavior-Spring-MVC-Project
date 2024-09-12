@@ -324,7 +324,7 @@ public class UserRegistrationRepository {
 				return (bioid>0)?bioid:0;
 			}catch(Exception e) {
 				System.out.println("bio repo error :"+e);
-				return -1;
+				return 0;
 			}
 		}
 		

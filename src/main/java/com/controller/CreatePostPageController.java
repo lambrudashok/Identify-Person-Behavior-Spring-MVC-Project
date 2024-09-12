@@ -38,6 +38,7 @@ public class CreatePostPageController{
 	}
 	
 	
+	
 	@RequestMapping(path="/postsubmit", method=RequestMethod.POST)
 	public String submitPost(HttpServletRequest request, @RequestParam("postimagefile") CommonsMultipartFile file) {
 		try {

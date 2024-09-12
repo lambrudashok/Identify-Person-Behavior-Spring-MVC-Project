@@ -1,7 +1,14 @@
 function checkPassword() {
     var pass = document.getElementById("newpass").value;
     var retype = document.getElementById("retypepass").value;
-
+	document.getElementById("msg").innerHTML="";
+	
+	if (pass.trim()==="") {
+		let msg = document.getElementById("msg");
+        msg.innerHTML="Password not empty.";
+        return false; 
+    }
+	
     if (!password(pass)) {
 		let msg = document.getElementById("msg");
         msg.innerHTML="Password must be at least 6 characters long and contain a digit.";

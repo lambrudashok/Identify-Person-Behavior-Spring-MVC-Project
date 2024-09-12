@@ -32,7 +32,7 @@
 	padding-top: 20px;
 }
 .columnname{
-	width:90%;
+	width:75%;
 	height: 50px;
 	margin:auto;
 	color:white;
@@ -47,6 +47,7 @@
 }
 
 .columnname #columnid{
+	display:none;
 	width:120px;
 	height: 49px;
 	padding-top:15px;
@@ -78,7 +79,7 @@
 
 
 .details{
-	width:90%;
+	width:75%;
 	height: 120px;
 	margin:auto;
 	color:white;
@@ -90,6 +91,7 @@
 }
 
 .details #userid{
+	display:none;
 	width:120px;
 	height: 120px;
 	text-align: center;

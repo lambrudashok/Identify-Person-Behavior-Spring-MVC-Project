@@ -15,7 +15,7 @@ function loginfun() {
 		document.getElementById("passwordmsg").innerHTML="Password is required";
 		return false;
 	}
-    
+
     if(username.trim() ==''){
 		document.getElementById("usernamemsg").innerHTML="Username is required";
 		return false;
@@ -23,12 +23,17 @@ function loginfun() {
     if (password.trim() =='') {
 		document.getElementById("passwordmsg").innerHTML="Password is required";
         return false;
+    }
+    
+    const usernam = username.trim();
+    if (/\s/.test(usernam)) {
+        document.getElementById("usernamemsg").innerHTML= "Username should not contain space.";
+        return false; 
     }else
 		return true;
 
     
 }
-
 
 
 

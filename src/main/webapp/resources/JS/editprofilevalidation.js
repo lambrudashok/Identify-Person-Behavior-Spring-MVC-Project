@@ -10,10 +10,18 @@ function checkField(){
 		msgname.innerHTML="Invalid name. Please use alphabets only";
         return false;
     }
+    
     if (!validateEmail(email)  && !email.trim()=='') {
 		let msgemail = document.getElementById("msgemail");
 		msgemail.innerHTML="Invalid email format.";
         return false;
+    }
+    
+    const usernam = username.trim();
+    if (/\s/.test(usernam)) {
+		let msgusername = document.getElementById("msgusername");
+		msgusername.innerHTML="Username should not contain space.";
+        return false; 
     }
     
 	let xhttp = new XMLHttpRequest();

@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@charset "UTF-8";
-
 *{
 	margin: 0;
 	padding: 0;
@@ -11,45 +9,155 @@
 .followercontainer{
 	width: 100%;
 	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	
 }
 .main{
 	width:100%;
 	min-height: 100vh;
-	display: flex;
+	margin: auto;
 }
-
-.main .leftmenu{
-	width:15%;
-	min-height: 100vh;
-}
-
 
 .followersection{
-	width:85%;
-	height: 100vh;
+	width:100%;
+	min-height: 100vh;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	overflow: auto;
-	border-left: #BDBDBD solid 1px;
+	color: white;
+	font-size:20px;
+	padding-top: 20px;
 	
 }
 
-
+.closetab{
+	width:30px;
+	height:30px;
+	font-size:25px;
+	text-align:center;
+	float:right;
+	color:white;
+	margin-top:10px;
+	margin-right:5%;
+}
+.closetab i{
+	color: aqua;
+}
 
 .followersection h4{
+	width:100%;
 	margin-top: 10px;
-	margin-left:450px;
+	padding-left:5%;
+	text-align: center;
 }
 
 .userfollower{
 	margin:auto;
-	width: 70%;
+	width: 100%;
 	min-height: 80px;
 	display: flex;
 	border-top: #BDBDBD solid 1px;
 	margin-top: 10px;
 	border-radius: 20px;
 }
+
+.userfollower .photo{
+	width:20%;
+	padding:5px;
+	min-height: 50px;
+}
+.userfollower .photo img{
+	width:100%;
+	height:60px;
+	border-radius: 40px;
+	
+}
+.userfollower .userdetails{
+	width:80%;
+	height:60px;
+	margin-left: 10px;
+	margin-top:10px;
+	display:flex;
+}
+.userdetails #namediv{
+	width:60%;
+	height:80px;
+}
+.userdetails #btndiv{
+	width:40%;
+	height:80px;
+}
+.userdetails #btndiv button{
+	width:100px;
+	height:35px;
+	background-color:#BDBDBD;
+	color:white;
+	border-radius: 20px;
+}
+
+
+
+
+
+ 
+/* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+
+
+.followercontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	
+}
+.main{
+	width:100%;
+	min-height: 100vh;
+	margin: auto;
+}
+
+.followersection{
+	width:70%;
+	min-height: 100vh;
+	font-size:25px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	margin: auto;
+	
+	
+}
+
+.closetab{
+	width:30px;
+	height:30px;
+	font-size:25px;
+	text-align:center;
+	float:right;
+	color:white;
+	margin-top:10px;
+	margin-right:15%;
+}
+.closetab i{
+	color: aqua;
+}
+
+.followersection h4{
+	width:100%;
+	margin-top: 10px;
+	padding-left:15%;
+	text-align: center;
+}
+
+.userfollower{
+	margin:auto;
+	width: 85%;
+	min-height: 80px;
+	display: flex;
+	border-top: #BDBDBD solid 1px;
+	margin-top: 10px;
+	border-radius: 20px;
+}
+
 
 .userfollower .photo{
 	width:20%;
@@ -67,8 +175,25 @@
 	height:80px;
 	margin-left: 10px;
 	margin-top:10px;
+	display:flex;
 }
 .userdetails #namediv{
 	width:50%;
 	height:80px;
 }
+.userdetails #btndiv{
+	width:50%;
+	height:80px;
+}
+.userdetails #btndiv button{
+	width:100px;
+	height:35px;
+	background-color:#BDBDBD;
+	color:white;
+	border-radius: 20px;
+}
+
+
+	
+}
+

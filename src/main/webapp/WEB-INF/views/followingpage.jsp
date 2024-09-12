@@ -5,7 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="resources/CSS/followingStyle.css">
 <script type="text/javascript" src="resources/JS/followingvalidation.js"></script>
 </head>
@@ -13,12 +15,11 @@
 
 <div class="followingcontainer">
 	<div class="main">
-		<div class="leftmenu">
-			<%@ include file="menus.jsp" %>
-		</div> <!-- leftmenu -->
-		
 		<div class="followingsection">
 			
+			<div class="closetab">
+				<a href="profilepage"><i class="fa-solid fa-xmark"></i></a>
+			</div><!--closetab -->
 			<%
 			
 			List <UserInfoModel> list =(List<UserInfoModel>) request.getAttribute("list");

@@ -5,9 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/CSS/profilesStyle.css">
 <script type="text/javascript" src='resources/JS/commentpostvalidation.js'></script> 
 </head>
@@ -34,10 +33,15 @@
 			
 				<div class="profileUsername"><%=prof.getUsername() %></div>
 				<div class="pff">
-				<a href="profilepage"><%=prof.getPostCount()%> Posts</a>
-				
-				<a href="followingpage"><%=prof.getFollowingCount()%> Following</a>
-				<a href="followerpage"><%=prof.getFollowerCount()%> Followers</a>
+				<div id="padj">
+				<a href="profilepage"><%=prof.getPostCount()%><br> Posts</a>
+				</div>
+				<div id="padj">
+				<a href="followingpage"><%=prof.getFollowingCount()%> <br>Following</a>
+				</div>
+				<div id="padj">
+				<a href="followerpage"><%=prof.getFollowerCount()%> <br>Followers</a>
+				</div>
 				
 				</div>
 				
@@ -81,6 +85,7 @@
 			                    
 			                    <div class="userpost">
 			                    	<div id="userP">
+			                    	
 			                   		 <h4><%=posts.getUsername() %></h4> 
 			                   		 <a id="deletepost" href="deletepost?postid=<%=posts.getPostid()%>" ><i class="fa-solid fa-trash-can"></i></a>
 			                  		</div>

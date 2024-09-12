@@ -43,45 +43,47 @@
 }
 
 .columnname #columnid{
+	display:none;
 	width:100px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 .columnname #columnusername{
-	width:150px;
+	width:200px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 .columnname #columndate{
-	width:100px;
+	width:150px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 
 .columnname #columtitle{
-	width:250px;
+	width:270px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 .columnname #columdescription{
-	width:320px;
+	width:350px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 
 .columnname #columuserid{
+	display:none;
 	width:100px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 .columnname #columstatus{
-	width:115px;
+	width:155px;
 	height: 49px;
 	padding-top:15px;
 }
@@ -107,6 +109,7 @@
 }
 
 .details #userid{
+	display:none;
 	width:100px;
 	min-height: 100px;
 	text-align: center;
@@ -115,7 +118,7 @@
 }
 
 .details #username{
-	width:150px;
+	width:200px;
 	min-height: 100px;
 	text-align: center;
 	padding-top:30px;
@@ -125,7 +128,7 @@
 }
 
 .details #date{
-	width:100px;
+	width:150px;
 	min-height: 100px;
 	text-align: center;
 	padding-top:30px;
@@ -134,21 +137,26 @@
 	border-right:white solid 1px;
 }
 .details #title{
-	width:250px;
+	width:270px;
 	min-height: 100px;
 	text-align:center;
 	padding-top:30px;
+	padding-right:10px;
+	padding-left:10px;
 	border-right:white solid 1px;
 }
 
 .details #description{
-	width:320px;
+	width:350px;
 	min-height: 100px;
 	text-align:center;
 	padding-top:30px;
+	padding-right:10px;
+	padding-left:10px;
 	border-right:white solid 1px;
 }
 .details #reportid{
+	display:none;
 	width:100px;
 	min-height: 100px;
 	text-align:center;
@@ -156,9 +164,10 @@
 	border-right:white solid 1px;
 }
 .details #status{
-	width:115px;
+	width:155px;
 	min-height: 100px;
 	text-align:center;
+	margin:auto;
 	padding-top:30px;
 }
 
@@ -166,6 +175,7 @@
 	width:110px;
 	height: 100px;
 	text-align:center;
+	margin-left:25px;
 	padding-top:30px;
 }
 .details #pending{
@@ -185,6 +195,7 @@
 .details #solvediv{
 	width:110px;
 	height: 100px;
+	margin-left:25px;
 	text-align:center;
 	padding-top:30px;
 }

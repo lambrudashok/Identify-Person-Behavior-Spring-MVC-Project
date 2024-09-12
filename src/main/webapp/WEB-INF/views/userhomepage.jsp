@@ -5,13 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/CSS/userHomeStyle.css">
 <script type="text/javascript" src="resources/JS/homevalidation.js"></script>
 </head>
@@ -21,22 +16,35 @@
 <div class="main">
 
 	<div class="leftMenuDiv">
-	<%@ include file="menus.jsp" %>
-		
+	<%@ include file="menus.jsp" %> 
 	</div><!-- leftMenuDiv -->
 	
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->	
 	<div class="middleSlideDiv">
-	   <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary shadow-sm sticky-top" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+
+	   <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-none shadow-sm sticky-top mobilepill" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-black); --bs-nav-pills-link-active-bg: var(--bs-white);">
+  	   <li class="nav-item" role="presentation">
+       <button class="nav-link active rounded-5" id="foryou-tab" data-bs-toggle="tab" onclick="showmiddlecontent(this)" data-bs-target="#foryou-content" type="button" role="tab" aria-controls="foryou-content" aria-selected="true">For You</button>
+       </li>
+       <li class="nav-item" role="presentation">
+       <button class="nav-link rounded-5" id="following-tab" data-bs-toggle="tab"  onclick="showmiddlecontent(this)" data-bs-target="#following-content" type="button" role="tab" aria-controls="following-content" aria-selected="false">Following</button>
+       </li>
+       <li class="nav-item" id="mobilepillfollowsearch" role="presentation">
+       <button class="nav-link rounded-5" id="searching-tab" data-bs-toggle="tab" onclick="mobilesearchtabfun(this)" type="button" >Search</button>
+       </li>
+       </ul>
+       
+		
+	   <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-none shadow-sm sticky-top mobilepill" id="pillNv" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-black); --bs-nav-pills-link-active-bg: var(--bs-white);">
   	   <li class="nav-item" role="presentation">
        <button class="nav-link active rounded-5" id="foryou-tab" data-bs-toggle="tab" data-bs-target="#foryou-content" type="button" role="tab" aria-controls="foryou-content" aria-selected="true">For You</button>
        </li>
        <li class="nav-item" role="presentation">
        <button class="nav-link rounded-5" id="following-tab" data-bs-toggle="tab" data-bs-target="#following-content" type="button" role="tab" aria-controls="following-content" aria-selected="false">Following</button>
        </li>
-       </ul> 
+       </ul>
 
-       <div class="tab-content mt-3" id="MainMiddleContent">
+       <div class="tab-content" id="MainMiddleContent">
        
        		<!-- for you Content -->
        		<div class="tab-pane fade show active" id="foryou-content" role="tabpanel" aria-labelledby="foryou-tab">
@@ -188,9 +196,9 @@
 	
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->	
 	
-	<div class="rightSearchDiv">
+	<div class="rightSearchDiv" id="rightSearchDiv">
 	
-	<div class="searching">
+	<div class="searching" >
 	
 	   <div class="searchbar">
 	   	<input type="search" id="searchuser" value="" placeholder="Search" onkeyup="searchUsingAjaxUser(this.value)">
@@ -259,6 +267,5 @@
 	</div> <!-- rightSearchDiv -->
 	
 </div> <!-- main -->
-
 </body>
 </html>

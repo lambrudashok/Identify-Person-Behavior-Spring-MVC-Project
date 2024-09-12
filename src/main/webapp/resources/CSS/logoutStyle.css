@@ -9,6 +9,115 @@
 .logoutcontainer{
 	width: 100%;
 	min-height: 100vh;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+}
+
+.main{
+	width: 100%;
+	min-height: 100vh;
+	margin:auto;
+	padding-top: 100px;
+}
+
+.logoutdiv{
+	width: 100%;
+	min-height: 100vh;
+	padding-left:15px;
+	margin: auto;
+}
+
+#profile{
+	width: 95%;
+	height: 90px;
+	border:white solid 1px;
+	border-radius:30px;
+	background-color:#d5d8e0;
+	display:flex;
+}
+
+.photo{
+	width:30%;
+	height: 80px;
+}
+
+.photo img{
+	width: 80%;
+	height: 75px;
+	margin-left:5px;
+	border:black solid 1px;
+	margin-top:5px;
+	border-radius: 50px;
+}
+.userdetails{
+	width: 70%;
+	height: 90px;
+	color:black;
+	padding-left:10px;
+	padding-top: 10px;
+}
+.userdetails #name{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+.userdetails #username{
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+#requestlogout{
+	width: 95%;
+	height: 200px;
+	border:white solid 1px;
+	margin-top:20px;
+	border-radius:10px;
+	background-color:#d5d8e0;
+}
+#requestlogout h2{
+	font-size:17px;
+	text-align:center;
+	margin-top: 20px;
+}
+.btndiv{
+	width:100%;
+	height:50px;
+	padding-left:17%;
+	margin-top: 20px;
+	display:flex;
+}
+.btndiv #okbtn{
+	width:80px;
+	height: 40px;
+	border-radius:20px;
+	border-color:silver;
+	background-color: #7fdbd8;
+	font-size:20px;
+	font-weight: bold;
+}
+
+.btndiv #cancelbtn{
+	width:80px;
+	height: 40px;
+	border-radius:20px;
+	border-color:silver;
+	background-color: #7fdbd8;
+	margin-left:15%;
+	font-size:20px;
+	font-weight: bold;
+}
+
+
+
+
+/* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+	
+.logoutcontainer{
+	width: 100%;
+	min-height: 100vh;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
 
@@ -20,20 +129,21 @@
 }
 
 .logoutdiv{
-	width: 90%;
+	width: 80%;
 	min-height: 70vh;
 	border:white solid 1px;
+	padding-top:30px;
 	border-radius:20px;
 	box-shadow:2px 5px 10px white;
 	margin: auto;
 }
 
 #profile{
-	width: 94%;
+	width: 95%;
 	height: 90px;
 	border:white solid 1px;
-	margin:20px;
 	border-radius:30px;
+	margin-left:10px;
 	background-color:#d5d8e0;
 	display:flex;
 }
@@ -53,7 +163,6 @@
 	width: 70%;
 	height: 90px;
 	color:black;
-	margin-top:5px;
 	padding-left:10px;
 }
 .userdetails #name{
@@ -67,21 +176,22 @@
 }
 
 #requestlogout{
-	width: 94%;
-	height: 230px;
+	width: 95%;
+	height: 200px;
 	border:white solid 1px;
-	margin:20px;
+	margin-left:10px;
 	border-radius:10px;
 	background-color:#d5d8e0;
 }
 #requestlogout h2{
 	text-align:center;
 	margin-top: 20px;
+	font-size: 25px;
 }
 .btndiv{
-	width:50%;
+	width:80%;
 	height:50px;
-	margin-left:30%;
+	padding-left:27%;
 	margin-top: 20px;
 	display:flex;
 }
@@ -89,11 +199,10 @@
 	width:80px;
 	height: 40px;
 	border-radius:20px;
-	margin-left:10px;
 	border-color:silver;
 	background-color: #7fdbd8;
-	font-size:15px;
-	font-weight: bold;
+	font-size:20px;
+	font-weight: 400;
 }
 
 .btndiv #cancelbtn{
@@ -103,11 +212,11 @@
 	border-color:silver;
 	background-color: #7fdbd8;
 	margin-left:30%;
-	font-size:15px;
-	font-weight: bold;
+	font-size:20px;
+	font-weight: 400;
 }
 
-
-
+	
+}	
 
 

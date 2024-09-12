@@ -11,10 +11,119 @@
 	width: 100%;
 	min-height: 100vh;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.reportmenu{
+	display: none;
+}
+
+.reportmain{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.reportmain .reportbox{
+	width: 100%;
+	min-height: 100vh;
+	margin:auto;
+	color:white;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+}
+
+.reportdiv{
+	width: 100%;
+	padding:5px;
+	min-height: 50px;
+	display: flex;
+}
+
+.reportdiv h4{
+	font-weight: bold;
+	width:85%;
+	font-size:25px;
+	padding-left:10px;
+	padding-top:20px;
+	color:white;
+}
+
+.closetab{
+	font-size:30px;
+	text-align:center;
+	color:white;
+	padding-top:10px;
+	margin-left: 10px;
+}
+.closetab i{
+	color: aqua;
+}
+.reportbox .desc{
+	width:100%;
+	padding-left:15px;
+	color:white;
+}
+
+.reportbox h6{
+	font-size: 18px;
+	padding-top: 20px;
+}
+
+#title{
+	width:95%;
+	height: 45px;
+	border: black solid 2px;
+	padding-left:10px;
+	font-size:17px;
+	border-radius: 10px;
+}
+
+#description {
+    width: 95%;
+    height: 200px;
+    border: black solid 2px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-size: 17px;
+    border-radius: 10px;
+    resize: vertical;
+    overflow: auto; 
+}
+.reportbox #reportbtn{
+	width:30%;
+	height:40px;
+	border-radius:15px;
+	color:white;
+	margin-top:20px;
+	background-color: deepskyblue;
+}
+#msg{
+	width:90%;
+	margin-top:10px;
+	padding-left:10px;
+	font-size: 20px;
+	color:green;
+	font-weight: bold;
+}
+ 
+ 
+ 
+ 
+/* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+ 
+ 
+ .reportcontainer{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	display: flex;
 }
 
 .reportmenu{
+	display:block;
 	width: 15%;
 	min-height: 100vh;
 }
@@ -84,7 +193,7 @@
 
 #description {
     width: 95%;
-    height: 120px;
+    height: 150px;
     border: black solid 2px;
     padding-left: 10px;
     padding-top:10px;
@@ -99,6 +208,7 @@
 	border-radius:15px;
 	color:white;
 	margin-top:20px;
+	margin-bottom:20px;
 	background-color: deepskyblue;
 }
 #msg{
@@ -109,4 +219,7 @@
 	color:green;
 	font-weight: bold;
 }
+ 
+ 
+ }
  

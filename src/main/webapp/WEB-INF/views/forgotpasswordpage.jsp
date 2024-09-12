@@ -74,8 +74,8 @@
 	
 	<div class="forgotdiv" id="forgotdiv">
 	<h3>Forgot Password</h3>
-	<input type="text" name="newpass" id="newpass" placeholder="New Password" required><br>
-	<input type="text" name="retypepass" id="retypepass" placeholder="Retype New Password" required><br>
+	<input type="password" name="newpass" id="newpass" placeholder="New Password" required><br>
+	<input type="password" name="retypepass" id="retypepass" placeholder="Retype New Password" required><br>
 	<div id="msg" class="msg"></div>
 	<button type="submit" name="forgot" id="forgot" onclick="checkPassword()" >Forgot Password</button>
 	</div><!--  forgotdiv -->

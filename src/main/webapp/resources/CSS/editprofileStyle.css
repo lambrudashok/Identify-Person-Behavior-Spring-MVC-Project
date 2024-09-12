@@ -9,18 +9,12 @@
 .editcontainer{
 	width: 100%;
 	min-height: 100vh;
+	padding-top:20px;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	display: flex;
-}
-
-.editmenu{
-	width: 15%;
-	min-height: 100vh;
-	border-right:white solid 1px;
 }
 
 .editsection{
-	width: 80%;
+	width: 100%;
 	min-height: 90vh;
 	padding-top:10px;
 	margin: auto;
@@ -28,7 +22,170 @@
 }
 
 .divider{
-	width:55%;
+	width:100%;
+	margin:auto;
+	min-height: 430px;
+	padding-top:15px;
+	padding-left:20px;
+}
+
+.heading{
+	display: flex;
+}
+
+.divider h3{
+	width:85%;
+	font-size:25px;
+	color:white;
+	
+}
+.closetab{
+	font-size:30px;
+	text-align:center;
+	color:white;
+	margin-left: 10px;
+}
+.closetab a{
+	color:aqua;
+}
+.photo{
+	width:95%;
+	height: 80px;
+	display:flex;
+	margin-top:10px;
+	padding:5px;
+	border: white solid 1px;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+.photo #changebtn{
+	width:150px;
+	height:40px;
+	margin-top:15px;
+	border-radius:20px;
+	color:white;
+	background-color: deepskyblue;
+}
+.image{
+	width:25%;
+	height: 85px;
+	position:relative;
+}
+.image img{
+	width:60px;
+	height:60px;
+	border-radius: 30px;
+}
+.image a{
+	width:25px;
+	height:25px;
+	font-size:20px;
+	text-align:center;
+	font-weight: bold;
+	background-color:white;
+	border-radius:20px;
+	top:33px;
+	right:5px;
+	border:white solid 1px;
+	position:absolute;
+	text-decoration: none;
+}
+
+
+.userdetail{
+	width: 35%;
+	height: 60px;
+	padding-left: 5px;
+}
+.userdetail h4{
+	color:white;
+	overflow:hidden;
+	font-size: 22px;
+}
+.userdetail #name{
+	font-size: 17px;
+}
+
+.divider .pro{
+	width:45%;
+	height: 60px;
+	border: none;
+	color:white;
+	margin-top: 15px;
+}
+
+
+
+
+.divider input{
+	width:95%;
+	height: 45px;
+	border: black solid 2px;
+	padding-left:10px;
+	font-size:17px;
+	margin-top:20px;
+	border-radius: 10px;
+}
+
+.msg{
+	width:90%;
+	margin-top:5px;
+	padding-left:10px;
+	font-size: 20px;
+	color:red;
+}
+#msg{
+	width:90%;
+	margin-top:5px;
+	padding-left:10px;
+	font-size: 20px;
+	color:green;
+	font-weight: bold;
+}
+.divider #editbtn{
+	width:95%;
+	height:45px;
+	margin-top :30px;
+	border-radius:20px;
+	font-weight:bold;
+	color:white;
+	background-color: deepskyblue;
+}
+
+
+
+/* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+	
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.editcontainer{
+	width: 100%;
+	min-height: 100vh;
+	padding-top:0;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	display: flex;
+}
+
+
+.editsection{
+	width: 100%;
+	min-height: 90vh;
+	padding-top:0;
+	margin: auto;
+	
+}
+
+.divider{
+	width:40%;
 	margin:auto;
 	min-height: 430px;
 	padding-top:15px;
@@ -154,15 +311,15 @@
 	width:50%;
 	height:40px;
 	margin-top :10px;
-	margin-left:125px;
+	margin-left:110px;
 	margin-bottom:20px;
 	border-radius:20px;
 	color:white;
 	background-color: deepskyblue;
 }
-
-
-
+	
+	
+}	
 
 
 

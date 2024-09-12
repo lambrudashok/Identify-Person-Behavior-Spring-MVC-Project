@@ -16,6 +16,7 @@
 	min-height: 100vh;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 } 
 .logincontainer img{
 	width:50%;
@@ -32,6 +33,7 @@
 	box-shadow: 5px 20px 50px #000;
 	height: 460px;
 	border-radius: 30px;
+	background-color: white;
 	}
 	
 
@@ -117,6 +119,7 @@ button:hover{
 	height: 460px;
 	box-shadow: none;
 	border-radius: 0;	
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); 
 }
 
 

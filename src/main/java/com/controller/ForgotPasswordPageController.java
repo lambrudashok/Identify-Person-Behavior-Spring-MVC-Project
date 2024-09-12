@@ -29,7 +29,7 @@ public class ForgotPasswordPageController {
 	@RequestMapping(value="/forgotcheckusername", method=RequestMethod.POST)
 	@ResponseBody
 	public String checkUsernameForgotPass(HttpServletRequest request) {
-		String username=(String)request.getParameter("username");
+		String username=(String)request.getParameter("username").trim();
 		//check username valid or not
 		int result=changeSer.checkUsername(username);
 		String str="";
@@ -116,8 +116,11 @@ public class ForgotPasswordPageController {
 		String pass=(String)request.getParameter("pass");
 		int result = changeSer.changeUserPassword(pass, registerid);
 		String str="";
+		str=str+"<div class='closetab'>";
+		str=str+"<a href='loginpage'><i class='fa-solid fa-xmark'></i></a>";
+		str=str+"</div>"; //closetab
+		str=str+"<div class='usernamediv' id='usernamediv'>";
 		str=str+"<h3>Forgot Password</h3>";
-		str=str+"<input type='text' name='username' id='username' placeholder='Enter Username' required><br>";
 		str=str+"<input type='text' name='newpass' id='newpass' placeholder='New Password' required><br>";
 		str=str+"<input type='text' name='retypepass' id='retypepass' placeholder='Retype New Password' required><br>";
 		str=str+"<div id='msg' class='msg'style='color:green; font-weight:20px;' >Password forgot successfully</div>";

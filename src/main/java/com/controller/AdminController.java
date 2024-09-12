@@ -21,7 +21,6 @@ import com.service.UserRegistrationService;
 
 @Controller
 public class AdminController {
-
 	
 	@Autowired
 	AdminService adminSer;

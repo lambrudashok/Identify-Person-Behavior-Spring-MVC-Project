@@ -73,9 +73,9 @@ public class RegistrationPageController {
 	// registration user
 	@RequestMapping(value="/registeruser", method=RequestMethod.POST)
 	public String registerUser(HttpServletRequest request, Model mod) {
-		String name=request.getParameter("name");
+		String name=request.getParameter("name").trim();
 		String email=request.getParameter("email");
-		String username=request.getParameter("username");
+		String username=request.getParameter("username").trim();
 		String password =request.getParameter("password");
 		
 		RegistrationModel model = new RegistrationModel();

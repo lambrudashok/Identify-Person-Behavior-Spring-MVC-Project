@@ -15,6 +15,7 @@
  
  
   function checkusername(username){
+	var username = username.trimStart();
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange=function(){
 		if(this.readyState==4 && this.status==200){
@@ -84,6 +85,12 @@ function validateForm() {
 		document.getElementById("usernamemsg").innerHTML="username not null";
 		return false;
 	}
+	
+	const usernam = username.trim();
+    if (/\s/.test(usernam)) {
+        document.getElementById("usernamemsg").innerHTML= "Username should not contain space.";
+        return false; 
+    }
 	
     if (!validateEmail(email)) {
 		document.getElementById("emailmsg").innerHTML="Invalid email format.";

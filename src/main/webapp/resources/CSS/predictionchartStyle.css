@@ -38,6 +38,9 @@
 	padding-top: 20px;
 	margin-left: 20px;
 }
+.heading .closetab a{
+	color: aqua;
+}
 .area{
 	width: 100%;
 	min-height: 80vh;

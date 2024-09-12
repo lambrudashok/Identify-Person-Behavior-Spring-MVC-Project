@@ -30,8 +30,8 @@
 			<button type="submit" id="btn" name="s" value="login">Login</button><br>
 		</form>
 		<div class="next">
-			<a id="fg" href="forgotpasswordpage">Forgot Password?</a> &nbsp;&nbsp; 
-			<a id="ank" href="registrationpage">sign up</a>
+			<a id="fg" href="forgotpasswordpage">Forgot password?</a> &nbsp;&nbsp; 
+			<a id="ank" href="registrationpage">SignUp</a>
 		</div>
 		
 	</div>

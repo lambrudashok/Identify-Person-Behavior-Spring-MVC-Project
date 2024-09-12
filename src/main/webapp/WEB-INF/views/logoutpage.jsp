@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/logoutStyle.css">
 <script type="text/javascript" src='resources/JS/logoutvalidation.js'></script> 

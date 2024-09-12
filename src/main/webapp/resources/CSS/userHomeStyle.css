@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+	/* mobile screen */
+
 *{
 	margin: 0;
 	padding: 0;
@@ -7,7 +9,6 @@
 }
 
 .main{
-	display: flex;
 	width:100%;
 	min-height: 100vh;
 	padding-left: 0;
@@ -15,19 +16,431 @@
 
 
 .leftMenuDiv{
+	width:100%;
+	min-height: 50px;
+}
+
+/* middle slide div below-----------------------------------------------------------------------*/	
+.middleSlideDiv{
+	width:100%;
+	min-height: 5vh;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+#pillNv{
+	display: none;
+}
+
+#pillNav2{
+	border-bottom:white solid 1px;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);	
+}
+
+/*--------------For You css below-------------------------*/
+
+
+.allapplicationposts{
+	width:100%;
+	min-height: 88vh;
+	overflow: auto;
+}
+
+.proA{
+	width:100%;
+	padding-top:5px;
+	min-height:200px;
+	position:relative;
+	padding-bottom:10px;
+	border-bottom: #BDBDBD solid 1px;
+	color: white;
+}
+
+.userlogoA{
+	width:20%;
+	min-height: 50px;
+	position:absolute;
+}
+.userlogoA img{
+	width:53px;
+	height:50px;
+	border-radius:25px;
+	margin-left:10px;
+}
+
+.userpostA{
+	width:100%;
+	min-height: 200px;
+}
+
+.userpostA #userPA{
+	width:95%;
+	height:50px;
+	padding-left: 20%;
+}
+
+.userpostA #userPA #h4{
+	width:90%;
+	height:30px;
+}
+
+.userpostA #postdisplayA{
+	width:95%;
+	font-size: 17px;
+	padding-left: 10px;
+	text-align: justify;
+}
+.userpostA img{
+	width:100%;
+	min-height:200px;
+	margin-top:10px;
+}
+.userpostA #likecommentdivA{
+	margin-top: 10px;
+	display: flex; 
+	padding-left:5px; 
+}
+
+.userpostA #likecommentdivA .likesp{
+	width: 15%;
+}
+
+.userpostA #likecommentdivA #liked{
+	color:red;
+}
+.userpostA #likecommentdivA #like{
+	color: #BDBDBD;
+}
+
+.userpostA #likecommentdivA #like:hover{
+	font-size: 22px;
+}
+
+.userpostA #likecommentdivA a{
+	font-size: 20px;
+	text-decoration: none;
+	color: #BDBDBD;
+	
+}
+.userpostA #likecommentdivA .commentsp{
+	width:85%;
+	display:flex;
+}
+.userpostA #likecommentdivA .commentsp #commentshow{
+	width: 20%;
+}
+.userpostA #likecommentdivA #comment{
+	width:65%;
+	padding: 5px;
+	border-radius:10px;
+	border-style: none;
+	margin-left:10px;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	color: white;
+}
+
+.userpostA #likecommentdivA ::placeholder{
+	color: white;
+}
+
+
+.userpostA #likecommentdivA #commentbtn{
+	width: 22%;
+	height: 30px;
+	margin-left:10px;
+	padding-bottom:2px;
+	border-radius:20px;
+	background-color: deepskyblue;
+	border:none;
+	color: white;
+
+}
+
+
+/*-------------Following below css-------------------------*/
+.allposts{
+	width:100%;
+	height: 88vh;
+	overflow: auto;
+}
+.allposts h5{
+	width:100%;
+	height:40px;
+	color:white;
+	padding-top:50px;
+	text-align:center;
+}
+.pro{
+	width:100%;
+	min-height:200px;
+	padding-top:5px;
+	padding-bottom:10px;
+	position:relative;
+	border-bottom: #BDBDBD solid 1px;
+	color: white;
+}
+
+.userlogo{
+	width:20%;
+	min-height: 50px;
+	position:absolute;
+}
+.userlogo img{
+	width:53px;
+	height:50px;
+	border-radius:25px;
+	margin-left:10px;
+}
+
+.userpost{
+	width:100%;
+	min-height: 200px;
+}
+
+.userpost #userP{
+	width:95%;
+	min-height:50px;
+	padding-left: 20%;
+}
+
+.userpost #userP h4{
+	width:90%;
+	height:30px;
+}
+
+
+.userpost #postdisplay{
+	width:95%;
+	font-size: 17px;
+	padding-left:10px;
+	text-align: justify;
+}
+.userpost img{
+	width:100%;
+	min-height:200px;
+	margin-top:10px;
+}
+.userpost #likecommentdiv{
+	margin-top: 10px;
+	display: flex;
+	margin-left: 5px;
+}
+
+.userpost #likecommentdiv .likesp{
+	width: 15%;
+}
+.userpost #likecommentdiv #liked{
+	color:red;
+}
+.userpost #likecommentdiv #like{
+	color: #BDBDBD;
+}
+
+.userpost #likecommentdiv #like:hover{
+	font-size: 22px;
+}
+
+.userpost #likecommentdiv a{
+	font-size: 20px;
+	text-decoration: none;
+	color: #BDBDBD;
+	
+}
+.userpost #likecommentdiv .commentsp{
+	width:85%;
+	display:flex;
+}
+.userpost #likecommentdiv #comment{
+	padding: 5px;
+	width:65%;
+	margin-left:10px;
+	border-radius:10px;
+	border-style: none;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	color: white;
+}
+.userpost #likecommentdiv #commentsp #commentshow{
+	width: 20%;
+}
+.userpost #likecommentdiv ::placeholder{
+	color: white;
+}
+
+
+.userpost #likecommentdiv #commentbtn{
+	width: 22%;
+	height: 30px;
+	margin-left:10px;
+	padding-bottom:2px;
+	border-radius:20px;
+	background-color: deepskyblue;
+	border:none;
+	color: white;
+
+}
+
+
+
+
+
+
+/* right search div below---------------------------------------- --------------------------------- */
+.rightSearchDiv{
+	display:none;
+	width:100%;
+	min-height: 89vh;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	color:white;
+	padding: 5px;
+}
+
+.searching{
+	width:100%;
+	min-height:89vh;
+	
+}
+.searchbar{
+	width:100%;
+	height:40px;
+	padding-top:5px;
+	
+}
+
+.searchbar #searchuser{
+	width:100%;
+	height:40px;
+	border:white solid 1px;
+	border-radius:20px;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	padding: 15px;
+	color: white;
+	
+}
+.searchbar input::placeholder{
+	color:white;
+}
+.userInfo{
+	width: 100%;
+	height: 89vh;
+	margin-top:10px;
+	overflow: auto;
+	border:white solid 1px;
+	border-radius: 20px;
+}
+.userInfo #showGrid h4{
+	margin-top:20px;
+	margin-left:60px;
+}
+
+.userfollowing{
+	margin:auto;
+	width: 100%;
+	padding:5px;
+	min-height: 50px;
+	margin-top:5px;
+	display: flex;	
+}
+
+.userfollowing .photo{
+	width:15%;
+	min-height: 50px;
+}
+.userfollowing .photo img{
+	width:100%;
+	height:50px;
+	border-radius: 40px;
+}
+.userfollowing .userdetails{
+	width:80%;
+	height:50px;
+	margin-left:15px;
+	display:flex;
+}
+.userdetails .namediv{
+	width:70%;
+	height:50px;
+}
+.namediv #name{
+	width:100%;
+	height:20px;
+	font-size:16px;
+	font-weight:bolder;
+	overflow:hidden;
+}
+.namediv #username{
+	width:100%;
+	height:20px;
+	font-size:16px;
+	overflow:hidden;
+}
+
+.userdetails #btndiv{
+	width:30%;
+	height:50px;
+}
+.userdetails #btndiv #follow{
+	width:100%;
+	height:35px;
+	font-size:14px;
+	margin-top:5px;
+	background-color:deepskyblue;
+	color:white;
+	border-radius: 20px;
+}
+.userdetails #btndiv #following{
+	width:100%;
+	height:35px;
+	font-size:14px;
+	margin-top:5px;
+	background-color:#BDBDBD;
+	color:white;
+	border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* ########################################################################################################### */
+
+
+
+/* laptop screen */
+
+@media only screen and (min-width: 768px) {
+	
+.main{
+	display: flex;
+	width:100%;
+	min-height: 100vh;
+	padding-left: 0;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+} 
+
+
+.leftMenuDiv{
 	width:15%;
 	min-height: 100vh;
+	
 }
 
 /* middle slide div below-----------------------------------------------------------------------*/	
 .middleSlideDiv{
 	width:60%;
-	min-height: 100vh;
+	min-height: 90vh;
 	background: white;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
-
 #pillNav2{
+	display: none;
+}
+
+#pillNv{
+	
+	display:flex;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);	
 }
 
@@ -43,7 +456,10 @@
 .proA{
 	width:100%;
 	min-height:430px;
+	padding-top:0;
+	position:0;
 	display:flex;
+	padding-bottom:0;
 	border-bottom: #BDBDBD solid 1px;
 	border-left: #BDBDBD solid 1px;
 	border-right: #BDBDBD solid 1px;
@@ -63,14 +479,17 @@
 }
 
 .userpostA{
-	width:100%;
-	min-height: 400px;
+	width:90%;
+	min-height: 200px;
+	margin-left:10%;
 	padding: 10px;
 }
 
 .userpostA #userPA{
 	width:90%;
 	height:30px;
+	margin-left: 0;
+	padding-left: 10px;
 }
 
 .userpostA #userPA #h4{
@@ -81,11 +500,12 @@
 
 .userpostA #postdisplayA{
 	width:90%;
-	font-size: 20px;
+	font-size: 17px;
+	text-align: justify;
 }
 .userpostA img{
 	width:90%;
-	height:400px;
+	min-height:200px;
 	margin-top:10px;
 	border-radius: 15px;
 }
@@ -94,10 +514,6 @@
 	display: flex;
 	margin-left: 20px;
 }
-
-
-
-
 
 .userpostA #likecommentdivA .likesp{
 	width: 10%;
@@ -124,11 +540,14 @@
 	font-size: 22px;
 }
 
-
+.userpostA #likecommentdivA .commentsp #commentshow{
+	width: 15%;
+}
 .userpostA #likecommentdivA #comment{
 	padding: 5px;
-	margin-left:100px;
 	border-radius:10px;
+	margin-left:0;
+	border:green solid 2px;
 	border-style: none;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	color: white;
@@ -143,10 +562,12 @@
 	width: 50px;
 	height: 30px;
 	border-radius:20px;
+	margin:0;
+	margin-left:30px;
 	background-color: deepskyblue;
 	border:none;
 	color: white;
-	margin-left: 20px;
+	padding-left:0;
 	margin-top: 5px;
 
 }
@@ -186,29 +607,33 @@
 }
 
 .userpost{
-	width:100%;
-	min-height: 400px;
+	width:90%;
+	margin-left:10%;
+	min-height: 200px;
 	padding: 10px;
 }
 
 .userpost #userP{
 	width:85%;
-	height:30px;
+	height:0;
+	margin:0;
+	padding-left: 10px;
 }
 
 .userpost #userP h4{
 	width:90%;
-	height:30px;
+	margin: 0;
 }
 
 
 .userpost #postdisplay{
 	width:80%;
-	font-size: 20px;
+	font-size: 17px;
+	text-align: justify;
 }
 .userpost img{
 	width:90%;
-	height:400px;
+	min-height:200px;
 	margin-top:10px;
 	border-radius: 15px;
 }
@@ -224,6 +649,7 @@
 .userpost #likecommentdiv .commentsp{
 	width:80%;
 	display:flex;
+	margin-right: 100px;
 }
 
 .userpost #likecommentdiv a{
@@ -245,7 +671,7 @@
 
 .userpost #likecommentdiv #comment{
 	padding: 5px;
-	margin-left:100px;
+	margin-left:20px;
 	border-radius:10px;
 	border-style: none;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
@@ -272,12 +698,13 @@
 
 
 
-
-
 /* right search div below---------------------------------------- --------------------------------- */
 .rightSearchDiv{
+	display:block;
 	width:25%;
 	min-height: 89vh;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	color:white;
 	padding-left: 5px;
 }
 
@@ -382,7 +809,9 @@
 	background-color:#BDBDBD;
 	color:white;
 	border-radius: 20px;
+}	
+	
+	
+
+
 }
-
-
-

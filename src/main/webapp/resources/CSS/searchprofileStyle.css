@@ -9,6 +9,119 @@
 .searchcontainer{
 	width: 100%;
 	min-height: 100vh;
+}
+
+.leftmenus{
+	width:100%;
+	min-height: 50px;
+}
+
+.searchsection{
+	width: 100%;
+	min-height: 100vh;
+	padding-top:20px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.searchbar{
+	width:90%;
+	margin:auto;
+	height:40px;
+	
+}
+
+.searchbar #searchuser{
+	width:100%;
+	height:40px;
+	border:white solid 1px;
+	border-radius:20px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	padding: 15px;
+	color: white;
+	
+}
+.searchbar input::placeholder{
+	color:white;
+}
+.userInfo{
+	width: 100%;
+	height: 89vh;
+	overflow: auto;
+}
+.userInfo #searchGrid h4{
+	color:white;
+	margin-top:20px;
+	margin-left:30%;
+}
+
+.info{
+	width:90%;
+	min-height: 89vh;
+	margin:auto;
+	margin-top:10px;
+	border:white solid 1px;
+	border-radius: 20px;
+}
+
+.info a{
+	text-decoration: none;
+}
+.userappinfo{
+	width: 100%;
+	min-height: 50px;
+	padding:5px;
+	margin:auto;
+	margin-top:5px;
+	display: flex;	
+}
+
+.userappinfo .photo{
+	width:30%;
+	min-height: 60px;
+}
+.userappinfo .photo img{
+	width:65%;
+	height:55px;
+	margin-left:10px;
+	border-radius: 50px;
+}
+.userappinfo .userdetails{
+	color:white;
+	width:80%;
+	height:60px;
+	margin-left:5px;
+	display:flex;
+}
+.userdetails .namediv{
+	width:100%;
+	height:60px; 
+}
+.namediv #name{
+	width:100%;
+	height:25px;
+	font-size:17px;
+	font-weight:bold;
+	overflow:hidden;
+}
+.namediv #username{
+	width:100%;
+	height:25px;
+	font-size:15px;
+	overflow:hidden;
+}
+
+
+
+ /* --------------------------------------------------------------------------------- */
+
+ 	/* desktop screen */
+
+@media only screen and (min-width: 768px) {
+	
+	
+.searchcontainer{
+	width: 100%;
+	min-height: 100vh;
 	display: flex;
 }
 
@@ -34,7 +147,6 @@
 
 .searchbar #searchuser{
 	width:97%;
-	
 	height:40px;
 	border:white solid 1px;
 	border-radius:20px;
@@ -48,7 +160,7 @@
 }
 .userInfo{
 	width: 100%;
-	height: 89vh;
+	height: 88vh;
 	overflow: auto;
 }
 .userInfo #searchGrid h4{
@@ -109,7 +221,10 @@
 	height:20px;
 	font-size:16px;
 	overflow:hidden;
-}
+}	
+	
 
+}	
+	
 
 

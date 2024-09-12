@@ -43,6 +43,7 @@
 }
 
 .columnname #columnid{
+	display:none;
 	width:80px;
 	height: 49px;
 	padding-top:15px;
@@ -57,20 +58,20 @@
 }
 
 .columnname #columnnam{
-	width:150px;
+	width:170px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 	
 }
 .columnname #columnemail{
-	width:162px;
+	width:192px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
 }
 .columnname #columnusername{
-	width:150px;
+	width:180px;
 	height: 49px;
 	padding-top:15px;
 	border-right:white solid 1px;
@@ -111,6 +112,7 @@
 }
 
 .details #userid{
+	display:none;
 	width:80px;
 	height: 120px;
 	text-align: center;
@@ -131,7 +133,7 @@
 	
 }
 .details #cname{
-	width:150px;
+	width:170px;
 	height: 120px;
 	text-align: center;
 	padding-top:50px;
@@ -140,7 +142,7 @@
 	border-right:white solid 1px;
 }
 .details #email{
-	width:162px;
+	width:192px;
 	height: 120px;
 	text-align: center;
 	padding-top:50px;
@@ -149,7 +151,7 @@
 	border-right:white solid 1px;
 }
 .details #username{
-	width:150px;
+	width:180px;
 	height: 120px;
 	text-align: center;
 	padding-top:50px;
