@@ -19,6 +19,7 @@
 .searchsection{
 	width: 100%;
 	min-height: 100vh;
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7)
 }
 
 .searchbar{
@@ -34,7 +35,7 @@
 	height:40px;
 	border:white solid 1px;
 	border-radius:20px;
-	background: black;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	padding: 15px;
 	color: white;
 	
@@ -48,7 +49,7 @@
 	margin-top: 30px;
 }
 .userInfo #searchGrid h4{
-	color:white;
+	color:#24243e;
 	font-size:20px;
 	margin-top:20px;
 	margin-left:35%;
@@ -58,10 +59,10 @@
 	margin:auto;
 	margin-top:10px;
 	width:40%;
-	min-height: 70vh;
-	padding-left:10px;
+	min-height: 78vh;
 	margin-bottom:30px;
-	border:white solid 1px;
+	background-color: #ebeced;
+	border:#24243e solid 1px;
 	border-radius: 20px;
 }
 
@@ -70,9 +71,12 @@
 	width: 100%;
 	padding:5px;
 	min-height: 50px;
-	margin-top:5px;
 	text-decoration:none;
 	display: flex;	
+}
+.userappinfo:hover{
+	background-color: white;
+	border-radius: 20px;
 }
 
 .userappinfo .photo{
@@ -86,7 +90,7 @@
 	border-radius: 50px;
 }
 .userappinfo .userdetails{
-	color:white;
+	color:#24243e;
 	width:80%;
 	height:60px;
 	margin-left:5px;

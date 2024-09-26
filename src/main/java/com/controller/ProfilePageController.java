@@ -75,10 +75,11 @@ public class ProfilePageController {
 		int commentCount = lkSer.getCommentCount(postid);
 		String str="";
 		str=str+"<a id='commentshow' href='viewprofilecomment?postid="+postid+"&userID="+userID+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
-        str=str+"<form name='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
+        str=str+"<form name='frm' id='frm' method='POST' onsubmit='return commentfun1("+postid+",comment.value)'>"; 
         str=str+"<input type='text' name='comment' id='comment' placeholder='comment here...' required>"; 
         str=str+"<button type='submit' id='commentbtn'  name='commentbtn' >post</button>";
         str=str+"</form>";
+        
 		return str;
 	}
 

@@ -37,8 +37,9 @@
 		<textarea name="description" id="description" placeholder="Please describe as much info as possible..." onkeyup="reportbtnshowfun()"></textarea><br>
 		<button type="submit" name="reportbtn" id="reportbtn"  >Send report</button>
 		</form>
+		<div id="msg">${msg}</div>
+	
 	</div> <!-- desc -->
-	<div id="msg">${msg}</div>
 	
 </div><!--  reportbox  -->
 			

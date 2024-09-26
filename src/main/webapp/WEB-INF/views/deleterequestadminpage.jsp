@@ -51,6 +51,7 @@
 				<div id="cname"><%=info.getCustomername() %></div>
 				<div id="username"><%=info.getUsername() %></div>
 				<div id="arivedate"><%=info.getDate() %></div>
+				
 				<div id="remainingdays">days : <%=info.getRemain()%></div>
 				<div id="delete"><a onclick="deleteAccountRequestUser(<%=info.getRegisterid()%>)">Confirm</a></div>
 				</div> <!-- details -->
@@ -65,12 +66,6 @@
 	%>
 	</div>
 	</div>
-
-
-
-	
-	
-	
 
 </div>	<!-- main -->
 

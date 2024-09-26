@@ -20,11 +20,11 @@
 	width: 100%;
 	min-height: 100vh;
 	padding-top:20px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-color: #ebeced;
 }
 
 .searchbar{
-	width:90%;
+	width:95%;
 	margin:auto;
 	height:40px;
 	
@@ -49,17 +49,16 @@
 	overflow: auto;
 }
 .userInfo #searchGrid h4{
-	color:white;
+	color:black;
 	margin-top:20px;
 	margin-left:30%;
 }
 
 .info{
-	width:90%;
+	width:100%;
 	min-height: 89vh;
 	margin:auto;
 	margin-top:10px;
-	border:white solid 1px;
 	border-radius: 20px;
 }
 
@@ -80,13 +79,13 @@
 	min-height: 60px;
 }
 .userappinfo .photo img{
-	width:65%;
+	width:60%;
 	height:55px;
 	margin-left:10px;
 	border-radius: 50px;
 }
 .userappinfo .userdetails{
-	color:white;
+	color:#24243e;
 	width:80%;
 	height:60px;
 	margin-left:5px;
@@ -95,6 +94,7 @@
 .userdetails .namediv{
 	width:100%;
 	height:60px; 
+	margin-left: -20px;
 }
 .namediv #name{
 	width:100%;
@@ -133,8 +133,7 @@
 .searchsection{
 	width: 85%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	border-left: white solid 1px;
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .searchbar{
@@ -148,7 +147,6 @@
 .searchbar #searchuser{
 	width:97%;
 	height:40px;
-	border:white solid 1px;
 	border-radius:20px;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	padding: 15px;
@@ -164,7 +162,7 @@
 	overflow: auto;
 }
 .userInfo #searchGrid h4{
-	color:white;
+	color:black;
 	margin-top:20px;
 	margin-left:30%;
 }
@@ -174,8 +172,9 @@
 	margin-top:10px;
 	width:50%;
 	min-height: 89vh;
-	padding-left:10px;
-	border:white solid 1px;
+	padding-left:0px;
+	background-color: #ebeced;
+	border:black solid 1px;
 	border-radius: 20px;
 }
 
@@ -188,18 +187,23 @@
 	display: flex;	
 }
 
+.userappinfo:hover{
+	background: linear-gradient(#ffffff, #f8f8f8);
+	border-radius: 15px;
+}	
+
 .userappinfo .photo{
 	width:15%;
 	min-height: 60px;
 }
 .userappinfo .photo img{
-	width:70%;
+	width:67%;
 	height:50px;
 	margin-left:10px;
 	border-radius: 50px;
 }
 .userappinfo .userdetails{
-	color:white;
+	color:black;
 	width:80%;
 	height:60px;
 	margin-left:5px;
@@ -208,6 +212,7 @@
 .userdetails .namediv{
 	width:70%;
 	height:60px;
+	margin-left: 0px;
 }
 .namediv #name{
 	width:100%;

@@ -62,7 +62,7 @@
 		}else{
 			%>
 			<div id="solvediv">
-			<button name="solve" id="solve"  >Solve</button>           
+			<button name="solve" id="solve"  >Solved</button>           
 			</div>	
 			<%
 		}

@@ -6,6 +6,7 @@ function closefun(){
 
 
 
+
 // its used for report problem user side
 function reportbtnshowfun(){
 	 var titlename = document.getElementById("title").value;
@@ -14,13 +15,15 @@ function reportbtnshowfun(){
 	 
 	    if(titlename.trim() === '' || description.trim() === ''){
 			var reportbtn=document.getElementById("reportbtn");
-			reportbtn.style.background="#AFEEEE";
-			reportbtn.style.color="black";
+			reportbtn.style.background="white";
+			reportbtn.style.color="#24243e";
+			reportbtn.style.borderColor="black";
 			reportbtn.disabled=true;
 	    } else {
 	      var reportbtn=document.getElementById("reportbtn");
-			reportbtn.style.background="deepskyblue";
+			reportbtn.style.background="#24243e";
 			reportbtn.style.color="white";
+			reportbtn.style.fontWeight="bold";
 			reportbtn.disabled=false;
 	    }
         

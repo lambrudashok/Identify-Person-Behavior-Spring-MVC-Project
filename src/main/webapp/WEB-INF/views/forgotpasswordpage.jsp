@@ -54,9 +54,9 @@
 	
 	
 	<div class="sendotpdiv" id="sendotpdiv">
-	<h3>Where should we send a confirmation code</h3>
+	<h3>Where should we send an OTP</h3>
 	<input type="hidden" value="" id="email"><br>
-	<h5>Send an email to</h5>
+	<h5>Send an email to </h5>
 	<button type="submit" name="sendotpbtn" id="sendotpbtn" onclick="checkOTP()"  >Send OTP</button><br>
 	</div><!-- sendotpdiv -->
 	
@@ -64,7 +64,7 @@
 	<div class="otpverifydiv" id="otpverifydiv">
 	<input type="hidden" value="" id="email"><br>
 	<div id="otpconfirmGrid">
-	<h3>Check your email to get your confirmation code</h3>
+	<h3>Check an email to get OTP</h3>
 	<input type="text" id="otpinput"  placeholder="Enter OTP code"><br>
 	<div id="msgotp" class="msg"></div>
 	<button type="submit" name="otpverifybtn" id="otpverifybtn"  >Confirm</button><br>

@@ -24,11 +24,12 @@
 	margin:auto;
 	min-height: 400px;
 	position:relative;
-	padding-top:15px;
+	padding-top:20px;
 	padding-left:20px;
 	border: white solid 1px;
 	border-radius: 30px;
-	box-shadow: 5px 10px 20px white;
+	background-color:white;
+	box-shadow: 5px 10px 20px black;
 }
 
 .divider .closetab{
@@ -36,26 +37,41 @@
 	font-size:30px;
 	text-align:center;
 	float:right;
-	color:white;
+	color:#24243e;
+}
+.closetab i{
+	color: #24243e;
 }
 
 .divider h3{
 	font-size:25px;
-	color:white;
+	color:#24243e;
 	
 }
 
-.divider h5{
-	color:white;
-	font-size: 15px;
-	padding-top:40px;
-	text-shadow: 2px 2px 4px white;
+.otpverifydiv h3{
+	width:90%;
+	margin-top:-20px;
 }
 
+#otpverifybtn:hover{
+	background: #6d44b8;
+	border: #24243e solid 2px;
+}
+
+
+.divider h5{
+	color:#24243e;
+	width:95%;
+	font-size: 17px;
+	padding-top:20px;
+	font-weight:normal;
+	text-align:center;
+}
 .divider input{
 	width:95%;
 	height: 45px;
-	margin-top: 20px;
+	margin-top: 25px;
 	border: black solid 2px;
 	padding-left:10px;
 	font-size:17px;
@@ -63,65 +79,79 @@
 }
 
 .divider .msg{
-	width:90%;
+	width:95%;
 	height:40px;
-	margin-top:20px;
+	margin-top:5px;
 	padding-left:10px;
-	font-size: 20px;
+	font-size: 17px;
 	color:red;
 }
 .divider button{
 	width:90%;
 	height:40px;
-	border-radius:20px;
+	border-radius:15px;
 	font-size:20px;
 	font-weight:bold;
 	color:white;
 	position:absolute;
-	border-color:white;
+	border-style:none;
 	bottom:20px;
-	background-color: deepskyblue;
+	background-color: #24243e;
 }
 
 .usernamediv #usernamenextbtn{
 	width:90%;
 	height:40px;
-	border-radius:20px;
 	font-size:20px;
-	font-weight:bold;
-	color:white;
 	position:absolute;
-	border-color:white;
 	bottom:70px;
-	background-color: deepskyblue;
+	border-radius:15px;
+	border-style:none;
+	color:white;
+	background-color: #24243e;
+	font-size:20px;
+	font-weight: bold;
 }
 
-
+#usernamenextbtn:hover{
+	background: #6d44b8;
+	border: #24243e solid 2px;
+}
 
 #emailconfirmbtn{
 	width:90%;
 	height:40px;
-	border-radius:20px;
 	font-size:20px;
-	font-weight:bold;
-	color:white;
 	position:absolute;
-	border-color:white;
 	bottom:70px;
-	background-color: deepskyblue;
+	border-radius:15px;
+	border-style:none;
+	color:white;
+	background-color: #24243e;
+	font-size:20px;
+	font-weight: bold;
 }
+#emailconfirmbtn:hover{
+	background: #6d44b8;
+	border: #24243e solid 2px;
+}
+
 
 .divider #cancelbtn{
 	width:90%;
 	height:40px;
-	border-radius:20px;
-	color:white;
-	font-size:20px;
-	border-color:white;
-	font-weight:bold;
 	position:absolute;
 	bottom:20px;
-	background-color: black;
+	border-radius:15px;
+	background-color: white;
+	border:#24243e solid 2px;
+	color:#24243e;
+	font-size:20px;
+	font-weight: bold;
+}
+
+#cancelbtn:hover{
+	background: #e0dede;
 }
 
 .emaildiv{
@@ -136,7 +166,8 @@
 
 .forgotdiv{
 	display:none;
-}
+} 
+
 
 
 
@@ -168,13 +199,13 @@
 }
 
 .divider{
-	width:100%;
+	width:90%;
 	margin:auto;
 	min-height: 400px;
 	margin-top:40px;
 	position:none;
 	padding-top:15px;
-	padding-left:20px;
+	padding-left:15px;
 	border: 0;
 	border-radius: 30px;
 	box-shadow: none;
@@ -187,8 +218,29 @@
 	float:right;
 	color:white;
 }
-.closetab a{
-	color: aqua;
+.closetab i{
+	font-size: 25px;
+	padding-top: 3px;
+}
+.divider .msg{
+	width:95%;
+	height:40px;
+	margin-top:5px;
+	padding-left:10px;
+	font-size: 15px;
+	color:red;
+}
+.divider h3{
+	font-size:25px;
+	color:#24243e;
+	
+}
+.forgotdiv #msg{
+	width:95%;
+	height:50px;
+	padding-left:10px;
+	font-size: 14px;
+	color:red;
 }
 	
 }	

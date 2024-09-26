@@ -21,11 +21,24 @@
 .followersection{
 	width:100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	color: white;
+	background-color: #ebeced;
+	color: #24243e;
 	font-size:20px;
-	padding-top: 20px;
 	
+}
+.followersection .adj{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	padding-top:10px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	padding-left:10px;
+	margin-bottom: 5px;
+}
+.adj h4{
+	width:90%;
+	margin-top: 10px;
+	color: white;
 }
 
 .closetab{
@@ -39,14 +52,7 @@
 	margin-right:5%;
 }
 .closetab i{
-	color: aqua;
-}
-
-.followersection h4{
-	width:100%;
-	margin-top: 10px;
-	padding-left:5%;
-	text-align: center;
+	color: white;
 }
 
 .userfollower{
@@ -54,8 +60,8 @@
 	width: 100%;
 	min-height: 80px;
 	display: flex;
+	background: linear-gradient(to bottom, #cfd0d1, #ebeced);
 	border-top: #BDBDBD solid 1px;
-	margin-top: 10px;
 	border-radius: 20px;
 }
 
@@ -88,12 +94,19 @@
 .userdetails #btndiv button{
 	width:100px;
 	height:35px;
-	background-color:#BDBDBD;
+	background-color:#24243e;
 	color:white;
-	border-radius: 20px;
+	border-radius: 15px;
+	border-style: none;
 }
 
-
+.followersection #fnn{
+	width:100%;
+	font-size:17px;
+	text-align:center;
+	margin-top: 30px;
+	color: #24243e;
+}
 
 
 
@@ -108,7 +121,7 @@
 .followercontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 	
 }
 .main{
@@ -118,82 +131,81 @@
 }
 
 .followersection{
-	width:70%;
+	width:50%;
 	min-height: 100vh;
 	font-size:25px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	margin: auto;
-	
-	
+	margin: auto;	
 }
-
+.followersection .adj{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	padding-top:10px;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	padding-left:10px;
+	margin-bottom: 5px;
+}
+.adj h4{
+	width:90%;
+	margin-top: 10px;
+	padding-left:10px;
+	color: white;
+}
 .closetab{
 	width:30px;
 	height:30px;
-	font-size:25px;
+	font-size:30px;
 	text-align:center;
 	float:right;
 	color:white;
 	margin-top:10px;
-	margin-right:15%;
+	margin-right:5%;
 }
 .closetab i{
-	color: aqua;
-}
-
-.followersection h4{
-	width:100%;
-	margin-top: 10px;
-	padding-left:15%;
-	text-align: center;
+	color: white;
 }
 
 .userfollower{
 	margin:auto;
-	width: 85%;
+	width: 100%;
 	min-height: 80px;
 	display: flex;
 	border-top: #BDBDBD solid 1px;
-	margin-top: 10px;
+	margin-top:0px;
 	border-radius: 20px;
 }
-
-
 .userfollower .photo{
-	width:20%;
+	width:15%;
 	padding:5px;
-	min-height: 80px;
+	min-height: 70px;
 }
 .userfollower .photo img{
-	width:70%;
-	height:80px;
-	margin-left:20px;
+	width:75%;
+	height:60px;
+	margin-left:10px;
 	border-radius: 40px;
 }
 .userfollower .userdetails{
-	width:100%;
+	width:85%;
 	height:80px;
-	margin-left: 10px;
 	margin-top:10px;
+	margin-left:-5px;
 	display:flex;
 }
 .userdetails #namediv{
-	width:50%;
+	width:77%;
 	height:80px;
 }
-.userdetails #btndiv{
-	width:50%;
-	height:80px;
+#namediv h6{
+	font-weight: normal;
 }
-.userdetails #btndiv button{
-	width:100px;
-	height:35px;
-	background-color:#BDBDBD;
-	color:white;
-	border-radius: 20px;
+.followersection #fnn{
+	width:100%;
+	font-size:19px;
+	text-align:center;
+	margin-top: 30px;
+	color: #24243e;
 }
-
-
 	
 }
 

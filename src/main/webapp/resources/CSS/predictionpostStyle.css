@@ -9,7 +9,7 @@
 .postcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background:black;
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 .menustag{
 	width:100%;
@@ -21,22 +21,22 @@
 	min-height: 100vh;
 }
 .main button{
+	width:20%;
 	height:40px;
-	padding:5px;
 	bottom:0px;
-	right:0px;
-	background-color: LightSkyBlue;
+	right:2.2em;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	position:fixed;
-	border-radius:20px;
-	margin-right:175px;
+	border-radius:15px;
+	margin-right:180px;
 	margin-bottom:10px;
 	color:white;
 	font-weight:bold;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 .main h2{
-	color: white;
+	color: #24243e;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -49,7 +49,7 @@
 	font-weight:bold;
 	top:0;
 	position:sticky;
-	background: black;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	text-align:center;
 	display:flex;
 	border:white solid 1px;
@@ -97,11 +97,15 @@
 	width:80%;
 	min-height: 120px;
 	margin:auto;
-	color:white;
-	margin-top:5px;
+	color:#24243e;
 	display:flex;
-	border-radius:20px;
-	border: white solid 1px;
+	background-color: #ebeced;
+	border-bottom: #BDBDBD solid 1px;
+	border-left: #BDBDBD solid 1px;
+	border-right: #BDBDBD solid 1px;
+}
+.details:hover{
+	background-color: white;
 }
 
 .details #postid{
@@ -110,7 +114,7 @@
 	min-height: 120px;
 	text-align: center;
 	padding-top:50px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #username{
@@ -120,13 +124,13 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #postimage{
 	width:220px;
 	min-height: 120px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #postimage img{
 	width:200px;

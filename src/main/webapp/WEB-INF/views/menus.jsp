@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="stylesheet" href="resources/CSS/menuStyle.css">
 </head>
 <body>
@@ -63,13 +62,15 @@
     </div>
 </nav>
 
+
+
 <!-- Vertical Menu for Desktop View -->
 <div class="mainmenulaptop">
 		<div class="nav flex-column nav-pills sticky-top" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 		<a class="nav-link text-white" id="logoPerson"  href="userhomepage"  aria-selected="false">
   			<img src="resources/asset/backgroud1.jpg" class="logoimg" alt="">FutureAI</a>
   			
-  		<a class="nav-link text-white menulogo" id="homeid"  href="userhomepage"  aria-selected="true" style="margin-top:30px">
+  		<a class="nav-link text-white menulogo" id="homeid"  href="userhomepage"  aria-selected="true" style="margin-top:10px">
   			<i class="fa-solid fa-house logosize"></i>Home</a>
   			
   		<a class="nav-link text-white menulogo" id="searchid"  href="searchprofilepage"  aria-selected="false">

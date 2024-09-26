@@ -9,14 +9,12 @@
 .editcontainer{
 	width: 100%;
 	min-height: 100vh;
-	padding-top:20px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-color: #ebeced;
 }
 
 .editsection{
 	width: 100%;
 	min-height: 90vh;
-	padding-top:10px;
 	margin: auto;
 	
 }
@@ -25,12 +23,20 @@
 	width:100%;
 	margin:auto;
 	min-height: 430px;
-	padding-top:15px;
-	padding-left:20px;
+	margin-left: 10px;
+}
+
+.adj{
+	width: 100%;
+	min-height: 120px;
+	padding-left:10px;
+	margin-left:-10px;
+	background-color:#24243e;
 }
 
 .heading{
 	display: flex;
+	padding-top:20px;
 }
 
 .divider h3{
@@ -46,26 +52,26 @@
 	margin-left: 10px;
 }
 .closetab a{
-	color:aqua;
+	color:white;
 }
 .photo{
-	width:95%;
+	width:100%;
 	height: 80px;
 	display:flex;
 	margin-top:10px;
-	padding:5px;
-	border: white solid 1px;
-	border-radius: 20px;
+	background-color:#24243e;
 	margin-bottom: 10px;
 }
 
 .photo #changebtn{
-	width:150px;
+	width:120px;
 	height:40px;
 	margin-top:15px;
-	border-radius:20px;
-	color:white;
-	background-color: deepskyblue;
+	margin-left:10px;
+	border-radius:15px;
+	color:#24243e;
+	font-weight:bold;
+	background-color: #ebeced;
 }
 .image{
 	width:25%;
@@ -86,7 +92,7 @@
 	background-color:white;
 	border-radius:20px;
 	top:33px;
-	right:5px;
+	right:20px;
 	border:white solid 1px;
 	position:absolute;
 	text-decoration: none;
@@ -96,7 +102,8 @@
 .userdetail{
 	width: 35%;
 	height: 60px;
-	padding-left: 5px;
+	padding-left: 0px;
+	margin-left: -10px;
 }
 .userdetail h4{
 	color:white;
@@ -112,10 +119,9 @@
 	height: 60px;
 	border: none;
 	color:white;
+	margin-left:10px;
 	margin-top: 15px;
 }
-
-
 
 
 .divider input{
@@ -124,7 +130,7 @@
 	border: black solid 2px;
 	padding-left:10px;
 	font-size:17px;
-	margin-top:20px;
+	margin-top:15px;
 	border-radius: 10px;
 }
 
@@ -132,14 +138,14 @@
 	width:90%;
 	margin-top:5px;
 	padding-left:10px;
-	font-size: 20px;
+	font-size: 15px;
 	color:red;
 }
 #msg{
 	width:90%;
 	margin-top:5px;
 	padding-left:10px;
-	font-size: 20px;
+	font-size: 15px;
 	color:green;
 	font-weight: bold;
 }
@@ -147,10 +153,11 @@
 	width:95%;
 	height:45px;
 	margin-top :30px;
-	border-radius:20px;
+	border-radius:15px;
 	font-weight:bold;
+	font-size:20px;
 	color:white;
-	background-color: deepskyblue;
+	background-color: #24243e;
 }
 
 
@@ -171,7 +178,7 @@
 	width: 100%;
 	min-height: 100vh;
 	padding-top:0;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 	display: flex;
 }
 
@@ -188,14 +195,17 @@
 	width:40%;
 	margin:auto;
 	min-height: 430px;
-	padding-top:15px;
-	padding-left:20px;
-	border: white solid 1px;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
-	border-radius: 30px;
-	box-shadow: 5px 10px 20px white;
+	padding-left:0px;
+	background-color: #ebeced;
+	border-radius: 0px;
 }
-
+.adj{
+	width: 100%;
+	min-height: 120px;
+	padding-left:20px;
+	margin-left:0px;
+	background-color:#24243e;
+}
 .heading{
 	display: flex;
 }
@@ -218,18 +228,18 @@
 	display:flex;
 	margin-top:10px;
 	padding:5px;
-	border: white solid 1px;
 	border-radius: 20px;
 	margin-bottom: 10px;
 }
 
 .photo #changebtn{
-	width:150px;
+	width:120px;
 	height:40px;
 	margin-top:15px;
-	border-radius:20px;
-	color:white;
-	background-color: deepskyblue;
+	margin-left:20%;
+	border-radius:15px;
+	color:#24243e;
+	background-color: #ebeced;
 }
 .image{
 	width:20%;
@@ -261,14 +271,16 @@
 .userdetail{
 	width: 35%;
 	height: 60px;
+	padding-left: 0px;
+	margin-left: 0px;
 }
 .userdetail h4{
 	color:white;
 	overflow:hidden;
-	font-size: 22px;
+	font-size: 25px;
 }
 .userdetail #name{
-	font-size: 17px;
+	font-size: 15px;
 }
 
 .divider .pro{
@@ -288,7 +300,8 @@
 	border: black solid 2px;
 	padding-left:10px;
 	font-size:17px;
-	margin-top:20px;
+	margin-top:15px;
+	margin-left:10px;
 	border-radius: 10px;
 }
 
@@ -296,26 +309,26 @@
 	width:90%;
 	margin-top:5px;
 	padding-left:10px;
-	font-size: 20px;
+	font-size: 15px;
 	color:red;
 }
 #msg{
 	width:90%;
 	margin-top:5px;
 	padding-left:10px;
-	font-size: 20px;
+	font-size: 15px;
 	color:green;
 	font-weight: bold;
 }
 .divider #editbtn{
 	width:50%;
 	height:40px;
-	margin-top :10px;
-	margin-left:110px;
+	margin-top :20px;
+	margin-left:25%;
 	margin-bottom:20px;
-	border-radius:20px;
+	border-radius:15px;
 	color:white;
-	background-color: deepskyblue;
+	background-color: #24243e;
 }
 	
 	

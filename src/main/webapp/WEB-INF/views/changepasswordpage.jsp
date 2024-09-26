@@ -16,14 +16,14 @@
 	
 <div class="changesection">
 	<div class="divider">
-	
+	<div class="adj">
 	<div class="closetab">
 		<a href="userhomepage"><i class="fa-solid fa-xmark"></i></a>
 	</div><!--closetab -->
 
 	<h3>Change Password</h3>
 	<h6>password must contain 6 character include digit.</h6>
-	
+	</div> <!-- adj -->
 	<form name="frm" action="changepassword" method="POST" onsubmit="return checkPassword()">
 	<input type="password" name="curpass" id="curpass" placeholder="Current Password" required><br>
 	<input type="password" name="newpass" id="newpass" placeholder="New Password"><br>

@@ -9,7 +9,7 @@
 .changecontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+	background:white;
 }
 
 .changesection{
@@ -19,21 +19,30 @@
 
 .divider{
 	width:100%;
-	min-height: 500px;
-	padding-left:20px;
+	min-height: 100vh;
 	margin:auto;
-	padding-top:20px;
+	color:black;
+	background-color: #ebeced;
 
 }
 
+.adj{
+	width:100%;
+	padding-top:10px;
+	padding-left:10px;
+	height: 70px;
+	background-color:#24243e;
+}
 .closetab{
 	font-size:25px;
 	text-align:center;
 	float:right;
-	margin-right: 20px;
+	margin-top:10px;
+	margin-right: 15px;
 }
 .closetab i{
-	color: aqua;
+	color: white;
+	font-size: 30px;
 }
 
 .divider h3{
@@ -42,14 +51,16 @@
 	
 }
 .divider h6{
+	font-weight:normal;
 	color:white;
-	margin-top:10px;
-	font-size: 15px;	
+	margin-top:0px;
+	font-size:12px;	
 }
 .divider input{
-	width:95%;
+	width:94%;
 	height: 45px;
-	margin-top: 20px;
+	margin-top: 15px;
+	margin-left:10px;
 	border: black solid 2px;
 	padding-left:10px;
 	font-size:17px;
@@ -66,11 +77,13 @@
 .divider button{
 	width:50%;
 	height:40px;
-	margin-top :30px;
-	margin-left:20%;
-	border-radius:20px;
+	margin-top :10px;
+	margin-left:10px;
+	border-radius:15px;
 	color:white;
-	background-color: deepskyblue;
+	border-style:none;
+	font-weight:bold;
+	background-color:#24243e;
 }
 
 
@@ -94,19 +107,36 @@
 	width: 100%;
 	min-height: 100vh;
 	padding-top:25px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: white;
 	
 }
 
 .divider{
 	width:40%;
-	min-height: 500px;
-	padding-left:20px;
+	min-height: 390px;
+	padding-left:0;
 	margin:auto;
-	border: white solid 1px;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
-	border-radius: 30px;
-	box-shadow: 5px 5px 20px white;
+	color:black;
+	padding-top:0;
+	background-color: #ebeced;
+}
+.adj{
+	width:100%;
+	padding-top:10px;
+	padding-left:20px;
+	height: 70px;
+	background-color:#24243e;
+}
+.closetab{
+	font-size:25px;
+	text-align:center;
+	float:right;
+	margin-top:10px;
+	margin-right: 30px;
+}
+.closetab i{
+	color: white;
+	font-size: 30px;
 }
 
 .divider h3{
@@ -115,33 +145,36 @@
 }
 .divider h6{
 	color:white;
-	font-size: 15px;	
+	font-size: 15px;
+	margin-top:0px;
 }
 .divider input{
-	width:95%;
+	width:92%;
 	height: 45px;
 	margin-top: 20px;
 	border: black solid 2px;
 	padding-left:10px;
+	margin-left:20px;
 	font-size:17px;
 	border-radius: 10px;
 }
 
 .divider #msg{
 	width:90%;
-	margin-top:20px;
-	padding-left:10px;
+	padding-left:25px;
+	margin-bottom:-15px;
 	font-size: 15px;
 	color:red;
 }
 .divider button{
 	width:43%;
 	height:40px;
-	margin-top :60px;
-	margin-left:25%;
+	margin-top :20px;
+	margin-left:20px;
 	border-radius:20px;
 	color:white;
-	background-color: deepskyblue;
+	font-weight:bold;
+	background-color: #24243e;
 }
 	
 	

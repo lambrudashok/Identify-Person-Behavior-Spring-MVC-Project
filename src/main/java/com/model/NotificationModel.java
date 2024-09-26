@@ -12,7 +12,14 @@ public class NotificationModel {
 	private int registerid;
 	private String username;
 	private String profileimage;
+	private String view;
 	
+	public String getView() {
+		return view;
+	}
+	public void setView(String view) {
+		this.view = view;
+	}
 	public Time getTime() {
 		return time;
 	}

@@ -20,7 +20,7 @@
 	width: 100%;
 	min-height: 100vh;
 	overflow: auto;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background-color: #ebeced;
 }
 
 .profilemain{
@@ -33,20 +33,21 @@
 .profilelogo{
 	width:30%;
 	height:200px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);	
+	align-content:center;
+	background: linear-gradient(#7579e7, #393e46);	
 }
 .profilelogo img{
 	width:100%;
 	height:80px;
 	padding:5px;
-	margin-top:25px;
+	margin-bottom:10px;
 	border-radius:80px;
 }
 
 .profilename{
 	width:100%;
 	height:200px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(#7579e7, #393e46);
 }
 
 .profileUsername{
@@ -91,7 +92,7 @@
 }	
 	
 .bio{
-	color:orange; 
+	color:white; 
 }
 #prodiv3{
 	width:30%;
@@ -102,18 +103,21 @@
 #prodiv3 #follow{
 	width:100%;
 	padding:7px;
-	background-color:  deepskyblue ;
-	border-radius: 20px;
-	color: white;	
+	background-color:  #24243e ;
+	border-radius: 15px;
+	color: white;
+	font-weight: bold;
+	border-style:none;
+	border:white solid 1px;
 	
 }
 
 #prodiv3 #following{
 	width:100%;
 	padding:7px;
-	background-color:#BDBDBD;
 	border-radius: 20px;
-	color: white;
+	background-color: #ebeced;
+	color: #24243e;
 }
 
 
@@ -125,17 +129,20 @@
 }
 
 .allposts h5{
-	color:white;
+	color:#24243e;
 	margin-top:20px;
 	text-align: center;
 } 
-
+#myTab{
+	background-color: #ebeced;
+}
 .pro{
 	width:100%;
-	min-height:430px;
+	min-height:200px;
 	position:relative;
-	margin-top:10px;
+	background-color: #ebeced;
 	border-bottom: #BDBDBD solid 1px;
+	padding-top:10px;
 	color: white;
 }
 
@@ -153,13 +160,14 @@
 
 .userpost{
 	width:100%;
-	min-height: 400px;
+	min-height: 200px;
 }
 
 .userpost #userP{
 	width:100%;
 	height:50px;
 	padding-left:20%;
+	color:#24243e;
 	display:flex;
 }
 
@@ -174,15 +182,16 @@
 	padding-left:5%;
 	text-align:justify;
 	font-size: 15px;
+	color: #24243e;
 }
 .userpost img{
 	width:100%;
-	min-height:350px;
+	min-height:200px;
 	margin-top:10px;
 }
 
 .userpost #likecommentdiv{
-	margin-top: 10px;
+	margin-top: 15px;
 	display: flex;
 	margin-left: 10px;
 }
@@ -201,14 +210,14 @@
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #BDBDBD;
+	color: #878787;
 	
 }
 .userpost #likecommentdiv #liked{
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #BDBDBD;
+	color: #878787;
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -217,29 +226,31 @@
 
 
 .userpost #likecommentdiv #comment{
-	width:65%;
+	width:73%;
 	padding:5px;
-	border-radius:10px;
-	margin-left:5px;
-	border-style: none;
+	border-top-left-radius:15px;
+	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	color: white;
+	background-color:white;
+	border-style: none;
+	border:#BDBDBD solid 0.5px; 
+	color: #23233e;
 }
 
 .userpost #likecommentdiv ::placeholder{
-	color: white;
+	color: #878787;
 }
 
 
 .userpost #likecommentdiv #commentbtn{
 	width: 50px;
 	height: 35px;
-	border-radius:20px;
-	background-color: deepskyblue;
+	border-top-right-radius:15px;
+	border-bottom-right-radius:15px;
 	border:none;
+	margin-left:-5px;
+	background-color: #24243e;
 	color: white;
-	margin-left: 10px;
 }
 
 
@@ -269,7 +280,7 @@
 	min-height: 100vh;
 	overflow: auto;
 	border-left:white solid 1px; 
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .profilemain{
@@ -350,7 +361,7 @@
 	
 .bio{
 	margin-left: 10px;
-	color:orange; 
+	color:white; 
 }
 
 #prodiv3{
@@ -361,20 +372,21 @@
 #prodiv3 #follow{
 	width:70%;
 	padding:7px;
-	background-color:  deepskyblue ;
+	background-color:  #24243e ;
 	border-radius: 20px;
 	margin-left:30px;
 	color: white;	
 	
 }
-
+#prodiv3 #follow:hover{
+	background-color: #6d44b8;
+}
 #prodiv3 #following{
 	width:70%;
 	padding:7px;
-	background-color:#BDBDBD;
 	margin-left:30px;
 	border-radius: 20px;
-	color: white;
+	color: #24243e;
 }
 
 
@@ -383,28 +395,27 @@
 	width:60%;
 	height: 350px;
 	margin: auto;
+	background-color: #ebeced;
 }
 
 .allposts h5{
-	color:white;
+	color:#24243e;
 	margin-top:20px;
 	text-align: center;
 } 
 
 .pro{
 	width:100%;
-	min-height:430px;
+	min-height:200px;
 	display:flex;
 	border-bottom: #BDBDBD solid 1px;
-	border-left: #BDBDBD solid 1px;
-	border-right: #BDBDBD solid 1px;
 	margin-top:0;
 	color: white;
 }
 
 .userlogo{
 	width:10%;
-	min-height: 400px;
+	min-height: 200px;
 	text-align:none;
 	position:static;
 	padding-top:10px;
@@ -418,7 +429,7 @@
 
 .userpost{
 	width:100%;
-	min-height: 400px;
+	min-height: 100px;
 	padding: 10px;
 }
 
@@ -442,9 +453,8 @@
 }
 .userpost img{
 	width:90%;
-	height:350px;
+	min-height:100px;
 	margin-top:10px;
-	border-radius: 15px;
 }
 
 .userpost #likecommentdiv{
@@ -456,55 +466,61 @@
 .userpost #likecommentdiv .likesp{
 	width: 10%;
 }
-.userpost #likecommentdiv .commentsp{
-	width:90%;
-	display:flex;
-	margin-left: 10px;
-}
 
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #BDBDBD;
+	color: #878787;
 	
 }
 .userpost #likecommentdiv #liked{
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #BDBDBD;
+	color: #878787;
 }
 
 .userpost #likecommentdiv #like:hover{
 	font-size: 22px;
 }
 
+.userpost #likecommentdiv .commentsp{
+	width:80%;
+	display:flex;
+	
+}
 
+.commentsp #frm{
+	width: 100%;
+}
 .userpost #likecommentdiv #comment{
-	padding: 5px;
-	border-radius:10px;
+	width:85%;
+	padding:5px;
+	padding-left:20px;
+	border-top-left-radius:15px;
+	border-bottom-left-radius:15px;
+	margin-bottom:10px;
+	background-color:white;
 	border-style: none;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	color: white;
+	border:#BDBDBD solid 0.5px; 
+	color: #24243e;
 }
 
 .userpost #likecommentdiv ::placeholder{
-	color: white;
+	color: 878787;
 }
 
 
 .userpost #likecommentdiv #commentbtn{
-	width: 60px;
+	width: 50px;
 	height: 35px;
-	border-radius:20px;
-	background-color: deepskyblue;
+	border-top-right-radius:15px;
+	border-bottom-right-radius:15px;
 	border:none;
+	margin-left:-5px;
+	background-color: #24243e;
 	color: white;
-	margin-left: 20px;
-	margin-top: 5px;
 }	
-	
-	
 	
 }	
 

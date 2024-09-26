@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/notificationStyle.css">
 <script type="text/javascript" src='resources/JS/notification.js'></script> 
+
 </head>
 <body>
 
@@ -22,8 +23,18 @@
 			
 	<div class="notificationbox">
 	<div class="notificationdiv"> 
+	
+	<%
+	int Ncount= (Integer)request.getAttribute("Ncount");
+	%>
 		<div class="details">
+			<div class="adj">
 			<h4>Notifications</h4>
+				<div class="cout<%=Ncount %>" id="cout">
+				<i class="fa-regular fa-circle"></i>
+				<h6><%=Ncount %></h6>
+				</div>
+			</div>
 			<div id="name"><a href=''>All</a></div>
 		</div> <!-- details -->
 		
@@ -37,7 +48,7 @@
 	if(notificationlist!=null){
 	for(NotificationModel list : notificationlist){
 	%>
-	<div class="notificationuser">
+	<div class="notificationuser" id="notificationuser<%=list.getView()%>">
 	<div class="photouser">
 		<img alt="notificationspage" src="resources/Profile_Images/<%=list.getProfileimage()%>">
 	</div> <!-- photouser -->
@@ -46,11 +57,20 @@
 		<div id="username"><%=list.getUsername() %></div>
 		<div id="notificationpro"><%=list.getNotification() %></div>
 		</div>
+		
 		<div class="spdatetime">
 		<div id="notificationdate"><%=list.getDate() %></div>
 		<div id="notificationtime"><%=list.getTime() %></div>
 		</div>
+		
 	</div> <!-- userdetailsnotification -->
+	
+		<i class="fa-solid fa-circle" id="dot"></i>
+		
+	<div class="deletenotification">
+       <a href="deletenotification?nid=<%=list.getNid()%>"><i class="fa-solid fa-trash-can"></i></a>
+	</div> <!-- deletenotification -->
+	
 	</div>  <!-- notificationuser -->
 	<%
 	}

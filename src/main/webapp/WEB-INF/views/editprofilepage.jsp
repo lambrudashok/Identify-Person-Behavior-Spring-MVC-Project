@@ -23,6 +23,8 @@
 
 	%>
 	<div class="divider" id="editGrid">
+	
+	<div class="adj">
 	<div class="heading">
 	<h3>Edit Profile</h3>
 	<div class="closetab">
@@ -43,6 +45,8 @@
 		<button type="submit" name="changebtn" id="changebtn" >Change Profile</button>
 	</div>
 	</form>
+	
+	</div> <!-- adj -->
 	
 	<input type="text" name="cname" id="cname" placeholder="name"><br>
 	<div id="msgname" class="msg"></div>

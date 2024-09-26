@@ -409,10 +409,11 @@ public class UserRegistrationRepository {
 		                 new PreparedStatementCreator() {
 		                     @Override
 		                     public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-		                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()))",
+		                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()),?)",
 		                        		 PreparedStatement.RETURN_GENERATED_KEYS);
 		                         ps.setString(1, model.getNotification());
 		                         ps.setInt(2, id);
+		                         ps.setString(3, "no");
 		                         return ps;
 		                     }
 		                 }, keyholder);
@@ -452,10 +453,11 @@ public class UserRegistrationRepository {
 	                 new PreparedStatementCreator() {
 	                     @Override
 	                     public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-	                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()))",
+	                         PreparedStatement ps = con.prepareStatement("insert into notificationmaster values ('0', ?, (select curdate()), ?,(select curtime()),?)",
 	                        		 PreparedStatement.RETURN_GENERATED_KEYS);
 	                         ps.setString(1, model.getNotification());
 	                         ps.setInt(2, model.getRegisterid());
+	                         ps.setString(3, "no");
 	                         return ps;
 	                     }
 	                 }, keyholder);
@@ -482,7 +484,7 @@ public class UserRegistrationRepository {
 		// notifications fetch user
 		public List<NotificationModel> getAllUserNotification(int registerid){
 			try {
-				List<NotificationModel> list = template.query("select rm.registerid,nm.notification,nm.date,nm.time from notificationmaster nm "
+				List<NotificationModel> list = template.query("select rm.registerid,nm.notification,nm.date,nm.time,nm.nid,nm.view from notificationmaster nm "
 						+ "inner join notificationregistrationjoin nrj on nrj.nid=nm.nid "
 						+ "inner join registrationmaster rm on rm.registerid=nrj.registerid "
 						+ "where nm.sendid=? order by nm.nid desc", 
@@ -494,6 +496,8 @@ public class UserRegistrationRepository {
 								nmodel.setNotification(rs.getString(2));
 								nmodel.setDate(rs.getDate(3));
 								nmodel.setTime(rs.getTime(4));
+								nmodel.setNid(rs.getInt(5));
+								nmodel.setView(rs.getString(6));
 								return nmodel;
 							}
 						});
@@ -510,8 +514,45 @@ public class UserRegistrationRepository {
 				return null;
 			}
 		}
-	
 		
+		
+		
+		//count notifications user
+		public int getNotificationUserCount(int registerid){
+			try {
+				int count = template.queryForObject("select count(nm.nid) from notificationmaster nm "
+						+ "inner join notificationregistrationjoin nrj on nrj.nid=nm.nid "
+						+ "inner join registrationmaster rm on rm.registerid=nrj.registerid "
+						+ "where nm.sendid=? and nm.view='no'", 
+						new Object[] {registerid}, new RowMapper<Integer>() {
+							@Override
+							public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+								return rs.getInt(1);
+							}
+						});
+				return  (count>0)?count:0;
+			}catch(Exception e) {
+				System.out.println("notification error :"+e);
+				return 0;
+			}
+		}
+	
+		//delete notification user
+		public int deleteUserNotification(final int nid){
+			try {
+				int v = template.update("delete from notificationmaster where nid=?", new PreparedStatementSetter() {
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setInt(1, nid);
+					}
+				} );
+				
+				return (v>0) ?1:0;
+			}catch(Exception e) {
+				System.out.println("notification error :"+e);
+				return 0;
+			}
+		}
 		
 		// when user send report problem
 		public boolean isAddReportProblemUser(final ReportProblemModel model) {

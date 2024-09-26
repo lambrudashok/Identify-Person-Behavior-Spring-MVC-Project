@@ -74,7 +74,7 @@ public class ForgotPasswordPageController {
 			session.setAttribute("forgotregisterid", emailResult);
 			
 			str=str+"<div class='sendotpdiv' style='display:block;' id='sendotpdiv'>";
-			str=str+"<h3>Where should we send a confirmation code</h3>";
+			str=str+"<h3>Where should we send an OTP</h3>";
 			str=str+"<input type='hidden' value='"+email+"' id='email'><br>";
 			str=str+"<h5>Send an email to "+email+"</h5>";
 			str=str+"<button type='submit' name='sendotpbtn' id='sendotpbtn' onclick='checkOTP()'  >Send OTP</button><br>";
@@ -99,7 +99,7 @@ public class ForgotPasswordPageController {
 	@ResponseBody
 	public String reEnterOtpForgotPass() {
 		String str="";
-		str=str+"<h3>Check your email to get your confirmation code</h3>";
+		str=str+"<h3>Check an email to get OTP</h3>";
 		str=str+"<input type='text' id='otpinput'  placeholder='Enter OTP code'><br>";
 		str=str+"<div id='msgotp' class='msg'>Invalid OTP. Please enter correct OTP</div>";
 		str=str+"<button type='submit' name='otpverifybtn' id='otpverifybtn'  >Confirm</button><br>";
@@ -123,7 +123,7 @@ public class ForgotPasswordPageController {
 		str=str+"<h3>Forgot Password</h3>";
 		str=str+"<input type='text' name='newpass' id='newpass' placeholder='New Password' required><br>";
 		str=str+"<input type='text' name='retypepass' id='retypepass' placeholder='Retype New Password' required><br>";
-		str=str+"<div id='msg' class='msg'style='color:green; font-weight:20px;' >Password forgot successfully</div>";
+		str=str+"<div id='msg' class='msg'style='color:green; font-weight:20px;' >Password successfully changed</div>";
 		str=str+"<form action='loginpage' method='post'>";
 		str=str+"<button type='submit' name='forgot' id='forgot' >Logout</button>";
 		str=str+"</form>";

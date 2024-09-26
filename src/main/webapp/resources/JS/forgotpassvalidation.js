@@ -95,7 +95,7 @@ function checkPassword() {
     if (!password(pass)) {
 		let msg = document.getElementById("msg");
 		msg.style.color="red";
-		msg.style.fontSize="20px";
+		msg.style.fontSize="15px";
         msg.innerHTML="Password must be at least 6 characters long and contain a digit.";
         return false; 
     }
@@ -103,7 +103,7 @@ function checkPassword() {
     if (!retypepassword(pass, retype)) {
 		let msg = document.getElementById("msg");
 		msg.style.color="red";
-		msg.style.fontSize="20px";
+		msg.style.fontSize="15px";
 		msg.innerHTML="Passwords do not match.";
         return false; 
     }

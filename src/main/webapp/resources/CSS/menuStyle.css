@@ -40,7 +40,7 @@
         font-size: 20px;
         font-weight:bold;
         margin-right: 15px;
-        margin-left: 25%;
+        margin-left: 10px;
     }
 
 
@@ -82,6 +82,9 @@
         width: 70px;
         height: 50px;
     }
+.cov{
+	width: 100%;
+}
 
 .menulogo {
         font-size: 22px;
@@ -113,10 +116,10 @@
         flex-direction: column;
     }
 
-    #v-pills-tab :hover {
+   #v-pills-tab :hover {
         background: linear-gradient(#7579e7, #393e46);
         color: white;
-    }
+    } 
 
    
 }

@@ -136,7 +136,7 @@ public class SearchAnotherUserProfileController {
 		int commentCount = lkSer.getCommentCount(postid);
 		String str="";
 		str=str+"<a id='commentshow' href='viewanotheruserprofilecomment?postid="+postid+"&userID="+registerid+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
-        str=str+"<form name='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
+        str=str+"<form name='frm' id='frm' method='POST' onsubmit='return commentfun("+postid+",comment.value)'>"; 
         str=str+"<input type='text' name='comment' id='comment' placeholder='comment here...' required>"; 
         str=str+"<button type='submit' id='commentbtn'  name='commentbtn' >post</button>";
         str=str+"</form>";

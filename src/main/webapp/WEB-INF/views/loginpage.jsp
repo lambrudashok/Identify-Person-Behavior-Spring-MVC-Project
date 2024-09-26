@@ -22,11 +22,11 @@
 	<div class="main">
 	
 		<form name="frm" id="frm" action="validation" method="POST" onsubmit="return loginfun()"><br>
-			<h2>Login Here</h2> 
-			<input type="text" name="username" id="username"	placeholder="Enter username" ><br>
-			<div class="msg" id="usernamemsg"></div><br>
-			<input type="password"	name="password" id="password" placeholder="Enter password" ><br>
-			<div class="msg" id="passwordmsg">${msg}</div><br>
+			<h2>Login</h2> 
+			<input type="text" name="username" id="username"	placeholder="Enter username" >
+			<div class="msg" id="usernamemsg"></div>
+			<input type="password"	name="password" id="password" placeholder="Enter password" >
+			<div class="msg" id="passwordmsg">${msg}</div>
 			<button type="submit" id="btn" name="s" value="login">Login</button><br>
 		</form>
 		<div class="next">

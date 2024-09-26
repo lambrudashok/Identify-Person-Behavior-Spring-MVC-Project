@@ -9,21 +9,20 @@
 .deletecontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+	background-color: white;
 }
 
 .main{
 	width: 100%;
 	min-height: 100vh;
 	margin:auto;
-	padding-top: 30px;
+	padding-top: 150px;
 	
 }
 
 .deletediv{
-	width: 100%;
+	width: 95%;
 	min-height: 100vh;
-	padding-left:15px;
 	margin: auto;
 }
 
@@ -31,28 +30,31 @@
 	font-size:25px;
 	text-align:center;
 	float:right;
+	align-content:center;
 	margin-right: 20px;
 }
 .closetab i{
-	color: aqua;
+	font-size:30px;
+	color: white;
 }
 
 #profile{
-	width: 95%;
+	width: 100%;
 	height: 90px;
 	border:white solid 1px;
-	border-radius:30px;
-	background-color:#d5d8e0;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+	background-color:#24243e;
 	display:flex;
 }
 
 .photo{
-	width:30%;
+	width:25%;
 	height: 80px;
 }
 
 .photo img{
-	width: 80%;
+	width: 95%;
 	height: 75px;
 	margin-left:5px;
 	border:black solid 1px;
@@ -62,48 +64,52 @@
 .userdetails{
 	width: 70%;
 	height: 90px;
+	padding-left:5px;
 	color:black;
-	padding-left:10px;
 	padding-top: 10px;
 }
 .userdetails #name{
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
 	margin-top: 5px;
+	color: white;
 }
 .userdetails #username{
 	font-size: 15px;
 	margin-top: 5px;
+	color: white;
 }
 
 #request{
-	width: 95%;
-	height: 230px;
-	border:white solid 1px;
-	margin-top:20px;
-	border-radius:10px;
-	background-color:#d5d8e0;
+	width: 100%;
+	height: 170px;
+	border:#ebeced solid 1px;
+	margin-top:0px;
+	border-bottom-left-radius:25px;;
+	border-bottom-right-radius:25px;
+	background-color: #ebeced;;
 }
 #request h2{
 	font-size:20px;
 	text-align:center;
-	margin-top: 20px;
+	margin-top: 60px;
 }
 .btndiv{
 	width:100%;
 	height:50px;
 	padding-left:8%;
-	margin-top: 20px;
+	margin-top: 10px;
 	display:flex;
 	
 }
 .btndiv #yesbtn{
 	width:80px;
 	height: 40px;
-	border-radius:20px;
+	border-radius:15px;
 	margin-left:40px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	border-style:none;
+	color:white;
+	background-color: #24243e;
 	font-size:20px;
 	font-weight: bold;
 }
@@ -111,16 +117,16 @@
 .btndiv #nobtn{
 	width:80px;
 	height: 40px;
-	border-radius:20px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	border-radius:15px;
+	background-color: white;
 	margin-left:30%;
+	color:#24243e;
 	font-size:20px;
 	font-weight: bold;
 }
 #request #msg{
-	margin-top:20px;
-	font-size:20px;
+	margin-top:0px;
+	font-size:12px;
 	color:green;
 	font-weight:bold;
 	text-align: center;
@@ -138,7 +144,6 @@
 .deletecontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
 
 .main{
@@ -151,20 +156,17 @@
 .deletediv{
 	width: 80%;
 	min-height: 70vh;
-	border:white solid 1px;
-	padding-top:10px;
-	border-radius:20px;
-	box-shadow:2px 5px 10px white;
 	margin: auto;
 }
 
 #profile{
 	width: 95%;
 	height: 90px;
-	border:white solid 1px;
-	border-radius:30px;
 	margin-left:10px;
-	background-color:#d5d8e0;
+	border:white solid 1px;
+	border-top-left-radius:25px;
+	border-top-right-radius:25px;
+	background-color:#24243e;
 	display:flex;
 }
 .photo{
@@ -180,13 +182,13 @@
 	border-radius: 50px;
 }
 .userdetails{
-	width: 70%;
+	width: 75%;
 	height: 90px;
 	color:black;
 	padding-left:10px;
 }
 .userdetails #name{
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: bold;
 	margin-top: 5px;
 }
@@ -194,33 +196,47 @@
 	font-size: 20px;
 	margin-top: 5px;
 }
-
+.closetab{
+	font-size:25px;
+	text-align:center;
+	float:right;
+	align-content:center;
+	margin-right:0px;
+}
+.closetab i{
+	font-size:35px;
+	color: white;
+}
 #request{
 	width: 95%;
-	height: 200px;
-	border:white solid 1px;
+	height: 185px;
+	border:#ebeced solid 1px;
+	margin-top:0px;
 	margin-left:10px;
-	border-radius:10px;
-	background-color:#d5d8e0;
+	border-bottom-left-radius:25px;;
+	border-bottom-right-radius:25px;
+	background-color: #ebeced;
 }
 #request h2{
 	text-align:center;
-	margin-top: 20px;
+	font-size:25px;
+	margin-top: 50px;
 }
 .btndiv{
-	width:50%;
+	width:100%;
 	height:50px;
-	margin-left:20%;
 	margin-top: 20px;
+	padding-left:0%;
+	margin-left:33.33%;
 	display:flex;
 }
 .btndiv #yesbtn{
 	width:80px;
 	height: 40px;
-	border-radius:20px;
-	margin-left:40px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	border-radius:15px;
+	margin-left:0px;
+	background-color: #24243e;
+	border-style:none;
 	font-size:20px;
 	font-weight: bold;
 }
@@ -228,16 +244,17 @@
 .btndiv #nobtn{
 	width:80px;
 	height: 40px;
-	border-radius:20px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	border-radius:15px;
+	border-color:#24243e;
+	background-color: white;
 	margin-left:30%;
+	color:#24243e;
 	font-size:20px;
 	font-weight: bold;
 }
 #request #msg{
-	margin-top:20px;
-	font-size:20px;
+	margin-top:0px;
+	font-size:15px;
 	color:green;
 	font-weight:bold;
 	text-align: center;

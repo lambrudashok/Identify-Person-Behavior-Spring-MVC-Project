@@ -9,7 +9,7 @@
 .reportcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .menustag{
@@ -23,7 +23,7 @@
 	min-height: 100vh;
 }
 .main h2{
-	color: white;
+	color: #24243e;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -98,14 +98,15 @@
 	width:100%;
 	min-height: 100px;
 	margin:auto;
-	color:white;
-	margin-top:5px;
+	color:#24243e;
 	display:flex;
-	border-radius:20px;
-	border: white solid 1px;
+	background-color: #ebeced;
+	border-bottom: #BDBDBD solid 1px;
+	border-left: #BDBDBD solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 .details:hover{
-	background: linear-gradient(to bottom, #4b4a7d, #6a6abf, #5e5e7a);
+	background-color: white;
 }
 
 .details #userid{
@@ -114,7 +115,7 @@
 	min-height: 100px;
 	text-align: center;
 	padding-top:30px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #username{
@@ -124,7 +125,7 @@
 	padding-top:30px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #date{
@@ -134,7 +135,7 @@
 	padding-top:30px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #title{
 	width:270px;
@@ -143,7 +144,7 @@
 	padding-top:30px;
 	padding-right:10px;
 	padding-left:10px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #description{
@@ -153,7 +154,7 @@
 	padding-top:30px;
 	padding-right:10px;
 	padding-left:10px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #reportid{
 	display:none;
@@ -161,7 +162,7 @@
 	min-height: 100px;
 	text-align:center;
 	padding-top:30px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #status{
 	width:155px;
@@ -184,13 +185,15 @@
 	border-radius:20px;
 	color:white;
 	margin-left:10px;
-	border-color:silver;
+	border-style:none;
 	background-color: #e74c3c;
 	font-size:15px;
 	font-weight: bold;
 }
-#pending:hover{
-	background-color: green;
+#pending:hover {
+	background-color: white;
+	color: red;
+	border: red solid 2px;
 }
 .details #solvediv{
 	width:110px;
@@ -203,11 +206,11 @@
 .details #solve{
 	width:85px;
 	height: 40px;
+	border-radius:15px;
+	border-style:none;
 	color:white;
-	border-radius:20px;
 	margin-left:10px;
-	border-color:silver;
-	background-color: green;
+	background-color: #24243e;
 	font-size:15px;
 	font-weight: bold;
 }	

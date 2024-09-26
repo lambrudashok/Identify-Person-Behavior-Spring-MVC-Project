@@ -181,20 +181,20 @@
  function unfollowShow(button){
 	button.style.color="red";
 	button.style.fontWeight="bold";
-	button.style.border="red solid 1px";
-	button.style.backgroundColor="#1a0000";
+	button.style.border="red solid 2px";
+	button.style.backgroundColor="#ebeced";
 	button.innerHTML="Unfollow";
  }
  
  
  
  function followingShow(button){
-	button.style.color="white";
+	button.style.color="#24243e";
 	button.style.fontWeight="normal";
-	button.style.backgroundColor="#BDBDBD";
+	button.style.backgroundColor="#ebeced";
 	button.innerHTML="Following";
 	button.style.fontWeight="none";
-	button.style.border="none";
+	button.style.border="#24243e solid 2px";
 	}
 	
 	

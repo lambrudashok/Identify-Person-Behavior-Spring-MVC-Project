@@ -19,22 +19,22 @@
 	</div>
 
 <div class="menus">
-<ul class="nav ">
-	<li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="adminpage">Home</a></li>
+<ul class="nav">
+	<li class="nav-item"><a class="nav-link" aria-current="page" href="adminpage">Home</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="userdetailsadminpage">User Details</a></li>
+	<li class="nav-item"><a class="nav-link" href="userdetailsadminpage">User Details</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="userpostsadminpage">View All Posts</a></li>
+	<li class="nav-item"><a class="nav-link" href="userpostsadminpage">View All Posts</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="deleterequestadminpage">Delete Account Request</a></li>
+	<li class="nav-item"><a class="nav-link" href="deleterequestadminpage">Delete Account Request</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="reportproblemadminpage">Reports</a></li>		
+	<li class="nav-item"><a class="nav-link" href="reportproblemadminpage">Reports</a></li>		
 	
-	<li class="nav-item"><a class="nav-link text-white" href="logindetailsadminpage">User Logins</a></li>
+	<li class="nav-item"><a class="nav-link" href="logindetailsadminpage">User Logins</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="predictionadminpage">Prediction</a></li>
+	<li class="nav-item"><a class="nav-link" href="predictionadminpage">Prediction</a></li>
 	
-	<li class="nav-item"><a class="nav-link text-white" href="loginpage">Logout</a></li>
+	<li class="nav-item"><a class="nav-link" href="loginpage">Logout</a></li>
 </ul>
 </div>
 </div> <!-- menustag -->

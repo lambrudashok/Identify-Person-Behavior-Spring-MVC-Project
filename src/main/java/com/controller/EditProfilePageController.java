@@ -133,7 +133,7 @@ public class EditProfilePageController {
 		UserInfoModel user = userSer.getUserInfo(userID); // fetch user information
 		
 		String str="";
-		
+		str=str+"<div class='adj'>";
 		str=str+"<div class='heading'>";
 		str=str+"<h3>Edit Profile</h3>";
 		str=str+"<div class='closetab'>";
@@ -153,6 +153,7 @@ public class EditProfilePageController {
 		str=str+"<button type='submit' name='changebtn' id='changebtn' >Change Profile</button>";
 		str=str+"</div>";
 		str=str+"</form>";
+		str=str+"</div>"; // adj 
 		str=str+"<input type='text' name='cname' id='cname' placeholder='name'><br>";
 		str=str+"<div id='msgname' class='msg'></div>";
 		str=str+"<input type='text' name='username' id='username' placeholder='Username'><br>";

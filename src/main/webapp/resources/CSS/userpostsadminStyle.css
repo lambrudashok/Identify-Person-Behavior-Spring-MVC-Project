@@ -9,7 +9,7 @@
 .postcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 .menustag{
 	width:100%;
@@ -21,7 +21,7 @@
 	min-height: 100vh;
 }
 .main h2{
-	color: white;
+	color: #24243e;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -81,11 +81,12 @@
 	width:90%;
 	min-height: 120px;
 	margin:auto;
-	color:white;
-	margin-top:5px;
+	color:#24243e;
 	display:flex;
-	border-radius:20px;
-	border: white solid 1px;
+	background-color: #ebeced;
+	border-bottom: #BDBDBD solid 1px;
+	border-left: #BDBDBD solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 
 .details #postid{
@@ -94,7 +95,7 @@
 	min-height: 120px;
 	text-align: center;
 	padding-top:50px;
-	border-right:white solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 
 .details #username{
@@ -104,13 +105,13 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 
 .details #postimage{
 	width:220px;
 	min-height: 120px;
-	border-right:white solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 .details #postimage img{
 	width:200px;

@@ -118,6 +118,16 @@ public class UserRegistrationService {
 		return regRepo.getAllUserNotification(registerid);
 	}
 	
+	//count notifications user
+	public int getNotificationUserCount(int registerid){
+		return regRepo.getNotificationUserCount(registerid);
+	}
+	
+	//delete notification user
+	public int deleteUserNotification(final int nid){
+		return regRepo.deleteUserNotification(nid);
+	}
+	
 	// when user send report problem
 	public boolean isAddReportProblemUser(ReportProblemModel model) {
 		return regRepo.isAddReportProblemUser(model);

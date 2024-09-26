@@ -25,12 +25,14 @@ public class UserLoginRepository {
 	        new PreparedStatementSetter() {
 	            @Override
 	            public void setValues(PreparedStatement ps) throws SQLException {
+	            	
 	                ps.setString(1, login.getUsername());
 	                ps.setString(2, login.getPassword());
 	            }
 	        },new RowMapper<Integer>() {
 	            @Override
 	            public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
+	         
 	                return rs.getInt("registerid");
 	            }
 	        }

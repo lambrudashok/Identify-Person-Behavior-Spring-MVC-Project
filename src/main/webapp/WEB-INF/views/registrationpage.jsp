@@ -14,6 +14,12 @@
          publicKey: "cSJw4UQuV4JA_SXo7",
        });
     })();
+    
+    
+// Disable right-click on the entire page
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}, false); 
  </script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="resources/CSS/registrationStyle.css">
@@ -25,7 +31,7 @@
 <div class="adj">
 <div class="register"> 
 		<form name="frm" id="frm" action="registeruser" method="POST" onsubmit="return validateForm()" >
-			<div class="logo">Register Here</div> 
+			<div class="logo">Register</div> 
 			<input type="text" name="name" id="name" placeholder="First and surname" required><br>
 			<div class="msg" id="namemsg"></div><br>
 			<input type="email" name="email" id="email" onkeyup="checkemail(this.value)" placeholder="Email" required><br> 

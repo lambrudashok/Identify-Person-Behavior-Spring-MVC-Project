@@ -37,9 +37,9 @@
  
  
  function followingShow(button){
-	button.style.color="white";
+	button.style.color="black";
 	button.style.fontWeight="normal";
-	button.style.backgroundColor="#BDBDBD";
+	button.style.backgroundColor="#ebeced";
 	button.innerHTML="Following";
 	button.style.fontWeight="none";
 	button.style.border="none";
@@ -49,7 +49,7 @@
 
 
 // user profile comment
- function commentfun(postid,commentname){
+ function commentfun1(postid,commentname){
 	
         if(commentname.trim() == ''){
             return false;

@@ -9,31 +9,28 @@
 .commentContainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	
 }
 
 .main{
-	width: 95%;
-	min-height: 80vh;
+	width: 100%;
+	min-height: 100vh;
 	margin: auto;
-	padding-top:30px;
-	padding-bottom:20px;
 }
 
 .commentbox{
 	width: 100%;
-	min-height: 80vh;
+	min-height: 100vh;
 	margin:auto;
-	border-radius:10px;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
-	border:white solid 1px;
+	background-color: #ebeced;
 }
 
 .profilediv{
 	width: 100%;
 	padding:5px;
 	min-height: 50px;
-	margin-top:5px;
+	background-color:#24243e;
+	color:white;
 	border-bottom:white solid 1px;
 	display: flex;
 }
@@ -42,18 +39,19 @@
 	min-height: 60px;
 }
 .profilediv .photo img{
-	width:70%;
+	width:60%;
 	height:50px;
 	margin-left:10px;
+	margin-top:5px;
 	border-radius: 50px;
 }
 .profilediv .userdetails{
 	color:white;
-	width:70%;
+	width:65%;
 	height:60px;
-	margin-left:5px;
+	margin-left:-20px;
 	font-size:20px;
-	margin-top:5px;
+	margin-top:10px;
 	display:flex;
 }
 
@@ -64,10 +62,9 @@
 	text-align:center;
 	padding-top:10px;
 	color:white;
-	margin-left: 20px;
 }
 .closetab i{
-	color: aqua;
+	color: white;
 }
 
 .userdetails #name{
@@ -75,7 +72,7 @@
 }
 
 .userdetails #username{
-	font-size: 17px;
+	font-size: 15px;
 }
 
 
@@ -89,8 +86,7 @@
 	display: flex;
 }
 .commentuser:hover{
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-	border-radius: 20px;
+	background-color:white;
 }
 .commentuser .photouser{
 	width:20%;
@@ -105,20 +101,20 @@
 .commentuser .userdetailscomment{
 	width:70%;
 	min-height:40px;
-	color:white;
-	margin-left:5px;
-}
-.namedivuser{
-	display: flex;
+	color:#24243e;
+	margin-left:0px;
 }
 .userdetailscomment #username{
 	font-weight: bold;
 	font-size: 20px;
 	padding-right: 30px;
 }
+.userdetailscomment #commentpro{
+	margin-top: 5px;
+}
 .userdetailscomment #commentdate{
 	font-size: 12px;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 #cnf{
@@ -139,32 +135,26 @@
 .commentContainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .main{
 	width: 40%;
-	min-height: 80vh;
+	min-height: 100vh;
 	margin: auto;
-	padding-top:30px;
-	padding-bottom:20px;
 }
 
 .commentbox{
 	width: 100%;
-	min-height: 80vh;
+	min-height: 100vh;
 	margin:auto;
 	border-radius:10px;
-	background:linear-gradient(to bottom, #2c2b44, #454172, #3a3859);;
-	border:white solid 1px;
-	box-shadow: 5px 5px 20px white;
 }
 
 .profilediv{
 	width: 100%;
 	padding:5px;
 	min-height: 50px;
-	margin-top:5px;
 	border-bottom:white solid 1px;
 	display: flex;
 }
@@ -204,8 +194,8 @@
 
 .commentuser{
 	width: 100%;
-	color:white;
 	padding:5px;
+	color:#24243e;
 	min-height: 40px;
 	margin-top:5px;
 	margin-bottom:10px;
@@ -228,8 +218,8 @@
 .commentuser .userdetailscomment{
 	width:70%;
 	min-height:40px;
-	color:white;
-	margin-left:5px;
+	color:#24243e;
+	margin-left:-10px;
 }
 .namedivuser{
 	display: flex;
@@ -237,11 +227,11 @@
 .userdetailscomment #username{
 	font-weight: bold;
 	font-size: 20px;
-	padding-right: 30px;
+	padding-right: 40px;
 }
 .userdetailscomment #commentdate{
 	font-size: 12px;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 #cnf{

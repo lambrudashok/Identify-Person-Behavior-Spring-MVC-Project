@@ -16,17 +16,17 @@
 	<div class="main">
 		
 		<div class="followersection">
-			
+			<div class="adj">
+			<h4>Followers</h4>			
 			<div class="closetab">
 				<a href="profilepage"><i class="fa-solid fa-xmark"></i></a>
 			</div><!--closetab -->
+		</div> <!-- adj -->
 			
 			<%
 			List <UserInfoModel> list =(List<UserInfoModel>) request.getAttribute("followerlist");
 			if(list!=null){
-				%>
-				<h4>Followers</h4>
-				<%
+	
 				for(UserInfoModel userInfo:list){
 					%>
 					
@@ -50,7 +50,7 @@
 				
 			}else{
 				%>
-				<h4>Follower Not Available</h4>
+				<h4 id="fnn">Follower Not Available</h4>
 				<%
 			}
 			

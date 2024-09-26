@@ -137,7 +137,7 @@
 				                    
 				                    <div class="commentsp" id="commentGrid<%=posts.getPostid() %>">
 				                    <a id="commentshow" href="viewanotheruserprofilecomment?postid=<%=posts.getPostid()%>&userID=<%=registerid%>"> <i class="fa-solid fa-comment"></i> <%=posts.getCommentCount() %></a>
-				                    <form name="frm" method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
+				                    <form name="frm" id="frm" method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
 				                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
 				                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
 				                    </form>
@@ -151,7 +151,7 @@
 			                    }
             				}else{
             					%>
-            					<h5>Posts Not Founds</h5>
+            					<h5>Post Not Available</h5>
             					<%
             				}
 					  	%>

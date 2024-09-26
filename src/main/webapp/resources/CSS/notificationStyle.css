@@ -26,9 +26,8 @@
 .notificationmain .notificationbox{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
+	background-color: #ebeced;
 	margin:auto;
-	padding-top:10px;
 	color:white;
 }
 
@@ -37,6 +36,7 @@
 	padding:5px;
 	min-height: 50px;
 	padding-bottom:10px;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
 	display: flex;
 }
 .notificationdiv .details{
@@ -61,6 +61,7 @@
 	background-color: white;
 }
 .details #name a{
+	color: #24243e;
 	text-decoration: none;
 }
 
@@ -71,10 +72,10 @@
 	text-align:center;
 	padding-top:10px;
 	color:white;
-	margin-left: 20px;
+	margin-left: 5px;
 }
 .closetab i{
-	color: aqua;
+	color: white;
 }
 .notificationuser{
 	width: 100%;
@@ -83,39 +84,47 @@
 	padding-top:5px;
 	padding-bottom:10px;
 	display: flex;
+	background-color: #ebeced;
 }
+
+.deletenotification a{
+	font-size: 18px;
+	color: #24243e;
+}
+
 .notificationuser:hover{
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-	border-radius: 20px;
+	background: linear-gradient(#ffffff, #f8f8f8);
+	border-radius: 0;
+	color: white;
 }
 .notificationuser .photouser{
 	width:20%;
 	height: 55px;
 }
 .notificationuser .photouser img{
-	width:95%;
+	width:80%;
 	height:52px;
 	border-radius: 50px;
 }
-.notificationuser .userdetailsnotification{
-	width:100%;
+.userdetailsnotification{
+	width:70%;
 	min-height:40px;
 	padding-left:5px;
-	color:white;
+	color:black;
 }
 .namedivuser{
 	width:100%;
 	min-height:40px;
-	color:white;
+	color:black;
 }
 
 .userdetailsnotification #username{
 	font-weight: bold;
 	font-size: 20px;
-	color:white;
+	color:black;
 }
 .namedivuser #notificationpro{
-	font-size: 18px;
+	font-size: 15px;
 }
 .userdetailsnotification .spdatetime{
 	display:flex;
@@ -129,6 +138,7 @@
 	text-align: center;
 	font-weight:bold;
 	font-size:20px;
+	color:#24243e;
 	margin-top: 20px;
 }
  
@@ -143,12 +153,9 @@
 
 @media only screen and (min-width: 768px) {
 	
-	
-	
 .notificationcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	display: flex;
 }
 
@@ -156,36 +163,37 @@
 	display: block;
 	width: 15%;
 	min-height: 100vh;
+	position: fixed;
 }
 
 .notificationmain{
-	width: 80%;
+	width: 85%;
+	margin-left:15%;
 	min-height: 100vh;
-	padding-top:10px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-	border-left:white solid 1px;
+	padding-top:0;
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .notificationmain .notificationbox{
 	width: 80%;
-	min-height: 40vh;
-	border-radius:10px;
+	min-height: 100vh;
 	margin:auto;
 	color:white;
 	padding-top:0;
-	box-shadow: 5px 5px 20px white;
-	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
-	border:white solid 1px;
+	background-color: #ebeced;
 }
 
 .notificationdiv{
 	width: 100%;
 	padding:5px;
 	min-height: 50px;
-	margin-top:5px;
+	margin-top:0;
+	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
 	border-bottom:white solid 1px;
 	display: flex;
 }
+
+
 .notificationdiv .details{
 	color:black;
 	width:85%;
@@ -196,9 +204,36 @@
 	padding-left:10px;
 	color:white;
 }
+
+.adj .cout0{
+	display: none;
+}
+.details .adj{
+	display: flex;
+}
+.adj i{
+	margin-left:5px;
+	font-size: 27px;
+	color: deepskyblue;
+	/* background-color: white; */
+	border-radius: 30px;
+}
+.adj #cout{
+	position: relative;
+}
+#cout h6{
+	position: absolute;
+	top: 1px;
+	font-size:18px;
+	color:deepskyblue;
+	left: 14px;
+	
+}
+
 .details h4{
 	font-weight: bold;
 }
+
 .details #name{
 	width:45px;
 	height:36px;
@@ -219,7 +254,7 @@
 	text-align:center;
 	padding-top:10px;
 	color:white;
-	margin-left: 20px;
+	margin-left: 30px;
 }
 
 .notificationuser{
@@ -229,38 +264,64 @@
 	padding-top:5px;
 	padding-bottom:10px;
 	display: flex;
+	background-color: #ebeced;
+}
+
+.notificationuser .deletenotification{
+	width: 5%;
+	height: 40px;
+	margin-left: 13%;
+	margin-top: 20px;
+	font-size: 15px;
+	color: black;
+}
+#notificationuserno .deletenotification{
+	margin-left: 11.5%;
+}
+
+.deletenotification a{
+	font-size: 18px;
+	color: black;
+}
+.deletenotification a:hover{
+	color: red;
+	font-size: 21px;	
 }
 .notificationuser:hover{
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-	border-radius: 20px;
+	background: linear-gradient(#ffffff, #f8f8f8);
+	border-radius: 0;
+	color: white;
 }
 .notificationuser .photouser{
 	width:10%;
 	min-height: 40px;
 }
+
 .notificationuser .photouser img{
-	width:70%;
+	width:65%;
 	height:50px;
 	border-radius: 50px;
-	margin-left: 10px;
+	margin-left: 15px;
 }
+
 .notificationuser .userdetailsnotification{
 	width:70%;
 	min-height:40px;
-	color:white;
+	color:black;
 	margin-left:5px;
 }
 .namedivuser{
 	display: flex;
-	color:white;
+	color:black;
 }
+
 .namedivuser #notificationpro{
 	font-size: 18px;
 }
 .userdetailsnotification #username{
 	font-weight: bold;
 	font-size: 18px;
-	color:white;
+	color:black;
 	padding-right: 10px;
 }
 .userdetailsnotification .spdatetime{
@@ -271,9 +332,22 @@
 .userdetailsnotification #notificationdate{
 	margin-right: 50px;
 }
+
+
+.notificationuser #dot{
+	display: none;
+}
+#notificationuserno #dot{
+	display:block;
+	font-size: 12px;
+	align-self:center;
+	color: blue;
+}
+
 #nnf{
 	text-align: center;
 	font-weight:bold;
+	color:#24243e;
 	font-size:20px;
 	margin-top: 20px;
 }

@@ -210,7 +210,7 @@ public class AdminController {
 			str=str+"</div>";
 		}else{
 			str=str+"<div id='solvediv'>";
-			str=str+"<button name='solve' id='solve'  >Solve</button>";           
+			str=str+"<button name='solve' id='solve'  >Solved</button>";           
 			str=str+"</div>";	
 		}
 		return str;

@@ -10,7 +10,7 @@
 .chartcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: black;
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .chart{
@@ -24,11 +24,11 @@
 	display: flex;
 }
 .heading h1{
-	width:90%;
-	color:white;
+	width:100%;
+	color:#24243e;
 	text-align:center;
 	padding-top: 20px;
-	padding-left: 50px;
+	padding-left: 80px;
 }
 .heading .closetab{
 	width:10%;
@@ -36,18 +36,17 @@
 	text-align:center;
 	color:white;
 	padding-top: 20px;
-	margin-left: 20px;
 }
 .heading .closetab a{
-	color: aqua;
+	color: #24243e;
 }
 .area{
 	width: 100%;
 	min-height: 80vh;
-	background:white;
+	background-color: white;
 	margin-top:20px;
 	padding:10px;
-	box-shadow: 5px 10px 20px white;
+	box-shadow: 5px 10px 20px #878787;
 	border-radius:20px;
-	border: white solid 1px;
+	border: #24243e solid 1px;
 }

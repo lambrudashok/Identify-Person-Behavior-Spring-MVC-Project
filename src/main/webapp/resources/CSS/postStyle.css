@@ -16,13 +16,14 @@
 .postmenus{
 	width:100%;
 	min-height: 50px;
-	border-bottom:white solid 1px;
+	position: fixed;
 }
 
 .postsection{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	padding-top:80px;
+	background-color: #ebeced;
 }
 
 .postimg{
@@ -30,12 +31,13 @@
 	min-height: 20vh;
 	margin: auto;
 	padding-top:5px;
-	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	background-color: #ebeced;
 	
 }
 .postimg img{
 	width: 100%;
 	min-height: 20vh;
+	border:black solid 1px;
 }
 	
 
@@ -43,18 +45,21 @@
 	width: 100%;
 	min-height: 60vh;
 	padding-bottom:40px;
-	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+	background-color: #ebeced;
 	
 }
 .postlayout h3{
 	padding-top: 20px;
 	text-align:center;
-	color: white;
+	color: black;
 	
 }
 
 .suces{
 	color: green;
+	font-size:15px;
+	margin-left: 25%;
+	margin-bottom: -20px;
 }
 
 .postlayout #postfrm{
@@ -66,7 +71,7 @@
 .postlayout #postname{
     width: 95%;
     height: 150px;
-    border: black solid 2px;
+    border: black solid 1px;
     padding-left: 10px;
     padding-top:10px;
     font-size: 17px;
@@ -76,26 +81,32 @@
 }
 
 .postlayout h6{
-	color:white;
+	color:black;
 	margin-top: 30px;
 }
 
 .postlayout #select{
 	width :95%;
-	border: white solid 1px;
-	color:white;
+	border: black solid 1px;
+	color:black;
+	background-color:white;
 	padding: 10px;
 	border-radius: 5px;
 }
-
+#postimagefile::-webkit-file-upload-button{
+      background-color: #24243e;
+      color: white;
+      border:#24243e solid 2px; 
+      border-radius: 10px;
+  }
 .postlayout #pst{
 	width: 70px;
 	height: 40px;
-	border-radius:20px;
-	background-color: deepskyblue;
+	border-radius:15px;
+	background-color: #24243e;
 	border:none;
 	color: white;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 
@@ -121,37 +132,44 @@
 .postmenus{
 	width:15%;
 	min-height: 100vh;
+	position: static;
+	
 }
 
 .postsection{
 	width: 85%;
-	min-height: 100vh;
-	display: flex;
-	border-left: white solid 1px;
+	min-height: 90vh;
+	padding-top:0px;
+	border-left: #BDBDBD solid 1px;
 }
 
+.postlayout{
+	width: 100%;
+	min-height: 100vh;
+	display:flex;
+	position:relative;
+	
+}
 .postimg{
 	width: 40%;
-	height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	align-content:center;
+	min-height: 90vh;
+	padding-top:10vh;
 	
 }
 .postimg img{
 	width: 70%;
-	height: 80vh;
-	padding-top:130px;
+	height: 45vh;
+	margin-bottom:10vh;
 	margin-left: 60px;
+	border:#24243e solid 1px;
 }
-	
 
-.postlayout{
-	width: 60%;
-	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
 .postlayout h3{
-	margin-top: 20px;
-	text-align:left;
+	width:100%;
+	position:absolute;
+	padding-bottom:20px;
+	background-color: #24243e;
 	color: white;
 	
 }
@@ -161,7 +179,8 @@
 }
 
 .postlayout #postfrm{
-	margin-top:50px;
+	width:60%;
+	margin-top:70px;
 	margin-left: 50px;
 }
 
@@ -169,7 +188,7 @@
 #postfrm #postname{
     width: 80%;
     height: 150px;
-    border: aqua solid 1px;
+    border: black solid 1px;
     padding-left: 10px;
     padding-top:10px;
     font-size: 17px;
@@ -178,14 +197,14 @@
 }
 
 .postlayout h6{
-	color:white;
+	color:#24243e;
 	margin-top: 30px;
 }
 
 .postlayout #select{
 	width :80%;
-	border: white solid 1px;
-	color:white;
+	border: black solid 1px;
+	color:#24243e;
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -193,12 +212,10 @@
 .postlayout #pst{
 	width: 70px;
 	height: 40px;
-	border-radius:20px;
+	border-radius:15px;
 	background-color: deepskyblue;
 	border:none;
 	color: white;
-	margin-top: 20px;
-	margin-left: 400px;
 }
 
 	

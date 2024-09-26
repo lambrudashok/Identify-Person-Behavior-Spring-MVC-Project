@@ -95,7 +95,7 @@
 		                    
 		                    <div class="commentsp" id="commentGridA<%=post.getPostid() %>">
 		                    <a id="commentshow" href="viewhomepagecomment?postid=<%=post.getPostid()%>&userID=<%=post.getRegisterid()%>"> <i class="fa-solid fa-comment"></i> <%=post.getCommentCount() %></a>
-		                    <form name="frm" method="POST" onsubmit="return commentfun(<%=post.getPostid() %>,comment.value)"> 
+		                    <form name="frm" id="frm" method="POST" onsubmit="return commentfun(<%=post.getPostid() %>,comment.value)"> 
 		                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
 		                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
 		                    </form>
@@ -173,7 +173,7 @@
 				                 
 				            <div class="commentsp" id="commentGrid<%=posts.getPostid() %>">
 		                    <a id="commentshow" href="viewhomepagecomment?postid=<%=posts.getPostid()%>&userID=<%=posts.getRegisterid()%>"> <i class="fa-solid fa-comment"></i> <%=posts.getCommentCount() %></a>
-		                    <form name="frm" method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
+		                    <form name="frm" id='frm' method="POST" onsubmit="return commentfun(<%=posts.getPostid() %>,comment.value)"> 
 		                    <input type="text" name="comment" id="comment" placeholder="comment here..." required> 
 		                    <button type="submit" id="commentbtn"  name="commentbtn" >post</button>
 		                    </form>

@@ -7,12 +7,14 @@
 	 
         if(postname.trim() === ''){
 			var postbtn=document.getElementById("pst");
-			postbtn.style.background="#AFEEEE";
-			postbtn.style.color="black";
+			postbtn.style.background="white";
+			postbtn.style.color="#24243e";
+			postbtn.style.fontWeight="bold";
+			postbtn.style.border="#24243e solid 1px";
 			postbtn.disabled=true;
         } else {
           var postbtn=document.getElementById("pst");
-			postbtn.style.background="deepskyblue";
+			postbtn.style.background="#24243e";
 			postbtn.style.color="white";
 			postbtn.disabled=false;
         }

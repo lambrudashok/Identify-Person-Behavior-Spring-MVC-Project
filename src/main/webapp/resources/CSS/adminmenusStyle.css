@@ -34,10 +34,14 @@
 	width:75%;
 	height: 40px;
 }
+.nav-link {
+    color: white;
+}
 
-.menus a:hover{
-	background: linear-gradient(#7579e7, #393e46);
-	border-radius: 20px;
-	padding: 6px;
+.nav-link:hover {
+	background-color:white;
+    color: #24243e;
+    border:black solid 1px;
+    border-radius: 15px;
 }
 

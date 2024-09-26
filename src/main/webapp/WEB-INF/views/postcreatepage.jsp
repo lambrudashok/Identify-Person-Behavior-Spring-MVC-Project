@@ -18,32 +18,31 @@
 	
 	
 	<div class="postsection">
-		<div class="postimg">
-		<img alt="" id="twitterpic" src="resources/Post_Images/person.png">
-		</div> <!-- postimg -->
 		
 		<div class="postlayout">
 		<h3>Create Post</h3>
 		
-		
-		<%
-		String msg = (String)session.getAttribute("postMsg");
-		if(msg!=null){
-			%>
-			<h4 class="suces"><%=msg%></h4>
-			<%
-			session.removeAttribute("postMsg");
-		}
-		%>
+		<div class="postimg">
+			<img alt="" id="twitterpic" src="resources/Post_Images/person.png">
+		</div> <!-- postimg -->
 		
 			<form name="frm" id="postfrm" action="postsubmit" method="POST" enctype="multipart/form-data" >
-			<h6>Post:</h6>
-			<textarea name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" ></textarea>
-			<h6>Post Image:</h6>
+			<h6 id="pm">Post Image:</h6>
 			<div id="select">
 			<input type="file" name="postimagefile" id="postimagefile"  onchange="changeImg(this)">
 			</div>
-			<button type="submit" id="pst" name="pst" value="post">Post</button>
+			<h6>Caption:</h6>
+			<textarea name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" ></textarea>
+			<%
+				String msg = (String)session.getAttribute("postMsg");
+				if(msg!=null){
+					%>
+					<h4 class="suces"><%=msg%></h4>
+					<%
+					session.removeAttribute("postMsg");
+				}
+				%>
+			<br><button type="submit" id="pst" name="pst" value="post">Post</button>
 			</form>
 		
 		</div><!--  postlayout -->

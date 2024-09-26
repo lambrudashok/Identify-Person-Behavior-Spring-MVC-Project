@@ -17,9 +17,6 @@
 <div class="main">
 
 <div class="deletediv">
-		<div class="closetab">
-			<a href="userhomepage"><i class="fa-solid fa-xmark"></i></a>
-		</div><!--closetab -->
 	<div id="profile">
 	
 	<%	
@@ -32,10 +29,12 @@
 		<div class="userdetails">
 			<div id="name"><%=userInfo.getName() %></div>
 			<div id="username"><%=userInfo.getUsername() %></div>
-
+		
 		</div> <!-- userdetails -->
 	
-	
+	<div class="closetab">
+			<a href="userhomepage"><i class="fa-solid fa-xmark"></i></a>
+		</div><!--closetab -->
 	</div> <!-- profile -->
 		
 	<div id="request">

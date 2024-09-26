@@ -9,7 +9,7 @@
 .detailscontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
 }
 
 .menustag{
@@ -23,7 +23,7 @@
 	min-height: 100vh;
 }
 .main h2{
-	color: white;
+	color: #24243e;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -104,11 +104,12 @@
 	width:100%;
 	height: 120px;
 	margin:auto;
-	color:white;
-	margin-top:5px;
+	color:#24243e;
 	display:flex;
-	border-radius:20px;
-	border: white solid 1px;
+	background-color: #ebeced;
+	border-bottom: #BDBDBD solid 1px;
+	border-left: #BDBDBD solid 1px;
+	border-right: #BDBDBD solid 1px;
 }
 
 .details #userid{
@@ -117,12 +118,12 @@
 	height: 120px;
 	text-align: center;
 	padding-top:50px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #photo{
 	width:150px;
 	height: 120px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #photo img{
 	width:130px;
@@ -139,7 +140,7 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #email{
 	width:192px;
@@ -148,7 +149,7 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #username{
 	width:180px;
@@ -157,7 +158,7 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 
 .details #password{
@@ -167,19 +168,18 @@
 	padding-top:50px;
 	padding-left:5px;
 	overflow:hidden;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 .details #delete{
 	width:90px;
 	height: 120px;
 	text-align:center;
 	padding-top:50px;
-	border-right:white solid 1px;
+	border-right:#BDBDBD solid 1px;
 }
 #delete a{
-	color: aqua;
+	color: deepskyblue;
 	font-weight: bold;
-	text-shadow: 1px 2px 5px white;
 }
 .details #freezediv{
 	width:110px;
@@ -190,15 +190,18 @@
 .details #freeze{
 	width:85px;
 	height: 40px;
-	border-radius:20px;
+	border-radius:15px;
+	border-style:none;
+	color:white;
 	margin-left:10px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	background-color: #24243e;
 	font-size:15px;
 	font-weight: bold;
 }
 #freeze:hover{
-	background-color: aqua;
+	background-color: white;
+	border:#24243e solid 2px;
+	color: #24243e;
 }
 .details #unfreezediv{
 	width:110px;
@@ -209,15 +212,17 @@
 .details #unfreeze{
 	width:85px;
 	height: 40px;
-	border-radius:20px;
+	border-radius:15px;
 	margin-left:10px;
-	border-color:silver;
+	border-style:none;
 	background-color: #e74c3c;
 	font-size:15px;
 	font-weight: bold;
 }
 #unfreeze:hover {
-	background-color: red;
+	background-color: white;
+	color: red;
+	border: red solid 2px;
 }
 
 
