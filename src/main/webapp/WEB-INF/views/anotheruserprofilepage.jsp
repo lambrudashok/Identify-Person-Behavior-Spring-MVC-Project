@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/anotherprofileStyle.css"> 
 <script type="text/javascript" src='resources/JS/commentpostvalidation.js'></script> 
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script>
 </head>
 <body>
 <%!int registerid; %>

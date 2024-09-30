@@ -9,7 +9,7 @@
 .changecontainer{
 	width: 100%;
 	min-height: 100vh;
-	background:white;
+	background:var(--pink);
 }
 
 .changesection{
@@ -21,8 +21,8 @@
 	width:100%;
 	min-height: 100vh;
 	margin:auto;
-	color:black;
-	background-color: #ebeced;
+	color:var(--black);
+	background-color: var(--gray);
 
 }
 
@@ -31,7 +31,7 @@
 	padding-top:10px;
 	padding-left:10px;
 	height: 70px;
-	background-color:#24243e;
+	background-color:var(--voilet);
 }
 .closetab{
 	font-size:25px;
@@ -41,18 +41,18 @@
 	margin-right: 15px;
 }
 .closetab i{
-	color: white;
+	color: var(--white);
 	font-size: 30px;
 }
 
 .divider h3{
-	color:white;
+	color:var(--white);
 	font-size: 25px;
 	
 }
 .divider h6{
 	font-weight:normal;
-	color:white;
+	color:var(--white);
 	margin-top:0px;
 	font-size:12px;	
 }
@@ -61,7 +61,7 @@
 	height: 45px;
 	margin-top: 15px;
 	margin-left:10px;
-	border: black solid 2px;
+	border: var(--black) solid 2px;
 	padding-left:10px;
 	font-size:17px;
 	border-radius: 10px;
@@ -72,7 +72,7 @@
 	margin-top:20px;
 	padding-left:10px;
 	font-size: 15px;
-	color:red;
+	color:var(--error);
 }
 .divider button{
 	width:50%;
@@ -80,10 +80,10 @@
 	margin-top :10px;
 	margin-left:10px;
 	border-radius:15px;
-	color:white;
+	color:var(--white);
 	border-style:none;
 	font-weight:bold;
-	background-color:#24243e;
+	background-color:var(--voilet);
 }
 
 
@@ -107,7 +107,7 @@
 	width: 100%;
 	min-height: 100vh;
 	padding-top:25px;
-	background: white;
+	background: var(--pink);
 	
 }
 
@@ -116,15 +116,17 @@
 	min-height: 390px;
 	padding-left:0;
 	margin:auto;
-	color:black;
+	color:var(--black);
+	border:var(--border) solid 1px;
 	padding-top:0;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 .adj{
 	width:100%;
 	padding-top:10px;
 	padding-left:20px;
 	height: 70px;
+	border-bottom:var(--border) solid 1px;
 	background-color:#24243e;
 }
 .closetab{
@@ -152,7 +154,7 @@
 	width:92%;
 	height: 45px;
 	margin-top: 20px;
-	border: black solid 2px;
+	border: var(--black) solid 2px;
 	padding-left:10px;
 	margin-left:20px;
 	font-size:17px;
@@ -164,8 +166,15 @@
 	padding-left:25px;
 	margin-bottom:-15px;
 	font-size: 15px;
-	color:red;
+	color:var(--error);
 }
+.divider .success{
+	width:90%;
+	padding-left:25px;
+	font-size: 15px;
+	color:var(--success);
+}
+
 .divider button{
 	width:43%;
 	height:40px;

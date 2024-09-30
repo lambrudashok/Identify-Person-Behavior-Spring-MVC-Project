@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="resources/CSS/changepassStyle.css">
 <script type="text/javascript" src='resources/JS/changepassvalidation.js'></script>
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script>
 </head>
 <body>
 <div class="changecontainer">
@@ -28,7 +31,9 @@
 	<input type="password" name="curpass" id="curpass" placeholder="Current Password" required><br>
 	<input type="password" name="newpass" id="newpass" placeholder="New Password"><br>
 	<input type="password" name="retypepass" id="retypepass" placeholder="Retype New Password"><br>
-	<div id="msg" class="msg">${msg}</div>
+	<div id="msg">${msg}</div>
+	<div id="success" class="success">${success}</div>
+	
 	<button type="submit" name="change" id="change">Change Password</button>
 	</form>
 	</div> <!-- divider -->

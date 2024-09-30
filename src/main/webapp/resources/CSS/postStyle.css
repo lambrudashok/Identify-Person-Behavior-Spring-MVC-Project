@@ -16,14 +16,14 @@
 .postmenus{
 	width:100%;
 	min-height: 50px;
-	position: fixed;
+	position: fixed; 
 }
 
 .postsection{
 	width: 100%;
 	min-height: 100vh;
 	padding-top:80px;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 
 .postimg{
@@ -31,13 +31,13 @@
 	min-height: 20vh;
 	margin: auto;
 	padding-top:5px;
-	background-color: #ebeced;
+	background-color: var(--gray);
 	
 }
 .postimg img{
 	width: 100%;
 	min-height: 20vh;
-	border:black solid 1px;
+	border:var(--black) solid 1px;
 }
 	
 
@@ -45,18 +45,18 @@
 	width: 100%;
 	min-height: 60vh;
 	padding-bottom:40px;
-	background-color: #ebeced;
+	background-color: var(--gray);
 	
 }
 .postlayout h3{
 	padding-top: 20px;
 	text-align:center;
-	color: black;
+	color: var(--black);
 	
 }
 
 .suces{
-	color: green;
+	color: var(--success);
 	font-size:15px;
 	margin-left: 25%;
 	margin-bottom: -20px;
@@ -75,13 +75,14 @@
     padding-left: 10px;
     padding-top:10px;
     font-size: 17px;
+    background-color:white;
     border-radius: 10px;
     resize: vertical;
     overflow: auto; 
 }
 
 .postlayout h6{
-	color:black;
+	color:var(--black);
 	margin-top: 30px;
 }
 
@@ -103,9 +104,10 @@
 	width: 70px;
 	height: 40px;
 	border-radius:15px;
-	background-color: #24243e;
+	background-color: white;
 	border:none;
-	color: white;
+	border:black solid 1px;
+	color: black;
 	margin-top: 10px;
 }
 
@@ -140,7 +142,7 @@
 	width: 85%;
 	min-height: 90vh;
 	padding-top:0px;
-	border-left: #BDBDBD solid 1px;
+	border-left: var(--border) solid 1px;
 }
 
 .postlayout{
@@ -162,7 +164,7 @@
 	height: 45vh;
 	margin-bottom:10vh;
 	margin-left: 60px;
-	border:#24243e solid 1px;
+	border:var(--voilet) solid 1px;
 }
 
 .postlayout h3{
@@ -175,7 +177,7 @@
 }
 
 .suces{
-	color: green;
+	color: var(--success);
 }
 
 .postlayout #postfrm{
@@ -191,13 +193,14 @@
     border: black solid 1px;
     padding-left: 10px;
     padding-top:10px;
+    color:#24243e;
     font-size: 17px;
     border-radius: 10px;
     overflow: auto; 
 }
 
 .postlayout h6{
-	color:#24243e;
+	color:var(--voilet);
 	margin-top: 30px;
 }
 
@@ -213,9 +216,7 @@
 	width: 70px;
 	height: 40px;
 	border-radius:15px;
-	background-color: deepskyblue;
-	border:none;
-	color: white;
+	color: black;
 }
 
 	

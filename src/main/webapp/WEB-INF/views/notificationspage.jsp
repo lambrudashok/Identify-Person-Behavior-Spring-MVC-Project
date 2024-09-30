@@ -9,8 +9,27 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/notificationStyle.css">
 <script type="text/javascript" src='resources/JS/notification.js'></script> 
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script>
 
+<script type="text/javascript">
+
+window.addEventListener('load', function (event) {
+	// view all notification when user view page
+	let xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange=function(){
+		if(this.readyState==4 && this.status==200){
+			this.responseText;
+		}
+	};
+	xhttp.open("POST","viewallautomatic",true);
+	xhttp.send();
+
+});
+</script>
 </head>
+
 <body>
 
 <div class="notificationcontainer">
@@ -25,21 +44,21 @@
 	<div class="notificationdiv"> 
 	
 	<%
-	int Ncount= (Integer)request.getAttribute("Ncount");
+	int count= (Integer)request.getAttribute("Ncount");
 	%>
 		<div class="details">
 			<div class="adj">
 			<h4>Notifications</h4>
-				<div class="cout<%=Ncount %>" id="cout">
-				<i class="fa-regular fa-circle"></i>
-				<h6><%=Ncount %></h6>
+				<div class="cout<%=count %>" id="cout">
+				<i class="fa-solid fa-circle"></i>
+				<h6><%=count %></h6>
 				</div>
 			</div>
 			<div id="name"><a href=''>All</a></div>
 		</div> <!-- details -->
 		
 		<div class="closetab">
-			<a onclick="closefun()"><i class="fa-solid fa-xmark"></i></a>
+			<a href="userhomepage"><i class="fa-solid fa-xmark"></i></a>
 		</div><!--closetab -->
 	</div> <!-- notificationdiv -->
 	

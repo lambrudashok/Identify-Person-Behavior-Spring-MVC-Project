@@ -95,17 +95,18 @@
 	width:30%;
 	height:40px;
 	border-radius:15px;
-	color:white;
+	color:black;
+	border:black solid 2px;
 	margin-top:20px;
-	background-color: deepskyblue;
+	font-weight:bold;
+	background-color: white;
 }
 #msg{
 	width:90%;
-	background-color: #ebeced;
 	margin-top:5px;
 	padding-left:10px;
 	font-size: 15px;
-	color:green;
+	color:var(--success);
 }
  
  
@@ -121,7 +122,7 @@
  .reportcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: white;
+	background: var(--pink);
 	display: flex;
 }
 
@@ -135,13 +136,15 @@
 	width: 80%;
 	min-height: 100vh;
 	padding-top:30px;
-	background: white;
+	background: var(--pink);
+	border-left:var(--border) solid 1px;
 }
 
 .reportmain .reportbox{
 	width: 70%;
 	min-height: 75vh;
 	margin:auto;
+	border:var(--border) solid 1px;
 	color:white;
 	background: linear-gradient(to bottom, #2c2b44, #454172, #3a3859);
 }
@@ -151,6 +154,7 @@
 	padding:5px;
 	min-height: 50px;
 	margin-top:5px;
+	border-bottom:var(--border) solid 1px;
 	display: flex;
 }
 
@@ -175,8 +179,8 @@
 	width:100%;
 	min-height:70vh;
 	padding-left:15px;
-	color:black;
-	background-color: #ebeced;
+	color:var(--black);
+	background-color: var(--gray);
 }
 
 .reportbox h6{
@@ -209,9 +213,11 @@
 	width:20%;
 	height:40px;
 	border-radius:15px;
-	color:white;
+	color:black;
+	border:black solid 2px;
 	margin-top:20px;
-	background-color: deepskyblue;
+	font-weight:bold;
+	background-color: white;
 }
 #msg{
 	width:90%;
@@ -219,7 +225,7 @@
 	padding-left:10px;
 	padding-bottom:20px;
 	font-size: 17px;
-	color:green;
+	color:var(--success);
 }
  
  

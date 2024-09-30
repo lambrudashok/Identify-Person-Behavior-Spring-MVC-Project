@@ -42,7 +42,7 @@ public class SettingsController {
 		int result=changeSer.checkPassword(currentPass, userID);
 		if(result>0) {
 			int change=changeSer.changeUserPassword(newPass, userID);
-			model.addAttribute("msg", "Password changed successfully.");
+			model.addAttribute("success", "Password changed successfully.");
 			return "changepasswordpage";
 		}else {
 			model.addAttribute("msg", "Current password is incorrect.");

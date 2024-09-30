@@ -21,8 +21,8 @@
 .followingsection{
 	width:100%;
 	min-height: 100vh;
-	background-color: #ebeced;
-	color: #24243e;
+	background-color: var(--gray);
+	color: var(--voilet);
 	font-size:20px;
 	
 }
@@ -62,8 +62,8 @@
 	width: 100%;
 	min-height: 80px;
 	display: flex;
-	background: linear-gradient(to bottom, #cfd0d1, #ebeced);
-	border-top: #BDBDBD solid 1px;
+	background: linear-gradient(to bottom, #cfd0d1, var(--gray));
+	border-top: var(--border) solid 1px;
 	border-radius: 20px;
 }
 
@@ -108,7 +108,7 @@
 	font-size:17px;
 	text-align:center;
 	margin-top: 30px;
-	color: #24243e;
+	color: var(--voilet);
 }
 
 
@@ -123,7 +123,7 @@
 .followingcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
+	background: var(--pink);
 	
 }
 .main{
@@ -136,6 +136,8 @@
 	width:50%;
 	min-height: 100vh;
 	font-size:25px;
+	border:var(--border) solid 1px;
+	border-top:none;
 	margin: auto;	
 }
 .followingsection .adj{
@@ -144,6 +146,7 @@
 	display: flex;
 	padding-top:10px;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	border-bottom:var(--border) solid 1px;
 	padding-left:10px;
 	margin-bottom: 5px;
 }
@@ -178,7 +181,7 @@
 	width: 100%;
 	min-height: 60px;
 	display: flex;
-	border-top: #BDBDBD solid 1px;
+	border-top: var(--border) solid 1px;
 	border-radius: 20px;
 }
 
@@ -215,7 +218,7 @@
 .userdetails #btndiv button{
 	width:100px;
 	height:35px;
-	background-color:#24243e;
+	background-color:24243e;
 	color:white;
 	border-radius: 15px;
 	border-style: none;
@@ -226,7 +229,7 @@
 	font-size:19px;
 	text-align:center;
 	margin-top: 30px;
-	color: #24243e;
+	color: var(--voilet);
 }
 
 	

@@ -21,8 +21,8 @@
 .followersection{
 	width:100%;
 	min-height: 100vh;
-	background-color: #ebeced;
-	color: #24243e;
+	background-color: var(--gray);
+	color: var(--voilet);
 	font-size:20px;
 	
 }
@@ -60,8 +60,8 @@
 	width: 100%;
 	min-height: 80px;
 	display: flex;
-	background: linear-gradient(to bottom, #cfd0d1, #ebeced);
-	border-top: #BDBDBD solid 1px;
+	background: linear-gradient(to bottom, #cfd0d1, var(--gray));
+	border-top: var(--border) solid 1px;
 	border-radius: 20px;
 }
 
@@ -105,7 +105,7 @@
 	font-size:17px;
 	text-align:center;
 	margin-top: 30px;
-	color: #24243e;
+	color: var(--voilet);
 }
 
 
@@ -121,7 +121,7 @@
 .followercontainer{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
+	background: var(--pink);
 	
 }
 .main{
@@ -134,6 +134,8 @@
 	width:50%;
 	min-height: 100vh;
 	font-size:25px;
+	border:var(--border) solid 1px;
+	border-top:none;
 	margin: auto;	
 }
 .followersection .adj{
@@ -143,6 +145,7 @@
 	padding-top:10px;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	padding-left:10px;
+	border-bottom:var(--border) solid 1px;
 	margin-bottom: 5px;
 }
 .adj h4{
@@ -170,7 +173,7 @@
 	width: 100%;
 	min-height: 80px;
 	display: flex;
-	border-top: #BDBDBD solid 1px;
+	border-top: var(--border) solid 1px;
 	margin-top:0px;
 	border-radius: 20px;
 }
@@ -204,7 +207,7 @@
 	font-size:19px;
 	text-align:center;
 	margin-top: 30px;
-	color: #24243e;
+	color: var(--voilet);
 }
 	
 }

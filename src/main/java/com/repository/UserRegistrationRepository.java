@@ -536,6 +536,27 @@ public class UserRegistrationRepository {
 				return 0;
 			}
 		}
+		
+		
+		//when user view notification then automatic notification view
+		public int notificationUserViewAutomatic(final int registerid){
+			try {
+				int viewGoneCount = template.update("update notificationmaster nm "
+						+ "inner join notificationregistrationjoin nrj on nrj.nid=nm.nid "
+						+ "inner join registrationmaster rm on rm.registerid=nrj.registerid "
+						+ "set nm.view='yes' where nm.sendid=?", new PreparedStatementSetter() {
+							@Override
+							public void setValues(PreparedStatement ps) throws SQLException {
+								ps.setInt(1, registerid);
+							}
+						}); 
+				
+				return  (viewGoneCount>0)?1:0;
+			}catch(Exception e) {
+				System.out.println("notification view :"+e);
+				return 0;
+			}
+		}
 	
 		//delete notification user
 		public int deleteUserNotification(final int nid){

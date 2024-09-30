@@ -8,7 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/logoutStyle.css">
-<script type="text/javascript" src='resources/JS/logoutvalidation.js'></script> 
+<script type="text/javascript" src='resources/JS/logoutvalidation.js'></script>
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script> 
 </head>
 <body>
 

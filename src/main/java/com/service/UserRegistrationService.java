@@ -123,6 +123,11 @@ public class UserRegistrationService {
 		return regRepo.getNotificationUserCount(registerid);
 	}
 	
+	//when user view notification then automatic notification view
+	public int notificationUserViewAutomatic(final int registerid){
+		return regRepo.notificationUserViewAutomatic(registerid);
+	}
+	
 	//delete notification user
 	public int deleteUserNotification(final int nid){
 		return regRepo.deleteUserNotification(nid);

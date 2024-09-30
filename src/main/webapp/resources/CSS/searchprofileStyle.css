@@ -20,7 +20,8 @@
 	width: 100%;
 	min-height: 100vh;
 	padding-top:20px;
-	background-color: #ebeced;
+	border-left:var(--border) solid 1px;
+	background-color: var(--gray);
 }
 
 .searchbar{
@@ -35,13 +36,13 @@
 	height:40px;
 	border:white solid 1px;
 	border-radius:20px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: var(--mixvoilet);
 	padding: 15px;
-	color: white;
+	color: var(--white);
 	
 }
 .searchbar input::placeholder{
-	color:white;
+	color:var(--white);
 }
 .userInfo{
 	width: 100%;
@@ -49,7 +50,7 @@
 	overflow: auto;
 }
 .userInfo #searchGrid h4{
-	color:black;
+	color:var(--black);
 	margin-top:20px;
 	margin-left:30%;
 }
@@ -85,7 +86,7 @@
 	border-radius: 50px;
 }
 .userappinfo .userdetails{
-	color:#24243e;
+	color:var(--voilet);
 	width:80%;
 	height:60px;
 	margin-left:5px;
@@ -133,7 +134,7 @@
 .searchsection{
 	width: 85%;
 	min-height: 100vh;
-	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
+	background: var(--pink);
 }
 
 .searchbar{
@@ -148,13 +149,13 @@
 	width:97%;
 	height:40px;
 	border-radius:20px;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: var(--mixvoilet);
 	padding: 15px;
-	color: white;
+	color: var(--white);
 	
 }
 .searchbar input::placeholder{
-	color:white;
+	color:var(--white);
 }
 .userInfo{
 	width: 100%;
@@ -162,7 +163,7 @@
 	overflow: auto;
 }
 .userInfo #searchGrid h4{
-	color:black;
+	color:var(--black);
 	margin-top:20px;
 	margin-left:30%;
 }
@@ -173,8 +174,8 @@
 	width:50%;
 	min-height: 89vh;
 	padding-left:0px;
-	background-color: #ebeced;
-	border:black solid 1px;
+	background-color: var(--gray);
+	border:var(--black) solid 1px;
 	border-radius: 20px;
 }
 
@@ -188,7 +189,7 @@
 }
 
 .userappinfo:hover{
-	background: linear-gradient(#ffffff, #f8f8f8);
+	background: var(--white);
 	border-radius: 15px;
 }	
 
@@ -203,7 +204,7 @@
 	border-radius: 50px;
 }
 .userappinfo .userdetails{
-	color:black;
+	color:var(--black);
 	width:80%;
 	height:60px;
 	margin-left:5px;

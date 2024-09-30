@@ -7,12 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/reportproblemStyle.css">
-<script type="text/javascript" src='resources/JS/notification.js'></script> 
+<script type="text/javascript" src='resources/JS/notification.js'></script>
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script> 
 
 </head>
-<body onload="reportbtnshowfun()">
+<body>
 
-<div class="reportcontainer">
+<div class="reportcontainer" onload="reportbtnshowfun()">
 
 	<div class="reportmenu">
 	<%@ include file="menus.jsp" %>

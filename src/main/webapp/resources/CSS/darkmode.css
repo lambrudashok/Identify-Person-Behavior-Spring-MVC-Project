@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+	
+:root{
+	--mixvoilet: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);  /*menus back*/
+	--voilet: #24243e;   												 /*text color*/
+	--pink: linear-gradient(to right, #e8e6f7, white, #e8e6f7);          /*white pink background*/
+	--gray: #ebeced;                                                     /*background gray*/
+	--white : white;													 /*white pure*/
+	--black : black;													 /*dark pure*/
+	--border :#BDBDBD;					
+	--darkgray:#878787;
+	--darkgraymode:#878786;
+	--error:red;
+	--success:green;
+
+}
+

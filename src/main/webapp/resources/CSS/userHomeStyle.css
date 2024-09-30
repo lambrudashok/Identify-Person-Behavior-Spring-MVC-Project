@@ -24,7 +24,7 @@
 .middleSlideDiv{
 	width:100%;
 	min-height: 5vh;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 
 #pillNv{
@@ -32,7 +32,7 @@
 }
 
 #pillNav2{
-	border-bottom:white solid 1px;
+	border-bottom:var(--white) solid 1px;
 	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);	
 }
 
@@ -51,8 +51,8 @@
 	min-height:200px;
 	position:relative;
 	padding-bottom:10px;
-	border-bottom: #BDBDBD solid 1px;
-	color: #24243e;
+	border-bottom: var(--border) solid 1px;
+	color: var(--voilet);
 }
 
 .userlogoA{
@@ -109,7 +109,7 @@
 	color:red;
 }
 .userpostA #likecommentdivA #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpostA #likecommentdivA #like:hover{
@@ -119,7 +119,7 @@
 .userpostA #likecommentdivA a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpostA #likecommentdivA .commentsp{
@@ -135,14 +135,14 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
+	border:var(--border) solid 0.5px; 
 	color: #23233e;
 }
 
 .userpostA #likecommentdivA ::placeholder{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 
@@ -153,8 +153,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 
 }
 
@@ -168,7 +168,7 @@
 .allposts h5{
 	width:100%;
 	height:40px;
-	color:#24243e;
+	color:var(--voilet);
 	padding-top:50px;
 	text-align:center;
 }
@@ -178,8 +178,8 @@
 	padding-top:5px;
 	padding-bottom:10px;
 	position:relative;
-	border-bottom: #BDBDBD solid 1px;
-	color: #24243e;
+	border-bottom: var(--border) solid 1px;
+	color: var(--voilet);
 }
 
 .userlogo{
@@ -236,7 +236,7 @@
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -246,7 +246,7 @@
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpost #likecommentdiv .commentsp{
@@ -259,16 +259,16 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
+	border:var(--border) solid 0.5px; 
 	color: #23233e;
 }
 .commentsp #commentshow{
 	width: 20%;
 }
 .userpost #likecommentdiv ::placeholder{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 
@@ -279,8 +279,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 
 }
 
@@ -291,8 +291,8 @@
 	display:none;
 	width:100%;
 	min-height: 89vh;
-	background-color: #ebeced;
-	color:#24243e;
+	background-color: var(--gray);
+	color:var(--voilet);
 	padding: 5px;
 }
 
@@ -311,22 +311,22 @@
 .searchbar #searchuser{
 	width:100%;
 	height:40px;
-	border:white solid 1px;
+	border:var(--white) solid 1px;
 	border-radius:20px;
 	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 	padding: 15px;
-	color: white;
+	color: var(--white);
 	
 }
 .searchbar input::placeholder{
-	color:white;
+	color:var(--white);
 }
 .userInfo{
 	width: 100%;
 	height: 89vh;
 	margin-top:10px;
 	overflow: auto;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 .userInfo #showGrid h4{
 	margin-top:20px;
@@ -384,9 +384,9 @@
 	height:35px;
 	font-size:14px;
 	margin-top:5px;
-	background-color:  #24243e ;
+	background-color:  var(--voilet) ;
 	border-radius: 15px;
-	color: white;
+	color: var(--white);
 	font-weight: bold;
 	border-style:none;
 }
@@ -396,8 +396,8 @@
 	font-size:14px;
 	margin-top:5px;
 	border-radius: 20px;
-	background-color: #ebeced;
-	color: #24243e;
+	background-color: var(--gray);
+	color: var(--voilet);
 }
 
 
@@ -421,7 +421,7 @@
 	width:100%;
 	min-height: 100vh;
 	padding-left: 0;
-	background-color: #ebeced
+	background-color: var(--gray)
 } 
 
 
@@ -435,7 +435,8 @@
 .middleSlideDiv{
 	width:60%;
 	min-height: 90vh;
-	background-color: #ebeced
+	border-left:var(--border) solid 1px;
+	background-color: var(--gray);
 }
 #pillNav2{
 	display: none;
@@ -463,8 +464,8 @@
 	position:0;
 	display:flex;
 	padding-bottom:0;
-	border-bottom: #BDBDBD solid 1px;
-	color: #24243e;
+	border-bottom: var(--border) solid 1px;
+	color: var(--voilet);
 }
 
 .userlogoA{
@@ -525,14 +526,14 @@
 .userpostA #likecommentdivA a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpostA #likecommentdivA #liked{
 	color:red;
 }
 .userpostA #likecommentdivA #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpostA #likecommentdivA #like:hover{
@@ -556,14 +557,14 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
-	color: #24243e;
+	border:var(--border) solid 0.5px; 
+	color: var(--voilet);
 }
 
 .userpostA #likecommentdivA ::placeholder{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 
@@ -574,8 +575,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 
 }
 
@@ -595,8 +596,8 @@
 	width:100%;
 	min-height:430px;
 	display:flex;
-	border-bottom: #BDBDBD solid 1px;
-	color: #24243e;
+	border-bottom: var(--border) solid 1px;
+	color: var(--voilet);
 }
 
 .userlogo{
@@ -667,14 +668,14 @@
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpost #likecommentdiv #liked{
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -688,14 +689,14 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
-	color: #24243e;
+	border:var(--border) solid 0.5px; 
+	color: var(--voilet);
 }
 
 .userpost #likecommentdiv ::placeholder{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 
@@ -706,8 +707,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 
 }
 
@@ -719,9 +720,9 @@
 	display:block;
 	width:25%;
 	min-height: 89vh;
-	background-color: #ebeced;
-	border-left: #BDBDBD solid 1px;
-	color:#24243e;
+	background-color: var(--gray);
+	border-left: var(--border) solid 1px;
+	color:var(--voilet);
 	padding-left: 5px;
 	
 }
@@ -741,7 +742,7 @@
 .searchbar #searchuser{
 	width:100%;
 	height:40px;
-	border:white solid 1px;
+	border:var(--white) solid 1px;
 	border-radius:20px;
 	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 	padding: 0px;
@@ -813,7 +814,7 @@
 	width:100%;
 	font-size:14px;
 	margin-top:5px;
-	background-color:  #24243e ;
+	background-color:  #24243e;
 	border-radius: 15px;
 	color: white;
 	font-weight: bold;

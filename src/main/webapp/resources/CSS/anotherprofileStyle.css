@@ -20,7 +20,7 @@
 	width: 100%;
 	min-height: 100vh;
 	overflow: auto;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 
 .profilemain{
@@ -54,7 +54,7 @@
 	font-size: 20px;
 	margin-top: 20px;
 	margin-left: 20px;
-	color: white;
+	color: var(--white);
 	font-weight: bold;
 }
 .pff{
@@ -70,7 +70,7 @@
 #padj a{
 	text-decoration: none;
 	font-size: 15px;
-	color: white;
+	color: var(--white);
 }
 
 #prodiv1{
@@ -88,11 +88,11 @@
 }
 .profileNam{
 	font-size: 18px;
-	color:white;
+	color:var(--white);
 }	
 	
 .bio{
-	color:white; 
+	color:var(--white); 
 }
 #prodiv3{
 	width:30%;
@@ -105,10 +105,10 @@
 	padding:7px;
 	background-color:  #24243e ;
 	border-radius: 15px;
-	color: white;
+	color: var(--white);
 	font-weight: bold;
 	border-style:none;
-	border:white solid 1px;
+	border:var(--white) solid 1px;
 	
 }
 
@@ -116,8 +116,8 @@
 	width:100%;
 	padding:7px;
 	border-radius: 20px;
-	background-color: #ebeced;
-	color: #24243e;
+	background-color: var(--gray);
+	color: var(--voilet);
 }
 
 
@@ -129,21 +129,21 @@
 }
 
 .allposts h5{
-	color:#24243e;
+	color:var(--voilet);
 	margin-top:20px;
 	text-align: center;
 } 
 #myTab{
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 .pro{
 	width:100%;
 	min-height:200px;
 	position:relative;
-	background-color: #ebeced;
-	border-bottom: #BDBDBD solid 1px;
+	background-color: var(--gray);
+	border-bottom: var(--border) solid 1px;
 	padding-top:10px;
-	color: white;
+	color: var(--white);
 }
 
 .userlogo{
@@ -167,7 +167,7 @@
 	width:100%;
 	height:50px;
 	padding-left:20%;
-	color:#24243e;
+	color:var(--voilet);
 	display:flex;
 }
 
@@ -182,7 +182,7 @@
 	padding-left:5%;
 	text-align:justify;
 	font-size: 15px;
-	color: #24243e;
+	color: var(--voilet);
 }
 .userpost img{
 	width:100%;
@@ -210,14 +210,14 @@
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpost #likecommentdiv #liked{
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -231,14 +231,14 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
+	border:var(--border) solid 0.5px; 
 	color: #23233e;
 }
 
 .userpost #likecommentdiv ::placeholder{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 
@@ -249,8 +249,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 }
 
 
@@ -279,8 +279,8 @@
 	width: 85%;
 	min-height: 100vh;
 	overflow: auto;
-	border-left:white solid 1px; 
-	background: linear-gradient(to right, #e8e6f7, white, #e8e6f7);
+	border-left:var(--border) solid 1px; 
+	background: var(--pink);
 }
 
 .profilemain{
@@ -375,6 +375,7 @@
 	background-color:  #24243e ;
 	border-radius: 20px;
 	margin-left:30px;
+	border:white solid 2px;
 	color: white;	
 	
 }
@@ -386,7 +387,7 @@
 	padding:7px;
 	margin-left:30px;
 	border-radius: 20px;
-	color: #24243e;
+	color: var(--voilet);
 }
 
 
@@ -395,11 +396,11 @@
 	width:60%;
 	height: 350px;
 	margin: auto;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 
 .allposts h5{
-	color:#24243e;
+	color:var(--voilet);
 	margin-top:20px;
 	text-align: center;
 } 
@@ -408,9 +409,9 @@
 	width:100%;
 	min-height:200px;
 	display:flex;
-	border-bottom: #BDBDBD solid 1px;
+	border-bottom: var(--border) solid 1px;
 	margin-top:0;
-	color: white;
+	color: var(--white);
 }
 
 .userlogo{
@@ -470,14 +471,14 @@
 .userpost #likecommentdiv a{
 	font-size: 20px;
 	text-decoration: none;
-	color: #878787;
+	color: var(--darkgray);
 	
 }
 .userpost #likecommentdiv #liked{
 	color:red;
 }
 .userpost #likecommentdiv #like{
-	color: #878787;
+	color: var(--darkgray);
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -500,10 +501,10 @@
 	border-top-left-radius:15px;
 	border-bottom-left-radius:15px;
 	margin-bottom:10px;
-	background-color:white;
+	background-color:var(--white);
 	border-style: none;
-	border:#BDBDBD solid 0.5px; 
-	color: #24243e;
+	border:var(--border) solid 0.5px; 
+	color: var(--voilet);
 }
 
 .userpost #likecommentdiv ::placeholder{
@@ -518,8 +519,8 @@
 	border-bottom-right-radius:15px;
 	border:none;
 	margin-left:-5px;
-	background-color: #24243e;
-	color: white;
+	background-color: var(--voilet);
+	color: var(--white);
 }	
 	
 }	

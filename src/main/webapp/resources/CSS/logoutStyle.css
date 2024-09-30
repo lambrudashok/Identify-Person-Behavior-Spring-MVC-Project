@@ -9,7 +9,7 @@
 .logoutcontainer{
 	width: 100%;
 	min-height: 100vh;
-	background-color: white;
+	background-color: var(--pink);
 }
 
 .main{
@@ -141,7 +141,7 @@
 	width: 95%;
 	height: 90px;
 	margin-left:10px;
-	border:white solid 1px;
+	border:var(--border) solid 1px;
 	border-top-left-radius:25px;
 	border-top-right-radius:25px;
 	background-color:#24243e;
@@ -181,10 +181,11 @@
 	height: 180px;
 	border:#ebeced solid 1px;
 	margin-top:0px;
+	color:var(--black);
 	margin-left:10px;
 	border-bottom-left-radius:25px;;
 	border-bottom-right-radius:25px;
-	background-color: #ebeced;
+	background-color: var(--gray);
 }
 #requestlogout h2{
 	text-align:center;

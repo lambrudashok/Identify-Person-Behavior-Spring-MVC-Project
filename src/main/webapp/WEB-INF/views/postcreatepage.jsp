@@ -8,9 +8,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/CSS/postStyle.css">
 <script type="text/javascript" src='resources/JS/postcreation.js'></script>
+<!-- dark model below-->
+<link rel="stylesheet" href="resources/CSS/darkmode.css">
+<script type="text/javascript" src="resources/JS/darkmode.js"></script>
 </head>
-<body onload="postfun()">
-<div class="postcontainer">
+<body>
+<div class="postcontainer" onload="postfun()">
   
 	<div class="postmenus">
 	<%@ include file="menus.jsp" %>
