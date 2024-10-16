@@ -133,6 +133,11 @@ public class UserRegistrationService {
 		return regRepo.deleteUserNotification(nid);
 	}
 	
+	//clear all notifications user
+	public int clearAllNotificationsUser(final int userid){
+		return regRepo.clearAllNotificationsUser(userid);
+	}
+	
 	// when user send report problem
 	public boolean isAddReportProblemUser(ReportProblemModel model) {
 		return regRepo.isAddReportProblemUser(model);

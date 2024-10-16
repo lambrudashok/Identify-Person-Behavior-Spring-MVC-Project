@@ -38,7 +38,7 @@
 		<div class="details">
 		<div id="postid"><%=info.getPostid()%></div>
 		<div id="username"><%=info.getUsername() %></div>
-		<div id="postimage"><img alt="" src="resources/Post_Images/<%=info.getImgname()%>"></div>
+		<div id="postimage"><img alt="" src="<%= request.getContextPath() %>/resources/Post_Images/<%=info.getImgname()%>"></div>
 		<div id="post"><%=info.getPost()%></div>
 		</div> <!-- details -->
 	

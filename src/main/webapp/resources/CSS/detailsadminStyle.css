@@ -180,6 +180,7 @@
 #delete a{
 	color: deepskyblue;
 	font-weight: bold;
+	cursor: pointer;
 }
 .details #freezediv{
 	width:110px;

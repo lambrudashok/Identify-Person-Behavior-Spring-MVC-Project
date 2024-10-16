@@ -2,8 +2,8 @@ package com.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,6 +83,26 @@ public class ProfilePageController {
 		return str;
 	}
 
+	
+	//double tab like or not check
+	@RequestMapping("/doubletablike")
+	@ResponseBody
+	public String doubleTabLikeOrNotCheck(HttpServletRequest request) {
+		
+		int postid=Integer.parseInt(request.getParameter("postid"));		
+		// access user id from session
+		HttpSession session=request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		
+        int v=lkSer.checkLike(postid,userID);  // check like 
+        String str="";
+		if(v>0){
+			str=str+"yes";
+        }else{
+        	str=str+"no";
+        }
+		return str;
+	}
 	
 	//profile posts like logic
 	@RequestMapping("/likecontroller")

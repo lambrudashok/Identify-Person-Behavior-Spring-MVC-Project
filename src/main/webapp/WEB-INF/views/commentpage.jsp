@@ -24,7 +24,7 @@
 	%>
 	<div class="profilediv">
 	<div class="photo">
-		<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
+		<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 	</div> <!-- photo -->
 	<div class="userdetails">
 		<div class="namediv">
@@ -44,7 +44,7 @@
 	%>
 	<div class="commentuser">
 	<div class="photouser">
-		<img alt="" src="resources/Profile_Images/<%=list.getProfileimage()%>">
+		<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=list.getProfileimage()%>">
 	</div> <!-- photouser -->
 	<div class="userdetailscomment">
 		<div class="namedivuser">

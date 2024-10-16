@@ -1,7 +1,9 @@
 package com.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -136,7 +138,14 @@ public class SettingsController {
 	
 	//logout login page
 	@RequestMapping(value="/loginpage", method=RequestMethod.POST)
-	public String getLoginPage() {
+	public String getLoginPage(HttpServletRequest request, HttpServletResponse response) {
+		// remove user session
+		HttpSession session = request.getSession(false);
+		session.removeAttribute("userID");
+		//remove user cookies
+		Cookie[] cookie = request.getCookies();
+		cookie[0].setMaxAge(0); // remove cookie
+		response.addCookie(cookie[0]);
 		return "loginpage";
 	}
 	

@@ -68,7 +68,7 @@
         width: 100%;
         justify-content: space-around;
     }
-.nav-item:hover{   /*home bar*/
+.nav-item .nav-link:hover{   /*home bar*/
 	background: linear-gradient(#7579e7, #393e46);
 	border-radius:20px;
     color: white;

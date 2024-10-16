@@ -31,7 +31,7 @@
 		
 		<div class="profilemain">
 			<div class="profilelogo">
-			<img alt="" src="resources/Profile_Images/<%=prof.getProfilephoto()%>">
+			<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=prof.getProfilephoto()%>">
 			</div>
 			<div class="profilename">
 			
@@ -106,7 +106,7 @@
 			                	%>
 			                	<div class="pro">
 			                	<div class="userlogo">
-			                    <img alt="" src="resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
+			                    <img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
 			                    </div>
 			                    
 			                    <div class="userpost">
@@ -114,7 +114,7 @@
 			                   		 <h4><%=posts.getUsername() %></h4> 
 			                   		 </div>
 			                    <div id="postdisplay"><%=posts.getPost() %></div>
-			                    <img alt="" src="resources/Post_Images/<%=posts.getImgname()%>">
+			                    <img class="postimgtab" id="postimgtab" onclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
 				                    <div id="likecommentdiv">
 				                    
 				                   <div class="likesp">

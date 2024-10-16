@@ -2,16 +2,17 @@ package com.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.model.NotificationModel;
 import com.model.PostModel;
@@ -36,14 +37,14 @@ public class CreatePostPageController{
 	public String getPostCreatePage() {
 		return "postcreatepage";
 	}
-	
-	
+
 	
 	@RequestMapping(path="/postsubmit", method=RequestMethod.POST)
-	public String submitPost(HttpServletRequest request, @RequestParam("postimagefile") CommonsMultipartFile file) {
+	public String submitPost(HttpServletRequest request, @RequestParam("postimagefile") MultipartFile file)throws IOException {
 		try {
 		  String post=request.getParameter("postname"); // fetch post
 		  String fileName= file.getOriginalFilename(); // fetch image file name
+		
 		  // access user id from session
 		   HttpSession session = request.getSession(false);
 		  int userID = Integer.parseInt(session.getAttribute("userID").toString());
@@ -73,11 +74,14 @@ public class CreatePostPageController{
 			 boolean postresult = postSer.isaddUserNewPost(pmodel);
 			 if(postresult) {
 				 // upload photo in server (server as a folder)
-				 String path = request.getServletContext().getRealPath("") +"resources\\Post_Images";
-				 byte[] bytes =file.getBytes();  // convert image to bytes
-				 FileOutputStream f = new FileOutputStream(path + File.separator +fileName);
-				 f.write(bytes);
-				 f.close();
+				 
+				 String path = request.getServletContext().getRealPath("")+ "resources" + File.separator + "Post_Images";
+		            File uploadDir = new File(path);
+		            if (!uploadDir.exists()) {
+		                uploadDir.mkdirs();
+		            }
+		            File destinationFile = new File(path + File.separator + fileName);
+		            file.transferTo(destinationFile);
 				 session.setAttribute("postMsg", "Post Upload Successful");
 				 
 				 // notification logic
@@ -103,19 +107,6 @@ public class CreatePostPageController{
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

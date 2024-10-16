@@ -35,9 +35,9 @@
 	<div class="desc">	
 		<form name="frm" action="sendreportproblemuser" method="POST">	
 		<h6>Issue title :</h6>
-		<input type="text" name="title" id="title" placeholder="What is your issue ?"  onkeyup="reportbtnshowfun()"><br>
+		<input type="text" name="title" id="title" placeholder="What is your issue ?"  onkeyup="reportbtnshowfun()" required><br>
 		<h6>Problem Description :</h6>
-		<textarea name="description" id="description" placeholder="Please describe as much info as possible..." onkeyup="reportbtnshowfun()"></textarea><br>
+		<textarea name="description" id="description" placeholder="Please describe as much info as possible..." onkeyup="reportbtnshowfun()" required></textarea><br>
 		<button type="submit" name="reportbtn" id="reportbtn"  >Send report</button>
 		</form>
 		<div id="msg">${msg}</div>

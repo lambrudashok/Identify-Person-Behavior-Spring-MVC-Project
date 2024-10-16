@@ -37,7 +37,7 @@
 					
 					<a class="userappinfo" id="userappinfo" href="predictionpostpage?id=<%=userInfo.getRegisterid() %>" > 
 						<div class="photo">
-							<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
+							<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 						</div> <!-- photo -->
 						<div class="userdetails">
 							<div class="namediv">

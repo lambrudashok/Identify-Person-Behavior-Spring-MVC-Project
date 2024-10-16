@@ -43,6 +43,42 @@
  }
  
  
+ 
+ //profile page double tab like logic
+let tapTimeout = null;
+ function doubletablike(postid) {
+
+    if (tapTimeout === null) {
+        tapTimeout = setTimeout(() => {
+            tapTimeout = null;
+        }, 300); // Delay to distinguish between single and double tap
+    } else {
+        clearTimeout(tapTimeout);// clear the timeout
+        tapTimeout = null;
+        let xhttp = new XMLHttpRequest();   // check like or not using ajax
+			xhttp.onreadystatechange=function(){
+				if(this.readyState==4 && this.status==200){
+					var likeornot=innerHTML=this.responseText;
+					if(likeornot=='no'){
+						let parentforyou=document.querySelector("#likecommentGridA"+postid); // like
+						let childforyou = parentforyou.querySelector('#like');
+						childforyou.click();
+					}else{
+						let parentforyou1=document.querySelector("#likecommentGridA"+postid); // unlike
+						let childforyou1 = parentforyou1.querySelector('#liked');
+						childforyou1.click();
+					}
+				}
+			};
+			xhttp.open("POST","doubletablike?postid="+postid,true);
+			xhttp.send();
+    }
+}
+ 
+ 
+ 
+ 
+ 
  // For You Like
   function likeForYou(postid){
 	let xhttp = new XMLHttpRequest();

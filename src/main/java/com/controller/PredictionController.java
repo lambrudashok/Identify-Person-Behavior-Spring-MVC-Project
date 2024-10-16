@@ -2,8 +2,8 @@ package com.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,7 +49,7 @@ public class PredictionController {
 			for(UserInfoModel userInfo:list){
 				str=str+"<a class='userappinfo' id='userappinfo' href='predictionpostpage?id="+userInfo.getRegisterid()+"' >"; 
 				str=str+"<div class='photo'>";
-				str=str+"<img alt='' src='resources/Profile_Images/"+userInfo.getProfileimage()+"'>";
+				str=str+"<img alt='' src='"+request.getContextPath()+"/resources/Profile_Images/"+userInfo.getProfileimage()+"'>";
 				str=str+"</div>";  //photo
 				str=str+"<div class='userdetails'>";
 				str=str+"<div class='namediv'>";

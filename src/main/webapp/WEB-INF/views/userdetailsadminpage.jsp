@@ -43,7 +43,7 @@
 	
 		<div class="details">
 		<div id="userid"><%=info.getRegisterid() %></div>
-		<div id="photo"><img alt="" src="resources/Profile_Images/<%=info.getProfileimgname()%>"></div>
+		<div id="photo"><img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=info.getProfileimgname()%>"></div>
 		<div id="cname"><%=info.getCustomername() %></div>
 		<div id="email"><%=info.getEmail() %></div>
 		<div id="username"><%=info.getUsername() %></div>

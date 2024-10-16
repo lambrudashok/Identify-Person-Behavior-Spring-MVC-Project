@@ -59,7 +59,7 @@ document.addEventListener('contextmenu', function(e) {
 			<div class="msgsuccess" >${msg}</div><br>
 			
 			<div class="capdiv">
-			<div class="g-recaptcha" id="recapt" data-sitekey="6Lca4SQqAAAAAMR1uYXhG2V1o-yIw-dP3X3rZkyF"></div>
+			<div class="g-recaptcha" id="recapt" data-sitekey="6Lf-wFUqAAAAAHXhcCcsebPkdQsdwQi-dzSOspXE"></div>
 			</div>
 			
 			<button type="submit" name="s" value="register" >Register</button><br>

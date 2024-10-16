@@ -2,8 +2,8 @@ package com.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,6 +51,16 @@ public class NotificationsPageController {
 		return getAllNotificationsPage(request, model);
 	}
 	
+	
+	// clear all notifications user
+	@RequestMapping("/clearallnotification")
+	public String clearAllNotifications(HttpServletRequest request,Model model) {
+		HttpSession session = request.getSession(false);
+		int userID = Integer.parseInt(session.getAttribute("userID").toString());
+		int v=userSer.clearAllNotificationsUser(userID); // clear all notifications user
+		return getAllNotificationsPage(request, model);
+	}
+	
 	// menus notification desktop count
 	@RequestMapping(path="/countnotification",method = RequestMethod.POST)
 	@ResponseBody
@@ -89,5 +99,9 @@ public class NotificationsPageController {
 			return str;
 		}
 	}
+	
+
+
+	
 	
 }

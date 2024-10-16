@@ -109,6 +109,7 @@
 	margin-left:40px;
 	border-style:none;
 	color:white;
+	cursor: pointer;
 	background-color: #24243e;
 	font-size:20px;
 	font-weight: bold;
@@ -121,6 +122,7 @@
 	background-color: white;
 	margin-left:30%;
 	color:#24243e;
+	cursor: pointer;
 	font-size:20px;
 	font-weight: bold;
 }

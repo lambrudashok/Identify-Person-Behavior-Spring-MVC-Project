@@ -95,6 +95,7 @@
 	border-style:none;
 	color:white;
 	background-color: #24243e;
+	cursor: pointer;
 	font-size:20px;
 	font-weight: bold;
 }
@@ -103,6 +104,7 @@
 	width:80px;
 	height: 40px;
 	border-radius:15px;
+	cursor: pointer;
 	background-color: white;
 	margin-left:9%;
 	color:#24243e;

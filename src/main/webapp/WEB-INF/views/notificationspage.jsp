@@ -55,6 +55,7 @@ window.addEventListener('load', function (event) {
 				</div>
 			</div>
 			<div id="name"><a href=''>All</a></div>
+			<a href="clearallnotification" id="clearAll" onclick="clearAllNotification()">Clear All</a>
 		</div> <!-- details -->
 		
 		<div class="closetab">
@@ -69,7 +70,7 @@ window.addEventListener('load', function (event) {
 	%>
 	<div class="notificationuser" id="notificationuser<%=list.getView()%>">
 	<div class="photouser">
-		<img alt="notificationspage" src="resources/Profile_Images/<%=list.getProfileimage()%>">
+		<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=list.getProfileimage()%>">
 	</div> <!-- photouser -->
 	<div class="userdetailsnotification">
 		<div class="namedivuser">

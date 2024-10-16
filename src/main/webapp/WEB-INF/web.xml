@@ -1,9 +1,12 @@
-<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+
+ 
+ <web-app version="5.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
     <display-name>IdentifyPersonBehaviorBySocialMedia</display-name>
-    
-    <context-param>
+
+     <context-param>
         <param-name>contextClass</param-name>
         <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
     </context-param>
@@ -25,9 +28,18 @@
             <param-value>com</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+        
+        <multipart-config>
+		    <max-file-size>209715200</max-file-size>
+		    <max-request-size>209715200</max-request-size>
+		    <file-size-threshold>2048</file-size-threshold>
+		</multipart-config>
+ 
     </servlet>
     
-    <!-- for error page -->
+    
+    
+   <!--  for error page -->
     <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -40,7 +52,8 @@
         <error-code>404</error-code>
         <location>/WEB-INF/views/errorpage.jsp</location>
     </error-page>
-    <!-- error page above -->
+  <!--   error page above -->
+   
     
     <servlet-mapping>
         <servlet-name>SpringDispatcher</servlet-name>
@@ -51,3 +64,6 @@
         <session-timeout>30</session-timeout>
     </session-config>
 </web-app>
+ 
+ 
+ 

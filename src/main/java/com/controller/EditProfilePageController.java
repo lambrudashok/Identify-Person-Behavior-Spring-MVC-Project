@@ -3,8 +3,8 @@ package com.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.model.RegistrationModel;
 import com.model.UserInfoModel;
@@ -37,13 +37,10 @@ public class EditProfilePageController {
 		return "editprofilepage";
 	}
 	
-	
 	// update profile image
 	@RequestMapping(path="/updateprofilephoto", method=RequestMethod.POST)
-	public String submitPost(HttpServletRequest request, @RequestParam("chooseprofile") CommonsMultipartFile file, Model model) {
-		
+	public String submitPost(HttpServletRequest request, @RequestParam("chooseprofile") MultipartFile file, Model model) {
 		try {
-			
 		  String fileName= file.getOriginalFilename(); // fetch image file name
 		 
 		  // access user id from session
@@ -53,19 +50,17 @@ public class EditProfilePageController {
 		  RegistrationModel photo = new RegistrationModel();
 		  photo.setProfileimgname(fileName); //set image name
 		  photo.setRegisterid(userID);
-		
 		  boolean b= userSer.isAddProfilePhoto(photo);  // add profile image name in database
-		  
 			 // upload photo in server (server as a folder)
-			 String path = request.getServletContext().getRealPath("") +"resources\\Profile_Images";
-			 
-			 byte[] bytes =file.getBytes();  // convert image to bytes
-			 FileOutputStream f = new FileOutputStream(path + File.separator +fileName);
-			 f.write(bytes);
-			 f.close();
-			
+		  	String path = request.getServletContext().getRealPath("") + "resources" + File.separator + "Profile_Images";
+	        File uploadDir = new File(path);
+	        if (!uploadDir.exists()) {
+	            uploadDir.mkdirs();
+	        }
+	        File destinationFile = new File(path + File.separator + fileName);
+	        file.transferTo(destinationFile);
+	  
 			 return getEditProfile(request,model); 
-		 
 		}catch(Exception e) {
 			return "editprofilepage";
 		}
@@ -143,7 +138,7 @@ public class EditProfilePageController {
 		str=str+"<form name='frm' action='updateprofilephoto' method='POST' enctype='multipart/form-data' onsubmit='return profilefun()'>";	
 		str=str+"<div class='photo'>";
 		str=str+"<div class='image' id='imageGrid'>";
-		str=str+"<img alt='' id='profilepic' src='resources/Profile_Images/"+user.getProfileimage()+"'>";
+		str=str+"<img alt='' id='profilepic' src='"+request.getContextPath()+"/resources/Profile_Images/"+user.getProfileimage()+"'>";
 		str=str+"<a onclick='a()'><input type='file' class='chooseprofile' name='chooseprofile'  id='chooseprofile' style='display:none;' onchange='profileImgChange(this)' >+</a>";  
 		str=str+"</div>";
 		str=str+"<div class='userdetail'>";

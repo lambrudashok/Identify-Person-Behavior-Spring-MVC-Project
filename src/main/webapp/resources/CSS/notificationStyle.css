@@ -46,6 +46,7 @@
 	font-size:20px;
 	margin-top:5px;
 	padding-left:10px;
+	position:relative;
 	color:white;
 }
 
@@ -91,6 +92,18 @@
 }
 .details #name a{
 	text-decoration: none;
+}
+
+.details #clearAll{
+	width:4rem;
+	height: 25px;
+	font-size: 1rem;
+	position: absolute;
+	text-decoration:none;
+	color:white;
+	left: 5rem;
+	cursor:pointer;
+	top: 2.4rem;
 }
 
 .closetab{

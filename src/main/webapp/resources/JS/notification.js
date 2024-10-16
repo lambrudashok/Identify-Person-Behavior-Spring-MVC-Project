@@ -3,6 +3,8 @@ function closefun(){
 	window.history.back();
 }
 
+
+
 // its used for report problem user side
 function reportbtnshowfun(){
 	 var titlename = document.getElementById("title").value;

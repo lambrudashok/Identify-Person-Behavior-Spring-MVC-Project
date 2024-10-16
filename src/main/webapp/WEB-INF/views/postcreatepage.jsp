@@ -26,7 +26,7 @@
 		<h3>Create Post</h3>
 		
 		<div class="postimg">
-			<img alt="" id="twitterpic" src="resources/Post_Images/person.png">
+			<img alt="" id="twitterpic" src="<%= request.getContextPath() %>/resources/Post_Images/person.png">
 		</div> <!-- postimg -->
 		
 			<form name="frm" id="postfrm" action="postsubmit" method="POST" enctype="multipart/form-data" >
@@ -35,7 +35,7 @@
 			<input type="file" name="postimagefile" id="postimagefile"  onchange="changeImg(this)">
 			</div>
 			<h6>Caption:</h6>
-			<textarea name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" ></textarea>
+			<textarea name="postname" id="postname" onkeyup="postfun(this.value)" placeholder="type your thoughts ?" required></textarea>
 			<%
 				String msg = (String)session.getAttribute("postMsg");
 				if(msg!=null){

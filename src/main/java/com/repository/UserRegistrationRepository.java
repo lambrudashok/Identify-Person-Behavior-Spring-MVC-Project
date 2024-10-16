@@ -575,6 +575,23 @@ public class UserRegistrationRepository {
 			}
 		}
 		
+		//clear all notifications user
+		public int clearAllNotificationsUser(final int userid){
+			try {
+				int v = template.update("delete from notificationmaster where sendid=?", new PreparedStatementSetter() {
+					@Override
+					public void setValues(PreparedStatement ps) throws SQLException {
+						ps.setInt(1, userid);
+					}
+				} );
+				return (v>0) ?1:0;
+			}catch(Exception e) {
+				System.out.println("notification error :"+e);
+				return 0;
+			}
+		}
+		
+		
 		// when user send report problem
 		public boolean isAddReportProblemUser(final ReportProblemModel model) {
 			try {

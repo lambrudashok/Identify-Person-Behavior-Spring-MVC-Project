@@ -31,10 +31,22 @@ function loginfun() {
         return false; 
     }else
 		return true;
-
     
 }
 
+
+// show password or hide login page
+function showpass(){
+	const pass=document.getElementById("password");
+	const eyeicon=document.getElementById("passview");
+	if(pass.type=="password"){
+		pass.type="text";
+		eyeicon.className="fa-solid fa-eye";
+	}else{
+		pass.type="password";
+		eyeicon.className="fa-solid fa-eye-slash";
+	}
+}
 
 
 

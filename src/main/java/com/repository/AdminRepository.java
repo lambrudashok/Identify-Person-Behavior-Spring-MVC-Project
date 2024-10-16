@@ -313,7 +313,7 @@ public class AdminRepository {
 	// fetch user login details date time 
 	public List<LoginModel> viewUserLoginDetails(){
 		try {
-			List<LoginModel> al = template.query("select * from loginmaster where registerid<>'null' order by date desc", new RowMapper<LoginModel>() {
+			List<LoginModel> al = template.query("select * from loginmaster where registerid<>'null' order by loginid desc", new RowMapper<LoginModel>() {
 				@Override
 				public LoginModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 					LoginModel model =new LoginModel();

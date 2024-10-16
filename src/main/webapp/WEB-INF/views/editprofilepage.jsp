@@ -38,7 +38,7 @@
 	<form name="frm" action="updateprofilephoto" method="POST" enctype="multipart/form-data" onsubmit="return profilefun()">	
 	<div class="photo">
 		<div class="image" id="imageGrid">
-			<img onclick="a()" id="profilepic" src="resources/Profile_Images/<%=model.getProfileimage()%>">
+			<img onclick="a()" id="profilepic" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=model.getProfileimage()%>">
 		<a onclick="a()"><input type="file" class="chooseprofile" name="chooseprofile"  id="chooseprofile" style="display:none;" onchange="profileImgChange(this)" >+</a>
 		</div>
 	<div class="userdetail">

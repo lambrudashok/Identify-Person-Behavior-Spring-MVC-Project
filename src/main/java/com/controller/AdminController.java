@@ -2,7 +2,7 @@ package com.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -94,7 +94,7 @@ public class AdminController {
 		for(RegistrationModel info:list){
 		str=str+"<div class='details'>";
 		str=str+"<div id='userid'>"+info.getRegisterid()+"</div>";
-		str=str+"<div id='photo'><img alt='' src='resources/Profile_Images/"+info.getProfileimgname()+"'></div>";
+		str=str+"<div id='photo'><img alt='' src='"+request.getContextPath()+"/resources/Profile_Images/"+info.getProfileimgname()+"'></div>";
 		str=str+"<div id='cname'>"+info.getCustomername()+"</div>";
 		str=str+"<div id='email'>"+info.getEmail()+"</div>";
 		str=str+"<div id='username'>"+info.getUsername()+"</div>";
@@ -155,7 +155,7 @@ public class AdminController {
 			for(RegistrationModel info:list){
 				str=str+"<div class='details'>";
 				str=str+"<div id='userid'>"+info.getRegisterid()+"</div>";
-				str=str+"<div id='photo'><img alt='' src='resources/Profile_Images/"+info.getProfileimgname()+"'></div>";
+				str=str+"<div id='photo'><img alt='' src='"+request.getContextPath()+"/resources/Profile_Images/"+info.getProfileimgname()+"'></div>";
 				str=str+"<div id='cname'>"+info.getCustomername()+"</div>";
 				str=str+"<div id='username'>"+info.getUsername()+"</div>";
 				str=str+"<div id='arivedate'>"+info.getDate()+"</div>";

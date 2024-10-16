@@ -62,7 +62,7 @@
 	                	%>
 	                	<div class="proA">
 	                	<div class="userlogoA">
-	                    <img alt="" src="resources/Profile_Images/<%=post.getProfileimage() %>" width="100px" height="50px">
+	                    <img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=post.getProfileimage() %>" width="100px" height="50px">
 	                    </div>
 	                    
 	                    <div class="userpostA">
@@ -70,7 +70,7 @@
 	                   		<h4 id="h4"><%=post.getUsername() %></h4>
 	                   		 </div>
 	                    <div id="postdisplayA"><%=post.getPost() %></div>
-	                    <img alt="" src="resources/Post_Images/<%=post.getImgname()%>">
+	                    <img class="postimgtabA" id="postimgtabA" onclick="doubletablike(<%=post.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=post.getImgname()%>">
 	                    
 	                    
 		                    <div id="likecommentdivA">
@@ -140,7 +140,7 @@
 	                	%>
 	                	<div class="pro">
 	                	<div class="userlogo">
-	                    <img alt="" src="resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
+	                    <img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
 	                    </div>
 	                    
 	                    <div class="userpost">
@@ -148,7 +148,7 @@
 	                   		 <h4><%=posts.getUsername() %></h4> 
 	                   		</div>
 	                    <div id="postdisplay"><%=posts.getPost() %></div>
-	                    <img alt="" src="resources/Post_Images/<%=posts.getImgname()%>">
+	                    <img class="postimgtab" id="postimgtab" onclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
 	                    
 	                    
 		                    <div id="likecommentdiv">
@@ -222,7 +222,7 @@
 					<div class="userfollowing">
 					
 						<div class="photo">
-							<img alt="" src="resources/Profile_Images/<%=userInfo.getProfileimage()%>">
+							<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=userInfo.getProfileimage()%>">
 						</div> <!-- photo -->
 						
 						<div class="userdetails">

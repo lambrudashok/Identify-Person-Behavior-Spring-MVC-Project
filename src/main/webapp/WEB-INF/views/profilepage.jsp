@@ -30,7 +30,7 @@
 			
 		<div class="profilemain">
 			<div class="profilelogo">
-			<img alt="" src="resources/Profile_Images/<%=prof.getProfilephoto() %>">
+			<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=prof.getProfilephoto() %>">
 			</div>
 			<div class="profilename">
 			
@@ -83,7 +83,7 @@
 			       				%>
 			                	<div class="pro">
 			                	<div class="userlogo">
-			                    <img alt="" src="resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
+			                    <img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=posts.getProfileimage() %>" width="100px" height="50px">
 			                    </div>
 			                    
 			                    <div class="userpost">
@@ -93,7 +93,7 @@
 			                   		 <a id="deletepost" href="deletepost?postid=<%=posts.getPostid()%>" ><i class="fa-solid fa-trash-can"></i></a>
 			                  		</div>
 			                    <div id="postdisplay"><%=posts.getPost() %></div>
-			                    <img alt="" src="resources/Post_Images/<%=posts.getImgname()%>">
+			                    <img class="postimgtab" id="postimgtab" onclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
 				                   
 				                    <div id="likecommentdiv">
 				                    <div class="likesp">
@@ -108,7 +108,7 @@
 							                  <%
 										 }else{
 											 %>
-											<a id="like"  onclick="likefun(<%=posts.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=posts.getLikeCount() %></a>
+											<a id="like" onclick="likefun(<%=posts.getPostid() %>)"> <i class="fa-solid fa-heart"></i> <%=posts.getLikeCount() %></a>
 					 	                    <%
 										 }
 						                 %> 
@@ -124,8 +124,6 @@
 				                    </form>
 				                    </div>
 					                    
-				                   
-				                   
 			                    </div>
 			                    </div>
 			                    </div>
@@ -142,10 +140,9 @@
 					  </div>
 		</div>
 			</div> <!-- allposts -->
-
-		
 		
 	</div><!-- userprofile -->
 </div>
 </body>
 </html>
+ 

@@ -1,8 +1,10 @@
 package com.controller;
 
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,13 +41,25 @@ public class LoginPageController {
 	
 	
 	@RequestMapping("/")
-	public String loginPageController() {          // index page (loading page UI)
-		return "loginpage";
+	public String loginPageController(HttpServletRequest request, HttpServletResponse response, Model mod) {
+	    // Check user login cookies
+	    Cookie[] cookies = request.getCookies();
+	    if (cookies != null) {
+	        for (Cookie cookie : cookies) {
+	            if ("userIDCookie".equals(cookie.getName())) {
+	                HttpSession session = request.getSession(true);
+	                session.setAttribute("userID", cookie.getValue());
+	                return getHomePage(request, mod);
+	            }
+	        }
+	    }
+	    return "loginpage";
 	}
+
 	
 	
 	@RequestMapping(value="/validation",method=RequestMethod.POST)
-	public String checkLogin(HttpServletRequest request, Model mod) {
+	public String checkLogin(HttpServletRequest request,HttpServletResponse response, Model mod) {
 		String username=request.getParameter("username").trim();
 		String password=request.getParameter("password");
 		LoginModel model = new LoginModel();
@@ -71,6 +85,11 @@ public class LoginPageController {
 				session.setAttribute("userID", userID);
 				model.setLoginid(userID);
 				boolean res=loginSer.isAddUserLogin(model); // add user login details
+				
+				// set cookies for user login
+				Cookie cookie = new Cookie("userIDCookie", Integer.toString(userID));
+				cookie.setMaxAge(365 * 24 * 60 * 60);
+				response.addCookie(cookie);
         		return getHomePage(request, mod); // call getHomePage
 				}
 			}else {

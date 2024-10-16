@@ -69,9 +69,9 @@
 	margin-top:15px;
 	margin-left:10px;
 	border-radius:15px;
-	color:var(--voilet);
-	font-weight:bold;
-	background-color: #24243e;
+	border:var(--white) solid 2px;
+	color:var(--white);
+	background-color: var(--voilet);
 }
 .image{
 	width:25%;
@@ -240,9 +240,9 @@
 	margin-top:15px;
 	margin-left:20%;
 	border-radius:15px;
-	border:var(--voilet) solid 2px;
-	color:var(--voilet);
-	background-color: #24243e;
+	border:var(--white) solid 2px;
+	color:var(--white);
+	background-color: var(--voilet);
 }
 .image{
 	width:20%;

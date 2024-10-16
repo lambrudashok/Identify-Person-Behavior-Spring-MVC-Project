@@ -188,6 +188,7 @@
 	width:100%;
 	min-height:200px;
 	margin-top:10px;
+	cursor: pointer;
 }
 
 .userpost #likecommentdiv{
@@ -215,9 +216,11 @@
 }
 .userpost #likecommentdiv #liked{
 	color:red;
+	cursor: pointer;
 }
 .userpost #likecommentdiv #like{
 	color: var(--darkgray);
+	cursor: pointer;
 }
 
 .userpost #likecommentdiv #like:hover{
@@ -476,13 +479,16 @@
 }
 .userpost #likecommentdiv #liked{
 	color:red;
+	cursor: pointer;
 }
 .userpost #likecommentdiv #like{
 	color: var(--darkgray);
+	cursor: pointer;
 }
 
 .userpost #likecommentdiv #like:hover{
 	font-size: 22px;
+	cursor: pointer;
 }
 
 .userpost #likecommentdiv .commentsp{
