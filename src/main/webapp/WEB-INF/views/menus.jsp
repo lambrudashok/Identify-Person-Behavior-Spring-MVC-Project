@@ -98,7 +98,6 @@
   				int Ncount= (Integer)request.getAttribute("Ncount");
 		  		%>
 				<i class="fa-solid fa-circle" id="dot"></i>
-				<h6>${Ncount}</h6>
 				</span> Notifications</a>
   		
   		<a class="nav-link text-white menulogo hvr" id="reportid"  href="reportproblempage"  aria-selected="false">

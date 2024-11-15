@@ -73,7 +73,6 @@ public class NotificationsPageController {
 		if(Ncount>0) {
 		String str="";
 		str=str+"<i class='fa-solid fa-circle' id='dot'></i>";
-		str=str+"<h6>"+Ncount+"</h6>";
 		return str;
 		}else {
 			String str="";

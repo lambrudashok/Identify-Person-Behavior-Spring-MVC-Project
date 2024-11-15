@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>profile page</title>
 <link rel="stylesheet" href="resources/CSS/profilesStyle.css">
 <script type="text/javascript" src='resources/JS/commentpostvalidation.js'></script> 
 <!-- dark model below-->

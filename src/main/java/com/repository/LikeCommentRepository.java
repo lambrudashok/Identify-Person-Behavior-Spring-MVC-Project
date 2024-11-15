@@ -90,7 +90,6 @@ public class LikeCommentRepository {
 	}
 	
 	
-	
 	// fetch post comment details 
 		public List<PostLayoutModel> getCommentDetails(int postid) {
 			final List<PostLayoutModel> commentlist = new ArrayList<PostLayoutModel>(); // store user comment details
@@ -219,7 +218,7 @@ public class LikeCommentRepository {
 		public int unLikePost(int postid,int userID) {
 			try {
 				
-				final Integer like = template.queryForObject("select lm.likeid from likemaster lm "
+				List<Integer> like = template.query("select lm.likeid from likemaster lm "
 						+ "inner join likepostjoin lpj on lpj.likeid=lm.likeid "
 						+ "where lpj.postid=? and lm.registerid=?", new Object[] {postid,userID}, new RowMapper<Integer>() {
 							@Override
@@ -227,14 +226,15 @@ public class LikeCommentRepository {
 								return rs.getInt(1);
 							}
 						});
-				
-				int v = template.update("delete from likemaster where likeid=?", new PreparedStatementSetter() {
-					@Override
-					public void setValues(PreparedStatement ps) throws SQLException {
-						ps.setInt(1, like);
-					}
-				});
-				
+				int v=0;
+				for(final Integer unlike : like) {
+					v = template.update("delete from likemaster where likeid=?", new PreparedStatementSetter() {
+						@Override
+						public void setValues(PreparedStatement ps) throws SQLException {
+							ps.setInt(1, unlike);
+						}
+					});
+				}
 				return (v>0) ? 1 : 0;
 				
 			}catch(Exception e) {

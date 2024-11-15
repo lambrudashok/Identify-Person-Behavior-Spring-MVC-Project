@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.model.UserInfoModel;
 import com.model.ProfileInformationModel;
+import com.model.NotificationModel;
 import com.model.PostLayoutModel;
 import com.model.PostModel;
 import com.service.CreatePostService;
@@ -83,6 +84,13 @@ public class SearchAnotherUserProfileController {
 		HttpSession session = request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
 		boolean result=follwSer.isAddFollowingUser(userID,followid); // add following user
+		
+		//send notification following
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("started following you.");
+		nty.setRegisterid(followid);
+		userSer.isAddNotification(userID, nty);  // send notification following
+				
 		int status=follwSer.checkFollowingStatus(followid,userID); // check following or not
 		String str = "";
 		if(status==0){
@@ -133,6 +141,13 @@ public class SearchAnotherUserProfileController {
 		pmodel.setRegisterid(userID);
 		int registerid = userSer.getPostRegisterid(postid); // fetch registerid post user
 		boolean commentResult=lkSer.isAddComment(pmodel);
+		
+		//send notification comment
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("Commented: "+comment+".");
+		nty.setRegisterid(registerid);
+		userSer.isAddNotification(userID, nty);  // send notification comment 
+		
 		int commentCount = lkSer.getCommentCount(postid);
 		String str="";
 		str=str+"<a id='commentshow' href='viewanotheruserprofilecomment?postid="+postid+"&userID="+registerid+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";

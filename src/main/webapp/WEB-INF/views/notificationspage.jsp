@@ -51,7 +51,7 @@ window.addEventListener('load', function (event) {
 			<h4>Notifications</h4>
 				<div class="cout<%=count %>" id="cout">
 				<i class="fa-solid fa-circle"></i>
-				<h6><%=count %></h6>
+				<h6><%=count%></h6>
 				</div>
 			</div>
 			<div id="name"><a href=''>All</a></div>

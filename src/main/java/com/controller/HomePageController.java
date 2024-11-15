@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.model.NotificationModel;
 import com.model.PostLayoutModel;
 import com.model.PostModel;
 import com.model.UserInfoModel;
@@ -57,6 +58,13 @@ public class HomePageController {
 		HttpSession session = request.getSession(false);
 		int registerId = Integer.parseInt(session.getAttribute("userID").toString());
 		boolean result=followSer.isAddFollowingUser(registerId,followid);	// add user follow
+		
+		//send notification following
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("started following you.");
+		nty.setRegisterid(followid);
+		userSer.isAddNotification(registerId, nty);  // send notification
+		
 		List<UserInfoModel> list = searchSer.fetchAllUserDetails(registerId); 
 		return list;
 	}
@@ -83,6 +91,14 @@ public class HomePageController {
 		HttpSession session=request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
 		boolean result=lkSer.isAddLike(postid, userID);
+		int registerid = userSer.getPostRegisterid(postid); // fetch registerid post user
+		
+		//send notification like
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("liked your post.");
+		nty.setRegisterid(registerid);
+		userSer.isAddNotification(userID, nty);  // send notification like
+		
 		int likeCount=lkSer.fetchLikeCount(postid); // get count of like
         int v=lkSer.checkLike(postid,userID); // check like 
         String str="";
@@ -134,6 +150,13 @@ public class HomePageController {
 		pmodel.setRegisterid(userID);
 		int registerid = userSer.getPostRegisterid(postid); // fetch registerid post user
 		boolean commentResult=lkSer.isAddComment(pmodel); // add comment record
+		
+		//send notification comment
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("Commented: "+comment+".");
+		nty.setRegisterid(registerid);
+		userSer.isAddNotification(userID, nty);  // send notification comment 
+		
 		int commentCount = lkSer.getCommentCount(postid); // fetch comment count
 		String str="";
 		str=str+"<a id='commentshow' href='viewhomepagecomment?postid="+postid+"&userID="+registerid+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";

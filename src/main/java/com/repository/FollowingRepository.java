@@ -311,8 +311,8 @@ public class FollowingRepository {
 	public List<Integer> fetchAllFollowingUserIds(final int userID){
 		try {
 			// store all following user id
-			List<Integer> al = template.query("select fm.followingregisterid as 'followingid' from followingmaster fm "
-					+ "inner join userfollowingfollowerjoin uffj on uffj.followingid=fm.followingid "
+			List<Integer> al = template.query("select fm.followerregisterid as 'followerid' from followermaster fm "
+					+ "inner join userfollowingfollowerjoin uffj on uffj.followerid=fm.followerid "
 					+ "inner join registrationmaster rm on rm.registerid=uffj.registerid "
 					+ "where rm.registerid=?", new PreparedStatementSetter() {
 						@Override

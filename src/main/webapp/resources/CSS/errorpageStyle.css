@@ -107,13 +107,15 @@ button{
 	width:100px;
 	height: 40px;
 	border-radius:20px;
-	border-color:silver;
-	background-color: #7fdbd8;
+	border-style:none;
+	background-color: #24243e;
+	color:white;
 	font-size:15px;
+	cursor: pointer;
 }
 
 #btn:hover {
-	background-color: aqua;
+	background-color: #6d44b8;
 }	
 	
 	

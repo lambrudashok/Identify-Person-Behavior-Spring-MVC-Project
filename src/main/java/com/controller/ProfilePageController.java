@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.model.NotificationModel;
 import com.model.PostLayoutModel;
 import com.model.PostModel;
 import com.model.ProfileInformationModel;
@@ -35,24 +36,20 @@ public class ProfilePageController {
 
 	@RequestMapping("/profilepage")
 	public String getProfilePage(HttpServletRequest request, Model model) {
-		
 		HttpSession	session = request.getSession(false);
 		int userID=Integer.parseInt(session.getAttribute("userID").toString());
 		List<ProfileInformationModel> profileList=registerSer.profileInformation(userID);	// fetch user profile information
 		model.addAttribute("prof", profileList);  // set profile information in model
 		List<PostLayoutModel> listPosts = postSer.ViewAllPosts(userID);  // fetch user all posts
 		model.addAttribute("posts", listPosts); // set all posts in model
-			
 		return "profilepage";
 	}
 
 	//  delete posts profile
 	@RequestMapping("/deletepost")
 	public String deletePostProfile(HttpServletRequest request, Model model) {
-		
 		int postid=Integer.parseInt(request.getParameter("postid"));
 		postSer.deletePost(postid); // delete post
-		
 		return getProfilePage(request, model);
 	}
 	
@@ -72,6 +69,7 @@ public class ProfilePageController {
 		pmodel.setPostid(postid);
 		pmodel.setRegisterid(userID);
 		boolean commentResult=lkSer.isAddComment(pmodel);
+		
 		int commentCount = lkSer.getCommentCount(postid);
 		String str="";
 		str=str+"<a id='commentshow' href='viewprofilecomment?postid="+postid+"&userID="+userID+"'> <i class='fa-solid fa-comment'></i> "+commentCount+"</a>";
@@ -113,18 +111,23 @@ public class ProfilePageController {
 		// access user id from session
 		HttpSession session=request.getSession(false);
 		int userID = Integer.parseInt(session.getAttribute("userID").toString());
-		
 		boolean result=lkSer.isAddLike(postid, userID);
 		int likeCount=lkSer.fetchLikeCount(postid); // get count of like
+		int registerid = registerSer.getPostRegisterid(postid); // fetch registerid post user
+		
+		//send notification like 
+		NotificationModel nty = new NotificationModel();
+		nty.setNotification("liked your post."); 
+		nty.setRegisterid(registerid);
+		registerSer.isAddNotification(userID, nty); // send notification like
+				
         int v=lkSer.checkLike(postid,userID);  // check like 
         String str="";
 		if(v>0){
 			str=str+"<a id='liked' onclick='unlikefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";  
-         
         }else{
         	str=str+"<a id='like'  onclick='likefun("+postid+")'> <i class='fa-solid fa-heart'></i>&nbsp"+likeCount+"</a>";
          }
-     
 		return str;
 	}
 	

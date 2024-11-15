@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>Home Page</title>
 <link rel="stylesheet" href="resources/CSS/userHomeStyle.css">
 <script type="text/javascript" src="resources/JS/homevalidation.js"></script>
 <!-- dark model below-->
@@ -14,7 +14,6 @@
 <script type="text/javascript" src="resources/JS/darkmode.js"></script>
 </head>
 <body>
-
 
 <div class="main">
 
@@ -70,7 +69,7 @@
 	                   		<h4 id="h4"><%=post.getUsername() %></h4>
 	                   		 </div>
 	                    <div id="postdisplayA"><%=post.getPost() %></div>
-	                    <img class="postimgtabA" id="postimgtabA" onclick="doubletablike(<%=post.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=post.getImgname()%>">
+	                    <img class="postimgtabA" id="postimgtabA" onclick="doubletablike(<%=post.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=post.getImgname()%>" alt="loading">
 	                    
 	                    
 		                    <div id="likecommentdivA">
