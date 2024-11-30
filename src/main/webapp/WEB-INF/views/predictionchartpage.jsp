@@ -39,7 +39,7 @@ int neuroticism=Integer.parseInt(request.getAttribute("neuroticism").toString())
 </div>
 <script type="text/javascript">
 
-const ctx = document.getElementById('myChart').getContext('2d');
+ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, {
   type: 'bar',
   data: {
@@ -74,7 +74,6 @@ new Chart(ctx, {
     }
   }
 });
-
 </script>
 </div> <!-- area -->
 </div> <!-- chart -->

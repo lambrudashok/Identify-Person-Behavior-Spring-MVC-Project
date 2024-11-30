@@ -23,13 +23,12 @@
 <%
 int registerId= Integer.parseInt(request.getAttribute("registerId").toString());
 List<PostLayoutModel> list =(List<PostLayoutModel>) request.getAttribute("list");
-%>
-<form name="frm" action="predictionoverall" method="POST">
-<button id="overallpredictionbtn" name="overallpredictionbtn" value="<%=registerId%>" >Over All Prediction</button>
-</form>
-<%
 if(list!=null){
-
+	%>
+	<form name="frm" action="predictionoverall" method="POST">
+	<button id="overallpredictionbtn" name="overallpredictionbtn" value="<%=registerId%>" >Over All Prediction</button>
+	</form>
+	<%
 %>
 <h2>Select Post For Prediction</h2>
 <div class="columnname">

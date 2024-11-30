@@ -69,8 +69,8 @@
 	                   		<h4 id="h4"><%=post.getUsername() %></h4>
 	                   		 </div>
 	                    <div id="postdisplayA"><%=post.getPost() %></div>
-	                    <img class="postimgtabA" id="postimgtabA" onclick="doubletablike(<%=post.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=post.getImgname()%>" alt="loading">
-	                    
+	                    <img class="postimgtabA" id="postimgtabA" ondblclick="doubletablike(<%=post.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=post.getImgname()%>" alt="loading">
+	                    <i id="like-icon<%=post.getPostid()%>" class="fa-solid fa-heart like-icon"></i>  <!-- like icon -->
 	                    
 		                    <div id="likecommentdivA">
 		                    
@@ -147,8 +147,8 @@
 	                   		 <h4><%=posts.getUsername() %></h4> 
 	                   		</div>
 	                    <div id="postdisplay"><%=posts.getPost() %></div>
-	                    <img class="postimgtab" id="postimgtab" onclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
-	                    
+	                    <img class="postimgtab" id="postimgtab" ondblclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
+	                    <i id="like-icon<%=posts.getPostid()%>" class="fa-solid fa-heart like-icon"></i>  <!-- like icon -->
 	                    
 		                    <div id="likecommentdiv">
 		                    <div class="likesp">
@@ -220,15 +220,17 @@
 					
 					<div class="userfollowing">
 					
-						<div class="photo">
-							<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=userInfo.getProfileimage()%>">
-						</div> <!-- photo -->
-						
-						<div class="userdetails">
-							<div class="namediv">
-								<div id="name"><%=userInfo.getName() %></div>
-								<div id="username"><%=userInfo.getUsername() %></div>
-							</div>
+						<a class="userappinfo" id="userappinfo" href="anotheruserprofilepage?id=<%=userInfo.getRegisterid() %>" > 
+							<div class="photo">
+								<img alt="" src="<%= request.getContextPath() %>/resources/Profile_Images/<%=userInfo.getProfileimage()%>">
+							</div> <!-- photo -->
+							<div class="userdetails">
+								<div class="namediv">
+									<div id="name"><%=userInfo.getName() %></div>
+									<div id="username"><%=userInfo.getUsername() %></div>
+								</div>
+							</div> <!-- userdetails -->	
+							</a>
 							<div id="btndiv">
 								<%
 								if(userInfo.getStatus()==0){
@@ -245,7 +247,6 @@
 								
 								%>							
 							</div>
-						</div> <!-- userdetails -->
 				
 					</div> <!-- userfollowing -->
 					

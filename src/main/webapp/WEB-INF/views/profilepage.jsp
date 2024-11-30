@@ -93,8 +93,8 @@
 			                   		 <a id="deletepost" href="deletepost?postid=<%=posts.getPostid()%>" ><i class="fa-solid fa-trash-can"></i></a>
 			                  		</div>
 			                    <div id="postdisplay"><%=posts.getPost() %></div>
-			                    <img class="postimgtab" id="postimgtab" onclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
-				                   
+			                    <img class="postimgtab" id="postimgtab" ondblclick="doubletablike(<%=posts.getPostid() %>)" src="<%= request.getContextPath() %>/resources/Post_Images/<%=posts.getImgname()%>">
+				                <i id="like-icon<%=posts.getPostid()%>" class="fa-solid fa-heart like-icon"></i>  <!-- like icon -->
 				                    <div id="likecommentdiv">
 				                    <div class="likesp">
 				                    

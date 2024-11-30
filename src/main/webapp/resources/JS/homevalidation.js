@@ -1,7 +1,7 @@
 /**
  * 
  */
-// we fetch data in form of json format
+// we fetch data in form of json format when user search home page 
  function searchUsingAjaxUser(str){
 	
 	let xhttp = new XMLHttpRequest();
@@ -12,6 +12,7 @@
 			if(jsonObject != null){
 				for(var i=0;i<jsonObject.length;i++){
 					str=str+"<div class='userfollowing'>";
+					str=str+"<a class='userappinfo' id='userappinfo' href='anotheruserprofilepage?id="+jsonObject[i].registerid+"'>"; 
 					str=str+"<div class='photo'>";
 					str=str+"<img alt='' src='resources/Profile_Images/"+jsonObject[i].profileimage+"'>";
 					str=str+"</div>"; // photo
@@ -20,6 +21,8 @@
 					str=str+"<div id='name'>"+jsonObject[i].name+"</div>";
 					str=str+"<div id='username'>"+jsonObject[i].username+"</div>";
 					str=str+"</div>";
+					str=str+"</div>"; //userdetails
+					str=str+"</a>";
 					str=str+"<div id='btndiv'>";
 					if(jsonObject[i].status ==0){
 					//follow btn
@@ -29,7 +32,7 @@
 					str=str+"<button name='following' id='following' value='"+jsonObject[i].registerid+"' onmouseover='unfollowShow(this)' onmouseleave='followingShow(this)' onclick='unfollowUser(this.value)' >Following</button>";            
 					}							
 					str=str+"</div>";
-					str=str+"</div>"; //userdetails
+					
 					str=str+"</div>";  // userfollowing
 				}
 			}else{
@@ -44,35 +47,35 @@
  
  
  
- //profile page double tab like logic
-let tapTimeout = null;
+ //home page double tab like logic
  function doubletablike(postid) {
+	const likeIcon = document.getElementById('like-icon'+postid); // like icon
 
-    if (tapTimeout === null) {
-        tapTimeout = setTimeout(() => {
-            tapTimeout = null;
-        }, 300); // Delay to distinguish between single and double tap
-    } else {
-        clearTimeout(tapTimeout);// clear the timeout
-        tapTimeout = null;
-        let xhttp = new XMLHttpRequest();   // check like or not using ajax
-			xhttp.onreadystatechange=function(){
-				if(this.readyState==4 && this.status==200){
-					var likeornot=innerHTML=this.responseText;
-					if(likeornot=='no'){
-						let parentforyou=document.querySelector("#likecommentGridA"+postid); // like
-						let childforyou = parentforyou.querySelector('#like');
-						childforyou.click();
-					}else{
-						let parentforyou1=document.querySelector("#likecommentGridA"+postid); // unlike
-						let childforyou1 = parentforyou1.querySelector('#liked');
-						childforyou1.click();
-					}
+    let xhttp = new XMLHttpRequest();   // check like or not using ajax
+		xhttp.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var likeornot=innerHTML=this.responseText;
+				if(likeornot=='no'){
+					likeIcon.style.color="red";
+					likeIcon.classList.add('show'); // like icon pop up for like
+					let parentforyou=document.querySelector("#likecommentGridA"+postid); // like
+					let childforyou = parentforyou.querySelector('#like');
+					childforyou.click();
+				}else{
+					likeIcon.style.color="white";
+					likeIcon.classList.add('show'); // like icon pop up for unlike
+					let parentforyou1=document.querySelector("#likecommentGridA"+postid); // unlike
+					let childforyou1 = parentforyou1.querySelector('#liked');
+					childforyou1.click();
 				}
-			};
-			xhttp.open("POST","doubletablike?postid="+postid,true);
-			xhttp.send();
-    }
+			}
+		};
+		xhttp.open("POST","doubletablike?postid="+postid,true);
+		xhttp.send();
+    
+    setTimeout(() => {  // remove pop up like icon
+    likeIcon.classList.remove('show');
+  	}, 1000);
 }
  
  
@@ -140,6 +143,7 @@ let tapTimeout = null;
 			if(jsonObject!=null){
 				for(var i=0;i<jsonObject.length;i++){
 					str=str+"<div class='userfollowing'>";
+					str=str+"<a class='userappinfo' id='userappinfo' href='anotheruserprofilepage?id="+jsonObject[i].registerid+"'>"; 
 					str=str+"<div class='photo'>";
 					str=str+"<img alt='' src='resources/Profile_Images/"+jsonObject[i].profileimage+"'>";
 					str=str+"</div>"; // photo
@@ -148,6 +152,8 @@ let tapTimeout = null;
 					str=str+"<div id='name'>"+jsonObject[i].name+"</div>";
 					str=str+"<div id='username'>"+jsonObject[i].username+"</div>";
 					str=str+"</div>";
+					str=str+"</div>"; //userdetails
+					str=str+"</a>";
 					str=str+"<div id='btndiv'>";
 					if(jsonObject[i].status ==0){
 					//follow btn
@@ -157,7 +163,6 @@ let tapTimeout = null;
 					str=str+"<button name='following' id='following' value='"+jsonObject[i].registerid+"' onmouseover='unfollowShow(this)' onmouseleave='followingShow(this)' onclick='unfollowUser(this.value)' >Following</button>";            
 					}							
 					str=str+"</div>";
-					str=str+"</div>"; //userdetails
 					str=str+"</div>";  // userfollowing
 				}
 			}else{
@@ -182,6 +187,7 @@ let tapTimeout = null;
 			if(jsonObject != null){
 				for(var i=0;i<jsonObject.length;i++){
 					str=str+"<div class='userfollowing'>";
+					str=str+"<a class='userappinfo' id='userappinfo' href='anotheruserprofilepage?id="+jsonObject[i].registerid+"'>"; 
 					str=str+"<div class='photo'>";
 					str=str+"<img alt='' src='resources/Profile_Images/"+jsonObject[i].profileimage+"'>";
 					str=str+"</div>"; // photo
@@ -190,6 +196,8 @@ let tapTimeout = null;
 					str=str+"<div id='name'>"+jsonObject[i].name+"</div>";
 					str=str+"<div id='username'>"+jsonObject[i].username+"</div>";
 					str=str+"</div>";
+					str=str+"</div>"; //userdetails
+					str=str+"</a>";
 					str=str+"<div id='btndiv'>";
 					if(jsonObject[i].status ==0){
 					//follow btn
@@ -199,7 +207,6 @@ let tapTimeout = null;
 					str=str+"<button name='following' id='following' value='"+jsonObject[i].registerid+"' onmouseover='unfollowShow(this)' onmouseleave='followingShow(this)' onclick='unfollowUser(this.value)' >Following</button>";            
 					}							
 					str=str+"</div>";
-					str=str+"</div>"; //userdetails
 					str=str+"</div>";  // userfollowing
 				}
 			}else{

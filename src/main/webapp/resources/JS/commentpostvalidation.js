@@ -1,33 +1,33 @@
 
 //profile page double tab like logic
-let tapTimeout = null;
  function doubletablike(postid) {
-
-    if (tapTimeout === null) {
-        tapTimeout = setTimeout(() => {
-            tapTimeout = null;
-        }, 300); // Delay to distinguish between single and double tap
-    } else {
-        clearTimeout(tapTimeout);// clear the timeout
-        tapTimeout = null;
-        let xhttp = new XMLHttpRequest();   // check like or not using ajax
-			xhttp.onreadystatechange=function(){
-				if(this.readyState==4 && this.status==200){
-					var likeornot=innerHTML=this.responseText;
-					if(likeornot=='no'){
-						let parent=document.querySelector("#likeGrid"+postid); // like
-						let child = parent.querySelector('#like');
-						child.click();
-					}else{
-						let parent1=document.querySelector("#likeGrid"+postid);    // unlike
-						let child1 = parent1.querySelector('#liked');
-						child1.click();	
-					}
+	const likeIcon = document.getElementById('like-icon'+postid); // like icon
+	
+    let xhttp = new XMLHttpRequest();   // check like or not using ajax
+		xhttp.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var likeornot=innerHTML=this.responseText;
+				if(likeornot=='no'){
+					likeIcon.style.color="red";
+					likeIcon.classList.add('show'); // like icon pop up for like
+					let parent=document.querySelector("#likeGrid"+postid); // like
+					let child = parent.querySelector('#like');
+					child.click();
+				}else{
+					likeIcon.style.color="white";
+					likeIcon.classList.add('show'); // like icon pop up for unlike
+					let parent1=document.querySelector("#likeGrid"+postid);    // unlike
+					let child1 = parent1.querySelector('#liked');
+					child1.click();	
 				}
-			};
-			xhttp.open("POST","doubletablike?postid="+postid,true);
-			xhttp.send();
-    }
+			}
+		};
+		xhttp.open("POST","doubletablike?postid="+postid,true);
+		xhttp.send();
+		
+	setTimeout(() => {  // remove pop up like icon
+    likeIcon.classList.remove('show');
+  	}, 1000);
 }
 
 

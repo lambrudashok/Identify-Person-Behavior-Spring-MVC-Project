@@ -159,6 +159,23 @@
 
 }
 
+.like-icon {
+  font-size: 100px;
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  pointer-events: none;
+}
+
+.like-icon.show {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+
 
 /*-------------Following below css-------------------------*/
 .allposts{
@@ -344,17 +361,25 @@
 	display: flex;	
 }
 
+.userfollowing a{
+	width:75%;
+	text-decoration: none;
+	display: flex;	
+	background-color: var(--gray);
+	color:var(--voilet);
+}
+
 .userfollowing .photo{
-	width:15%;
+	width:22%;
 	min-height: 50px;
 }
 .userfollowing .photo img{
-	width:100%;
+	width:95%;
 	height:50px;
 	border-radius: 40px;
 }
 .userfollowing .userdetails{
-	width:80%;
+	width:75%;
 	height:50px;
 	margin-left:15px;
 	display:flex;
@@ -377,11 +402,11 @@
 	overflow:hidden;
 }
 
-.userdetails #btndiv{
-	width:30%;
+.userfollowing #btndiv{
+	width:24%;
 	height:50px;
 }
-.userdetails #btndiv #follow{
+.userfollowing #btndiv #follow{
 	width:100%;
 	height:35px;
 	font-size:14px;
@@ -392,7 +417,7 @@
 	font-weight: bold;
 	border-style:none;
 }
-.userdetails #btndiv #following{
+.userfollowing #btndiv #following{
 	width:100%;
 	height:35px;
 	font-size:14px;
@@ -779,8 +804,16 @@
 	display: flex;	
 }
 
+.userfollowing a{
+	width:75%;
+	text-decoration: none;
+	display: flex;	
+	background-color: var(--gray);
+	color:var(--voilet);
+}
+
 .userfollowing .photo{
-	width:18%;
+	width:25%;
 	min-height: 50px;
 }
 .userfollowing .photo img{
@@ -789,7 +822,7 @@
 	border-radius: 40px;
 }
 .userfollowing .userdetails{
-	width:80%;
+	width:70%;
 	height:50px;
 	margin-left:5px;
 	display:flex;
@@ -797,6 +830,7 @@
 .userdetails .namediv{
 	width:70%;
 	height:50px;
+	
 }
 .namediv #name{
 	width:100%;
@@ -812,11 +846,11 @@
 	overflow:hidden;
 }
 
-.userdetails #btndiv{
+.userfollowing #btndiv{
 	width:30%;
 	height:50px;
 }
-.userdetails #btndiv #follow{
+.userfollowing #btndiv #follow{
 	width:100%;
 	font-size:14px;
 	margin-top:5px;
@@ -826,7 +860,7 @@
 	font-weight: bold;
 	border-style:none;
 }
-.userdetails #btndiv #following{
+.userfollowing #btndiv #following{
 	width:100%;
 	height:35px;
 	font-size:14px;

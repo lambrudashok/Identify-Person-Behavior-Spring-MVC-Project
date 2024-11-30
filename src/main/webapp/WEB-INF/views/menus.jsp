@@ -57,15 +57,19 @@
                 <a class="nav-link menulogo text-white" href="reportproblempage">
                 <i class="fa-solid fa-circle-exclamation logosize"></i>Report Problem</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle menulogo text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-gear logosize"></i>Settings
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item menulogo" href="changepasswordpage">Change Password</a></li>
-                    <li><a class="dropdown-item menulogo" href="deleteaccountpage">Delete Account</a></li>
-                    <li><a class="dropdown-item menulogo" href="logoutpage">Logout</a></li>
-                </ul>
+            
+            <!-- Settings  part below-->
+            
+            <li class="nav-item">
+                <a class="nav-link menulogo text-white ps-2" href="changepasswordpage"></i>Change Password</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link menulogo text-white ps-2" href="deleteaccountpage">Delete Account</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link menulogo text-white ps-2" href="logoutpage">Logout</a>
             </li>
         </ul>
     </div>
